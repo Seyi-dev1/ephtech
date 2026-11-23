@@ -140,14 +140,18 @@ export default function BoardMediaCarousel() {
   return (
     <div>
       <div className="flex flex-wrap items-end justify-between gap-x-6 gap-y-2 border-b border-line pb-3">
-        <div className="grid grid-cols-2 gap-x-5 gap-y-2 sm:flex sm:flex-wrap" role="group" aria-label="Choose board media">
+        <div
+          className="grid w-full grid-cols-2 gap-x-4 gap-y-2.5 sm:flex sm:w-auto sm:flex-wrap sm:gap-x-5 sm:gap-y-2"
+          role="group"
+          aria-label="Choose board media"
+        >
           {slides.map((slide, index) => (
             <button
               key={slide.id}
               type="button"
               aria-pressed={active === index}
               onClick={() => setActive(index)}
-              className={`mono border-b pb-1 text-[10px] tracking-[0.14em] uppercase transition-colors ${
+              className={`mono border-b pb-1 text-left text-[10px] tracking-[0.14em] uppercase transition-colors ${
                 active === index
                   ? "border-amber font-medium text-ink"
                   : "border-transparent text-muted hover:text-ink"
