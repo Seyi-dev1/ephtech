@@ -167,8 +167,8 @@ body {
     background: rgba(16, 21, 15, 0.03);
   }
   .btn-light {
-    border-color: rgba(247, 243, 233, 0.36);
-    background: rgba(250, 248, 241, 0.11);
+    border-color: rgba(247, 243, 233, 0.24);
+    background: transparent;
     color: var(--paper);
   }
   .btn-light:hover {
@@ -1566,7 +1566,7 @@ html.menu-open {
   cursor: default;
   will-change: transform;
   /* Safety net: auto-dismiss if JS never finishes. */
-  animation: pageLoaderBail 0.01s linear 5s forwards;
+  animation: pageLoaderBail 0.01s linear 6s forwards;
 }
 
 /*

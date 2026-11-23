@@ -99,8 +99,8 @@ export default function PageLoader() {
           {
             yPercent: 0,
             opacity: 1,
-            duration: 0.7,
-            stagger: 0.035,
+            duration: 1,
+            stagger: 0.065,
             ease: "power3.out",
           },
           0.05,
@@ -108,7 +108,7 @@ export default function PageLoader() {
       }
 
       if (countWrap) {
-        timeline.to(countWrap, { autoAlpha: 1, y: 0, duration: 0.35, ease: "power2.out" }, 0.42);
+        timeline.to(countWrap, { autoAlpha: 1, y: 0, duration: 0.35, ease: "power2.out" }, 0.32);
 
         const counter = { value: 0 };
         const firstDigit = countTrack?.firstElementChild as HTMLElement | null;
@@ -119,7 +119,7 @@ export default function PageLoader() {
           counter,
           {
             value: 100,
-            duration: 2.8,
+            duration: 3.35,
             ease: "power2.inOut",
             onUpdate: () => {
               const value = Math.min(100, Math.round(counter.value));
@@ -128,11 +128,11 @@ export default function PageLoader() {
               }
             },
           },
-          0.45,
+          0.35,
         );
       }
 
-      timeline.call(liftCurtain, undefined, 3.45);
+      timeline.call(liftCurtain, undefined, 3.95);
     };
 
     const fonts = document.fonts?.ready ?? Promise.resolve();
