@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Wordmark from "@/components/wordmark";
-import { Close, Download, WhatsApp } from "@/components/icons";
+import { Close, Download, Mail, Phone, WhatsApp } from "@/components/icons";
 import {
   WHATSAPP_DISPLAY,
   WHATSAPP_MESSAGES,
@@ -223,6 +223,41 @@ export default function Header() {
                 </Link>
               ))}
             </nav>
+
+            <div className="site-menu__mobile-contact">
+              <span className="site-menu__meta-label">Quote or contact</span>
+              <a
+                href={whatsappHref(WHATSAPP_MESSAGES.quote)}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={closeMenu}
+                className="site-menu__cta no-underline"
+                aria-label="Request a quote on WhatsApp"
+              >
+                <span>Request a quote</span>
+                <span className="site-menu__cta-icon">
+                  <WhatsApp className="h-4 w-4" />
+                </span>
+              </a>
+              <div className="site-menu__mobile-contact-links">
+                <a
+                  href="tel:+2348032519288"
+                  onClick={closeMenu}
+                  className="site-menu__mobile-contact-link"
+                >
+                  <Phone className="h-4 w-4" />
+                  {WHATSAPP_DISPLAY}
+                </a>
+                <a
+                  href="mailto:ephtechinternational@yahoo.com"
+                  onClick={closeMenu}
+                  className="site-menu__mobile-contact-link"
+                >
+                  <Mail className="h-4 w-4" />
+                  ephtechinternational@yahoo.com
+                </a>
+              </div>
+            </div>
 
             <aside
               className="site-menu__aside"
