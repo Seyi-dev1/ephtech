@@ -172,7 +172,7 @@ export default function BoardMediaCarousel() {
         onKeyDown={onKeyDown}
         onTouchStart={onTouchStart}
         onTouchEnd={onTouchEnd}
-        className="group relative mt-3 touch-pan-y overflow-hidden border border-line bg-paper-2 outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest"
+        className="group relative mt-3 touch-pan-y overflow-hidden border border-line bg-fog outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest"
       >
         <div className="relative h-[clamp(400px,68vw,540px)] lg:h-[clamp(460px,38vw,560px)]">
           <div

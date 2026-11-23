@@ -9,6 +9,7 @@
   --green: #1e7a45;
   --amber: #e8a33d;
   --stone: #eae3d3;
+  --fog: #d2cec4;
   --line: #d8d0be;
   --muted: #6e6b5f;
 }
@@ -22,6 +23,7 @@
   --color-green: var(--green);
   --color-amber: var(--amber);
   --color-stone: var(--stone);
+  --color-fog: var(--fog);
   --color-line: var(--line);
   --color-muted: var(--muted);
 
