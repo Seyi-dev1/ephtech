@@ -51,17 +51,17 @@ export default function BoardVisual({ light = false, compact = false }: { light?
       >
         <defs>
           <linearGradient id="boardTop" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#faf5e9" />
-            <stop offset="55%" stopColor="#e7ddc7" />
-            <stop offset="100%" stopColor="#cfc3a8" />
+            <stop offset="0%" stopColor="#ffffff" />
+            <stop offset="55%" stopColor="#fbfaf7" />
+            <stop offset="100%" stopColor="#ece9e3" />
           </linearGradient>
           <linearGradient id="boardFront" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#d9ccb0" />
-            <stop offset="100%" stopColor="#bdaf92" />
+            <stop offset="0%" stopColor="#f8f6f1" />
+            <stop offset="100%" stopColor="#e6e2da" />
           </linearGradient>
           <linearGradient id="boardSide" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#c4b698" />
-            <stop offset="100%" stopColor="#a4967a" />
+            <stop offset="0%" stopColor="#f0ede6" />
+            <stop offset="100%" stopColor="#dad5cb" />
           </linearGradient>
         </defs>
 
