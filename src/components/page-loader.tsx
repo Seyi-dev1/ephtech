@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import { gsap } from "gsap";
-
-const WORD = "EPHTECH";
+import logoLight from "@/assets/images/ephtech-logo-light.png";
 
 export default function PageLoader() {
   const rootRef = useRef<HTMLDivElement>(null);
@@ -24,9 +24,6 @@ export default function PageLoader() {
       return;
     }
 
-    const icon = mark.querySelector<SVGElement>("[data-loader-icon]");
-    const chars = Array.from(mark.querySelectorAll<HTMLElement>("[data-loader-char]"));
-    const sub = mark.querySelector<HTMLElement>("[data-loader-sub]");
     const countWrap = document.querySelector<HTMLElement>("[data-loader-count-wrap]");
     const countValue = document.querySelector<HTMLElement>("[data-loader-count]");
     const countTrack = document.querySelector<HTMLElement>("[data-count-track]");
@@ -36,12 +33,12 @@ export default function PageLoader() {
     window.dispatchEvent(new Event("ephtech:lock-scroll"));
     if (nav) gsap.set(nav, { opacity: 0 });
 
-    const rising = [icon, ...chars, sub].filter(
-      (el): el is HTMLElement | SVGElement => el !== null,
-    );
-    gsap.set(rising, { yPercent: 120, opacity: 0 });
-    if (sub) gsap.set(sub, { yPercent: 150 });
-    gsap.set(mark, { visibility: "visible" });
+    gsap.set(mark, {
+      visibility: "visible",
+      yPercent: 10,
+      opacity: 0,
+      scale: 0.99,
+    });
 
     if (countWrap) {
       gsap.set(countWrap, { autoAlpha: 0, y: 12 });
@@ -98,22 +95,12 @@ export default function PageLoader() {
       const timeline = gsap.timeline();
       timelines.push(timeline);
 
-      if (icon) {
-        timeline.set(icon, { opacity: 1 }, 0);
-        timeline.to(icon, { yPercent: 0, opacity: 1, duration: 0.7, ease: "power3.out" }, 0);
-      }
-      if (chars.length) {
-        timeline.set(chars, { opacity: 1 }, 0.05);
-        timeline.to(
-          chars,
-          { yPercent: 0, opacity: 1, duration: 0.7, stagger: 0.035, ease: "power3.out" },
-          0.05,
-        );
-      }
-      if (sub) {
-        timeline.set(sub, { opacity: 1 }, 0.26);
-        timeline.to(sub, { yPercent: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 0.26);
-      }
+      timeline.to(
+        mark,
+        { yPercent: 0, opacity: 1, scale: 1, duration: 0.9, ease: "power3.out" },
+        0,
+      );
+
       if (countWrap) {
         timeline.to(countWrap, { autoAlpha: 1, y: 0, duration: 0.35, ease: "power2.out" }, 0.52);
 
@@ -165,37 +152,14 @@ export default function PageLoader() {
   return (
     <div className="page-loader" data-page-loader ref={rootRef} aria-hidden="true">
       <div className="page-loader__mark" ref={markRef}>
-        <span className="page-loader__glyph-mask">
-          <svg
-            data-loader-icon
-            className="page-loader__glyph"
-            viewBox="0 0 30 30"
-            fill="none"
-            aria-hidden="true"
-          >
-            <rect x="4" y="4.5" width="20" height="3.6" rx="0.6" fill="currentColor" />
-            <rect x="4" y="13.2" width="12.6" height="3.6" rx="0.6" fill="currentColor" />
-            <rect x="4" y="21.9" width="20" height="3.6" rx="0.6" fill="currentColor" />
-            <rect x="23.2" y="13.2" width="3.6" height="3.6" fill="var(--amber)" />
-          </svg>
-        </span>
-
-        <span className="page-loader__type">
-          <span className="page-loader__name" aria-label="EPHTECH">
-            {WORD.split("").map((char, index) => (
-              <span className="page-loader__char-mask" key={`${char}-${index}`} aria-hidden="true">
-                <span className="page-loader__char" data-loader-char>
-                  {char}
-                </span>
-              </span>
-            ))}
-          </span>
-          <span className="page-loader__sub-mask">
-            <span className="page-loader__sub mono" data-loader-sub>
-              INTERNATIONAL
-            </span>
-          </span>
-        </span>
+        <Image
+          src={logoLight}
+          alt=""
+          width={592}
+          height={148}
+          className="page-loader__logo"
+          priority
+        />
       </div>
       <div className="page-loader__count" aria-hidden="true" data-loader-count-wrap>
         <span className="page-loader__count-label">Loading</span>

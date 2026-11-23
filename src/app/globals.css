@@ -1537,10 +1537,15 @@ html.menu-open {
   z-index: 1;
   display: flex;
   align-items: center;
-  gap: clamp(16px, 2.6vw, 36px);
-  color: var(--paper);
+  justify-content: center;
   visibility: hidden;
   will-change: transform, opacity;
+}
+
+.page-loader__logo {
+  display: block;
+  width: clamp(240px, 40vw, 600px);
+  height: auto;
 }
 
 .page-loader__count {
@@ -1595,62 +1600,6 @@ html.menu-open {
   width: 100%;
   height: 0.82em;
   line-height: 0.82em;
-}
-
-.page-loader__glyph-mask {
-  display: inline-flex;
-  overflow: hidden;
-}
-
-.page-loader__glyph {
-  width: clamp(40px, 5.2vw, 80px);
-  height: auto;
-  flex-shrink: 0;
-  color: var(--paper);
-  will-change: transform;
-}
-
-.page-loader__type {
-  display: flex;
-  flex-direction: column;
-  gap: clamp(6px, 0.9vw, 13px);
-}
-
-.page-loader__name {
-  display: flex;
-  color: var(--paper);
-  font-family: var(--font-instrument), ui-sans-serif, system-ui, sans-serif;
-  font-size: clamp(38px, 7.6vw, 118px);
-  font-weight: 600;
-  line-height: 0.9;
-  letter-spacing: -0.03em;
-}
-
-.page-loader__char-mask {
-  display: inline-block;
-  overflow: hidden;
-  padding-block: 0.12em;
-  margin-block: -0.12em;
-}
-
-.page-loader__char {
-  display: inline-block;
-  will-change: transform;
-}
-
-.page-loader__sub-mask {
-  display: flex;
-  overflow: hidden;
-}
-
-.page-loader__sub {
-  display: inline-block;
-  color: rgba(247, 244, 236, 0.45);
-  font-family: var(--font-plex), ui-monospace, monospace;
-  font-size: clamp(9px, 1.1vw, 15px);
-  line-height: 1;
-  letter-spacing: 0.26em;
-  will-change: transform;
 }
 
 html.is-loading,
