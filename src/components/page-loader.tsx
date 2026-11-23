@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
 import { gsap } from "gsap";
-import logoLight from "@/assets/images/ephtech-logo-light.png";
+
+const WORD = "EPHTECH";
 
 export default function PageLoader() {
   const rootRef = useRef<HTMLDivElement>(null);
@@ -24,6 +24,7 @@ export default function PageLoader() {
       return;
     }
 
+    const chars = Array.from(mark.querySelectorAll<HTMLElement>("[data-loader-char]"));
     const countWrap = document.querySelector<HTMLElement>("[data-loader-count-wrap]");
     const countValue = document.querySelector<HTMLElement>("[data-loader-count]");
     const countTrack = document.querySelector<HTMLElement>("[data-count-track]");
@@ -33,12 +34,8 @@ export default function PageLoader() {
     window.dispatchEvent(new Event("ephtech:lock-scroll"));
     if (nav) gsap.set(nav, { opacity: 0 });
 
-    gsap.set(mark, {
-      visibility: "visible",
-      yPercent: 10,
-      opacity: 0,
-      scale: 0.99,
-    });
+    gsap.set(chars, { yPercent: 120, opacity: 0 });
+    gsap.set(mark, { visibility: "visible" });
 
     if (countWrap) {
       gsap.set(countWrap, { autoAlpha: 0, y: 12 });
@@ -95,11 +92,20 @@ export default function PageLoader() {
       const timeline = gsap.timeline();
       timelines.push(timeline);
 
-      timeline.to(
-        mark,
-        { yPercent: 0, opacity: 1, scale: 1, duration: 0.9, ease: "power3.out" },
-        0,
-      );
+      if (chars.length) {
+        timeline.set(chars, { opacity: 1 }, 0.05);
+        timeline.to(
+          chars,
+          {
+            yPercent: 0,
+            opacity: 1,
+            duration: 0.7,
+            stagger: 0.035,
+            ease: "power3.out",
+          },
+          0.05,
+        );
+      }
 
       if (countWrap) {
         timeline.to(countWrap, { autoAlpha: 1, y: 0, duration: 0.35, ease: "power2.out" }, 0.52);
@@ -152,14 +158,15 @@ export default function PageLoader() {
   return (
     <div className="page-loader" data-page-loader ref={rootRef} aria-hidden="true">
       <div className="page-loader__mark" ref={markRef}>
-        <Image
-          src={logoLight}
-          alt=""
-          width={592}
-          height={148}
-          className="page-loader__logo"
-          priority
-        />
+        <span className="page-loader__name" aria-label="EPHTECH">
+          {WORD.split("").map((char, index) => (
+            <span className="page-loader__char-mask" key={`${char}-${index}`} aria-hidden="true">
+              <span className="page-loader__char" data-loader-char>
+                {char}
+              </span>
+            </span>
+          ))}
+        </span>
       </div>
       <div className="page-loader__count" aria-hidden="true" data-loader-count-wrap>
         <span className="page-loader__count-label">Loading</span>

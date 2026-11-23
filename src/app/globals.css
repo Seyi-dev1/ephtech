@@ -1542,22 +1542,40 @@ html.menu-open {
   will-change: transform, opacity;
 }
 
-.page-loader__logo {
-  display: block;
-  width: clamp(240px, 40vw, 600px);
-  height: auto;
+.page-loader__name {
+  display: flex;
+  color: var(--paper);
+  font-family: var(--font-instrument), ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(38px, 7.6vw, 118px);
+  font-weight: 600;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+}
+
+.page-loader__char-mask {
+  display: inline-block;
+  overflow: hidden;
+  padding-block: 0.12em;
+  margin-block: -0.12em;
+}
+
+.page-loader__char {
+  display: inline-block;
+  will-change: transform;
 }
 
 .page-loader__count {
   position: absolute;
-  left: clamp(20px, 4vw, 64px);
+  right: clamp(20px, 4vw, 64px);
   bottom: clamp(24px, 4vw, 48px);
   z-index: 2;
   display: flex;
   visibility: hidden;
   align-items: baseline;
+  justify-content: flex-end;
   gap: clamp(10px, 1.2vw, 18px);
   color: var(--paper);
+  text-align: right;
   white-space: nowrap;
   pointer-events: none;
 }
