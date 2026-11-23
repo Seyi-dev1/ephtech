@@ -4,7 +4,6 @@ import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Lenis from "lenis";
 
 export default function Motion() {
   useEffect(() => {
@@ -12,26 +11,6 @@ export default function Motion() {
     if (reduce) return;
 
     gsap.registerPlugin(ScrollTrigger);
-
-    const lenis = new Lenis({
-      lerp: 0.09,
-      wheelMultiplier: 1,
-      touchMultiplier: 1.4,
-    });
-
-    if (document.documentElement.classList.contains("is-loading")) {
-      lenis.stop();
-    }
-
-    const tick = (time: number) => lenis.raf(time * 1000);
-    gsap.ticker.add(tick);
-    gsap.ticker.lagSmoothing(0);
-    lenis.on("scroll", ScrollTrigger.update);
-
-    const lockScroll = () => lenis.stop();
-    const unlockScroll = () => lenis.start();
-    window.addEventListener("ephtech:lock-scroll", lockScroll);
-    window.addEventListener("ephtech:unlock-scroll", unlockScroll);
 
     let heroTl: gsap.core.Timeline | null = null;
 
@@ -331,8 +310,8 @@ export default function Motion() {
       const target = document.querySelector(href);
       if (!target) return;
       event.preventDefault();
-      lenis.start();
-      lenis.scrollTo(target as HTMLElement, { offset: -94, duration: 1.15 });
+      const top = Math.max(0, target.getBoundingClientRect().top + window.scrollY - 94);
+      window.scrollTo({ top, behavior: "smooth" });
     };
     document.addEventListener("click", onAnchorClick);
 
@@ -347,8 +326,6 @@ export default function Motion() {
       board?.removeEventListener("pointerenter", pointBoard);
       board?.removeEventListener("pointerleave", leaveBoard);
       if (boardRaf) cancelAnimationFrame(boardRaf);
-      window.removeEventListener("ephtech:lock-scroll", lockScroll);
-      window.removeEventListener("ephtech:unlock-scroll", unlockScroll);
       window.removeEventListener("ephtech:hero-video-start", onHeroStart);
       window.removeEventListener("ephtech:page-reveal", onHeroStart);
       window.removeEventListener("load", refresh);
@@ -357,8 +334,6 @@ export default function Motion() {
       heroHold?.kill();
       context.revert();
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-      gsap.ticker.remove(tick);
-      lenis.destroy();
     };
   }, []);
 

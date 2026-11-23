@@ -198,7 +198,6 @@ export default function Header() {
         className={`site-menu ${menuOpen ? "is-open" : ""}`}
         aria-hidden={!menuOpen}
         inert={!menuOpen}
-        data-lenis-prevent
       >
         <div className="site-menu__bg" aria-hidden="true" />
         <div className="site-menu__inner">
