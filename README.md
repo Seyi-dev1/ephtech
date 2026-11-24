@@ -54,8 +54,11 @@ npm run start
 
 ## What is temporary
 
-- The homepage hero video, road-construction image, importation image and
-  landscaping image are temporary stock media and are labelled **Illustrative**.
+- The homepage hero mixes a temporary stock opening scene with client-supplied
+  interior and exterior stills. Stock is labelled **Illustrative**; the hero
+  label reads “Client work + illustrative scene”.
+- The road-construction, importation and landscaping images are temporary stock
+  and are labelled **Illustrative**.
 - Client project names and locations are withheld pending approval.
 - WhatsApp opens a prefilled enquiry for the project team; there is no quote form
   or backend.

@@ -25,16 +25,18 @@ These are stock interiors, not Ephtech projects. They are used to test the motio
 
 - Files: `public/videos/company-hero.mp4` and
   `public/videos/company-hero-poster.jpg`
-- Edit: four 3.5-second scenes with 0.8-second crossfades; 960×540; muted;
-  trimmed from the sources below. The hero is labelled “Illustrative brand image”.
+- Edit: four 3.5-second scenes with 0.8-second crossfades; 960×540; muted.
+  Scene 1 is stock; scenes 2–4 are client-supplied stills with a slow zoom. The
+  hero label reads “Client work + illustrative scene”.
 - License: Pexels License for all four clips. Free for commercial use.
-- Scene 1 — two Black women engineers on site: Kindel Media, Pexels video 8487867
-  https://www.pexels.com/video/close-up-of-women-talking-at-a-construction-site-8487867/
-- Scene 2 — finished living room: Max Vakhtbovych, Pexels video 7533207
-  https://www.pexels.com/video/a-modern-living-room-7533207/
-- Scene 3 — designed office interior: Luke Holley, Pexels video 34626856
-  https://www.pexels.com/video/modern-office-space-with-artistic-design-34626856/
-- Scene 4 — completed house and landscaped garden: Alef Morais, Pexels video 40808151
-  https://www.pexels.com/video/modern-tropical-house-with-lush-garden-40808151/
+- Scene 1 — two Black women engineers on site: **Kindel Media**, Pexels video
+  [8487867](https://www.pexels.com/video/close-up-of-women-talking-at-a-construction-site-8487867/).
+  Stock / illustrative.
+- Scene 2 — furnished apartment with white ceiling: **client-supplied**
+  `work-interior.jpg` (from `WhatsApp Image 2026-11-22 at 10.50.54 (2).jpeg`).
+- Scene 3 — office with suspended white ceiling: **client-supplied**
+  `work-ceiling.jpg` (from `WhatsApp Image 2026-11-22 at 10.50.54.jpeg`).
+- Scene 4 — completed Nigerian residence: **client-supplied**
+  `work-real-estate.jpg` (from `WhatsApp Image 2026-11-23 at 18.02.34 (9).jpeg`).
 - Usage: temporary company homepage hero. Replace with an Ephtech brand film when
   available.
