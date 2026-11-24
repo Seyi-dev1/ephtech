@@ -149,3 +149,15 @@ These are presented as **client work / completed work**, not stock. Confirm
 ownership, project permissions and written approval before public launch.
 WhatsApp compression limits full-bleed use; request originals for hero-scale
 placements.
+
+### Hero video (temporary)
+
+- Files: `public/videos/company-hero.mp4` and
+  `public/videos/company-hero-poster.jpg`
+- Source: Pexels video 8964731
+- Photographer: Mikael Blomkvist
+- URL: https://www.pexels.com/video/a-man-and-woman-walking-at-the-construction-site-8964731/
+- License: Pexels License. Free for commercial use. Attribution not required.
+- Usage: temporary homepage hero background. Trimmed to 10 seconds and reduced
+  to 960×540 for web delivery. The hero is labelled “Illustrative brand image”.
+  Replace with an Ephtech brand film when available.

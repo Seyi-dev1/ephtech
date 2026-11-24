@@ -20,3 +20,15 @@ These are stock interiors, not Ephtech projects. They are used to test the motio
 - Duration: 24.7 seconds, 480 × 848 portrait, muted in the rail.
 - Usage: homepage "Built on site" feature (section 03).
 - Confirm ownership and permission before naming the client or building.
+
+## Company hero — temporary stock video
+
+- File: `public/videos/company-hero.mp4`
+- Poster: `public/videos/company-hero-poster.jpg`
+- Source: Pexels video 8964731
+- Photographer: Mikael Blomkvist
+- URL: https://www.pexels.com/video/a-man-and-woman-walking-at-the-construction-site-8964731/
+- License: Pexels License. Free for commercial use. Attribution not required.
+- Usage: temporary company homepage hero, trimmed to 10 seconds and reduced to
+  960×540. Labelled “Illustrative brand image”. Replace with an Ephtech brand
+  film when available.

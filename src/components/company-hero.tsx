@@ -19,6 +19,18 @@ export default function CompanyHero() {
           sizes="100vw"
           className="hero-image__poster"
         />
+        <video
+          className="hero-image__video"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          poster="/videos/company-hero-poster.jpg"
+          aria-hidden="true"
+        >
+          <source src="/videos/company-hero.mp4" type="video/mp4" />
+        </video>
       </div>
       <div className="hero-image__wash" aria-hidden="true" />
       <div className="hero-image__grain" aria-hidden="true" />
