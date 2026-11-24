@@ -83,7 +83,7 @@ export default function AboutPage() {
           <div className="grid gap-6 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-7" data-reveal>
               <span className="eyebrow text-muted">What we cover</span>
-              <h2 className="h2 mt-4">Eight services. One company.</h2>
+              <h2 className="h2 mt-4">Our services. One company.</h2>
             </div>
             <p className="body-lg lg:col-span-5" data-reveal>
               Choose a single service or bring us in across the whole project. The scope changes;

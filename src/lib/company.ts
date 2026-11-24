@@ -217,7 +217,6 @@ export const getCompanyService = (slug: string) =>
 export const companyStats = {
   rc: "RC 1216055",
   branches: "Lagos · Owerri · Aba",
-  services: "Eight services",
   team: "One accountable team",
 };
 

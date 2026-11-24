@@ -60,7 +60,7 @@ export default async function ServicePage({ params }: PageProps) {
                   {service.imageNote}
                 </span>
                 <p className="mt-2 text-[13px] leading-relaxed text-muted">
-                  One of eight services delivered by the Ephtech team.
+                  Delivered by the Ephtech team.
                 </p>
               </div>
             </div>

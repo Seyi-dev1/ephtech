@@ -10,7 +10,7 @@ import { ArrowRight, ArrowUpRight, WhatsApp } from "@/components/icons";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Eight services from Ephtech International: design and building projects, road construction, ceiling and wall systems, interior finishing, building materials, importation, real estate and landscaping.",
+    "Services from Ephtech International across design and building, road construction, ceiling and wall systems, interior finishing, building materials, importation, real estate and landscaping.",
   alternates: { canonical: "/services" },
 };
 
@@ -18,7 +18,7 @@ export default function ServicesPage() {
   return (
     <main id="main" className="bg-paper text-ink">
       <PageIntro
-        eyebrow="Services · Eight services"
+        eyebrow="Services"
         title="The services we deliver."
         lede="Construction, interiors, materials and property. Use one service or combine several — the scope is built around your project, not a fixed package."
         note="Project photography is client-supplied. Online images are illustrative and marked as such."
@@ -29,7 +29,7 @@ export default function ServicesPage() {
           <div className="mb-10 grid gap-5 border-b border-line pb-8 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-7" data-reveal>
               <span className="eyebrow text-muted">What we do</span>
-              <h2 className="h2 mt-4">Eight services. One company.</h2>
+              <h2 className="h2 mt-4">One company. A full range.</h2>
             </div>
             <p className="body-lg lg:col-span-5" data-reveal>
               Most clients start with one service and add others as the project grows. You are not

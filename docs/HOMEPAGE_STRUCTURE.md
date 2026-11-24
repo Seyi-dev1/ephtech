@@ -10,7 +10,7 @@ for Ephtech International Limited. The board remains a product page.
 ```text
 /                         Company home
 /about                    Company, process and branches
-/services                 Eight services
+/services                 Services
 /services/[slug]          Individual service pages
 /projects                 Selected work across the company
 /products                 Products, systems and materials
@@ -22,10 +22,9 @@ for Ephtech International Limited. The board remains a product page.
 
 1. **Hero** — company-level film/still, “Success through Excellence”, services
    and work CTAs.
-2. **Credibility band** — RC number, branches, eight services and one-team
-   accountability.
-3. **What we do** — the eight services presented directly, with a note that
-   clients can take one service or combine several.
+2. **Credibility band** — RC number, branches and one-team accountability.
+3. **What we do** — the services presented directly, with a note that clients
+   can take one service or combine several.
 4. **Selected work** — four project cards spanning interiors, construction and
    real estate, labelled as completed work.
 5. **Products & materials** — Ephtech Board featured as one product within the

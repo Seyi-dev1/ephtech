@@ -1,8 +1,8 @@
 # Ephtech pivot: company-first strategy
 
 **Status:** first implementation pass built on 24 November 2026. Company home,
-service hub, eight service pages, About, Products and Projects are live in the
-codebase. The Ephtech Board remains at `/board` as a product page.
+service hub, individual service pages, About, Products and Projects are live in
+the codebase. The Ephtech Board remains at `/board` as a product page.
 
 **Visual direction board:** [`pivot/visual-direction.jpg`](./pivot/visual-direction.jpg)
 
@@ -26,13 +26,14 @@ DNA and change what leads the page.
 > or combine several.
 
 The brand tagline is now **“Success through Excellence”** and the hero leads
-with it. The subline carries the company’s range: “Ephtech International Ltd is
-a construction, interiors, materials and property company across Nigeria.”
+with it. The subline carries the company’s range: “Ephtech International Ltd
+plans, builds, finishes, supplies materials and develops property across
+Nigeria for lasting value.”
 
 ## 2. Service architecture
 
-The client supplied eight services. The site presents them directly, without
-framing them as a mandatory sequence:
+The client supplied a range of services. The site presents them directly,
+without framing them as a mandatory sequence:
 
 | Service | What it covers |
 |---|---|
@@ -54,7 +55,7 @@ product. It gets its own product page, not the homepage.
 ```text
 /                         Company-led home
 /about                    Company, branches, process, credentials
-/services                 Eight services
+/services                 Services
 /services/[slug]          Individual service pages
 /projects                 Selected work across the company
 /products                 Products and systems
@@ -76,9 +77,9 @@ A company-level editorial page, not a product catalogue:
    materials and property work across Nigeria. CTAs: “Explore our services” and
    “See our work.”
 2. **Credibility strip** — RC 1216055 · Lagos, Owerri, Aba · one accountable
-   team · eight services.
-3. **What we do** — the eight services presented directly, with a note that
-   clients can take one service or combine several.
+   team.
+3. **What we do** — the services presented directly, with a note that clients
+   can take one service or combine several.
 4. **Selected work** — three or four project dossiers with service/sector tags
    and strong imagery.
 5. **Products & materials** — a proper product shelf. Ephtech Board is featured
@@ -181,7 +182,7 @@ See [`MEDIA_INVENTORY.md`](./MEDIA_INVENTORY.md) and the contact sheets in
 2. **Direction** — visual direction board, homepage wireframe, service-hub
    structure.
 3. **Build foundation** — global design system, navigation, homepage, service hub.
-4. **Content** — eight service pages, three to four project dossiers, about page.
+4. **Content** — individual service pages, three to four project dossiers, about page.
 5. **Products and polish** — product pages, media performance, SEO, accessibility,
    QA and launch.
 

@@ -61,8 +61,8 @@ export default function CompanyHero() {
               </h1>
 
               <p data-hero-fade className="hero-image__lede mt-6">
-                Ephtech International Ltd is a construction, interiors, materials and property
-                company across Nigeria.
+                Ephtech International Ltd plans, builds, finishes, supplies materials and
+                develops property across Nigeria for lasting value.
               </p>
 
               <div
@@ -93,13 +93,6 @@ export default function CompanyHero() {
                   Talk to the team
                 </a>
               </div>
-
-              <p
-                className="mono mt-7 text-[8.5px] tracking-[0.14em] uppercase text-paper/45"
-                data-hero-fade
-              >
-                Eight services · One accountable team
-              </p>
             </div>
           </div>
         </div>

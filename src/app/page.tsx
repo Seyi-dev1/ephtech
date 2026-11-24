@@ -128,11 +128,10 @@ export default function Home() {
 
       {/* ---------------- credibility band ---------------- */}
       <section aria-label="Company at a glance" className="border-y border-line bg-paper-2">
-        <div className="shell grid gap-6 py-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-10">
+        <div className="shell grid gap-6 py-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-10">
           {[
             { label: "Registered", title: companyStats.rc, body: "Ephtech International Limited" },
             { label: "Coverage", title: companyStats.branches, body: "Branches and project teams" },
-            { label: "Capability", title: companyStats.services, body: "From planning to landscape" },
             { label: "Accountability", title: companyStats.team, body: "One contract, one programme" },
           ].map((item) => (
             <div key={item.label} className="border-l border-line pl-4 first:border-l-0 first:pl-0 sm:border-l sm:pl-4">
@@ -157,8 +156,8 @@ export default function Home() {
               <h2 className="h2 mt-5">The services we deliver.</h2>
             </div>
             <p className="body-lg lg:col-span-5" data-reveal>
-              Eight services across construction, interiors, materials and property. Start with
-              one, or bring us in across the whole project — the scope is yours.
+              Construction, interiors, materials and property. Start with one, or bring us in
+              across the whole project. The scope is yours.
             </p>
           </div>
 

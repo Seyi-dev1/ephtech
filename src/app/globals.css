@@ -634,6 +634,7 @@ body {
 .hero-image__actions .btn {
   min-height: 48px;
   border-radius: 2px;
+  font-weight: 600;
 }
 
 .hero-image__link {
