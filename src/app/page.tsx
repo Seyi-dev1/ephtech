@@ -8,7 +8,7 @@ import workCeiling from "@/assets/images/work-ceiling.jpg";
 import workInterior from "@/assets/images/work-interior.jpg";
 import workRealEstate from "@/assets/images/work-real-estate.jpg";
 import { branches } from "@/lib/data";
-import { companyPrinciples, companyServices, companyStats } from "@/lib/company";
+import { companyPrinciples, companyServices } from "@/lib/company";
 import { siteUrl } from "@/lib/site";
 import { WHATSAPP_DISPLAY, WHATSAPP_MESSAGES, whatsappHref } from "@/lib/whatsapp";
 import CompanyHero from "@/components/company-hero";
@@ -125,27 +125,6 @@ export default function Home() {
       />
 
       <CompanyHero />
-
-      {/* ---------------- credibility band ---------------- */}
-      <section aria-label="Company at a glance" className="border-y border-line bg-paper-2">
-        <div className="shell grid gap-6 py-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-10">
-          {[
-            { label: "Registered", title: companyStats.rc, body: "Ephtech International Limited" },
-            { label: "Coverage", title: companyStats.branches, body: "Branches and project teams" },
-            { label: "Accountability", title: companyStats.team, body: "One contract, one programme" },
-          ].map((item) => (
-            <div key={item.label} className="border-l border-line pl-4 first:border-l-0 first:pl-0 sm:border-l sm:pl-4">
-              <span className="mono block text-[8.5px] tracking-[0.16em] uppercase text-muted">
-                {item.label}
-              </span>
-              <p className="mt-2 font-display text-[18px] font-medium tracking-[-0.02em]">
-                {item.title}
-              </p>
-              <p className="mt-1 text-[12px] leading-relaxed text-muted">{item.body}</p>
-            </div>
-          ))}
-        </div>
-      </section>
 
       {/* ---------------- services ---------------- */}
       <section id="services" className="section scroll-mt-24">
