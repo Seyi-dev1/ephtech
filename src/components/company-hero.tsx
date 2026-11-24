@@ -51,18 +51,18 @@ export default function CompanyHero() {
               </span>
               <h1 className="hero-image__title">
                 <span className="hero-image__line">
-                  <span data-hero-line>One team.</span>
+                  <span data-hero-line>Construction,</span>
                 </span>
                 <span className="hero-image__line">
                   <span data-hero-line>
-                    From plan to <em>place</em>.
+                    <em>re-engineered</em>.
                   </span>
                 </span>
               </h1>
 
               <p data-hero-fade className="hero-image__lede mt-6">
-                Design, construction, interiors, materials and property — one accountable team
-                across Lagos, Owerri and Aba.
+                Modern materials, engineered systems and one accountable team — from plan to
+                place.
               </p>
 
               <div
