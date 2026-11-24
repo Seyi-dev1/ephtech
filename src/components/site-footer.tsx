@@ -1,11 +1,10 @@
 import Link from "next/link";
 
 const footerLinks = [
-  { label: "The Board", href: "/board" },
-  { label: "Applications", href: "/board#applications" },
-  { label: "Site work", href: "/projects" },
   { label: "Services", href: "/services" },
-  { label: "FAQ", href: "/board#faq" },
+  { label: "Projects", href: "/projects" },
+  { label: "Products", href: "/products" },
+  { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
 

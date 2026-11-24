@@ -1,6 +1,8 @@
 # Ephtech pivot: company-first strategy
 
-**Status:** pre-build direction. No site pages have been changed yet.
+**Status:** first implementation pass built on 24 November 2026. Company home,
+service hub, eight service pages, About, Products and Projects are live in the
+codebase. The Ephtech Board remains at `/board` as a product page.
 
 **Visual direction board:** [`pivot/visual-direction.jpg`](./pivot/visual-direction.jpg)
 
@@ -33,7 +35,7 @@ The client supplied eight services. They map cleanly to five chapters:
 |---|---|---|
 | **01 Plan** | Design and Building Projects | Concept, design coordination, building projects and delivery |
 | **02 Build** | Road Construction | Civil works, roads, drainage and external works |
-| **03 Finish** | Olavic Ceiling and Wall Systems | Ceiling and wall systems, installation and finishes |
+| **03 Finish** | Ceiling & Wall Systems | Ceiling and wall systems, installation and finishes |
 | **03 Finish** | Interior Finishing | Fit-out, feature walls, staircases, painting and detail work |
 | **04 Supply** | Supply & Installation of Modern Building Materials | Materials supply, systems and installation support |
 | **04 Supply** | Importation of Modern Building Materials | Sourcing and importation of modern materials |
@@ -43,8 +45,6 @@ The client supplied eight services. They map cleanly to five chapters:
 **Ephtech Board** sits inside the Supply/Finish capability as the flagship
 product. It gets its own product page, not the homepage.
 
-> Confirm the exact spelling and meaning of **“Olavic”** with the client before
-> writing public copy.
 
 ## 3. Information architecture
 
@@ -53,15 +53,14 @@ product. It gets its own product page, not the homepage.
 /about                    Company, branches, process, credentials
 /services                 Service hub — five chapters, eight services
 /services/[slug]          Individual service pages
-/projects                 Portfolio index, filterable by service/sector
-/projects/[slug]          Project dossier / case study
+/projects                 Selected work across the company
 /products                 Products and systems
-/products/ephtech-board   Ephtech Board product page
+/board                    Ephtech Board product page (current URL)
 /contact                  Quote and contact
 ```
 
-The current `/board` content moves to `/products/ephtech-board`. Add a redirect
-if that URL has been shared. The main nav becomes:
+The board remains at `/board` for now; an alias at `/products/ephtech-board`
+can be added at launch. The main nav becomes:
 
 **Services · Projects · Products · About · Contact** + **Start a project**
 
@@ -184,7 +183,8 @@ See [`MEDIA_INVENTORY.md`](./MEDIA_INVENTORY.md) and the contact sheets in
 
 ## 10. Decisions needed
 
-- Confirm “Olavic” and the exact public service names.
+- Confirm the exact public service names. “Olavic” has been replaced with
+  “Ceiling & Wall Systems” in the implementation.
 - Confirm priority services and sectors.
 - Provide real project names, locations and permissions.
 - Decide whether Real Estate needs listings or a marketing page only.

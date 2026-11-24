@@ -1,29 +1,39 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import cathedralCeiling from "@/assets/images/cathedral-ceiling.jpg";
-import { branches, images, services } from "@/lib/data";
-import { homeFaqs } from "@/lib/faqs";
-import { confirmedSpecs, formatSpec, pillars, product } from "@/lib/product";
-import { siteUrl } from "@/lib/site";
+import boardProduct from "@/assets/images/board-product.jpg";
+import teamSite from "@/assets/images/team-site.jpg";
+import workBuild from "@/assets/images/work-build.jpg";
+import workCeiling from "@/assets/images/work-ceiling.jpg";
+import workInterior from "@/assets/images/work-interior.jpg";
+import workRealEstate from "@/assets/images/work-real-estate.jpg";
+import { branches } from "@/lib/data";
 import {
-  WHATSAPP_DISPLAY,
-  WHATSAPP_MESSAGES,
-  whatsappHref,
-} from "@/lib/whatsapp";
-import BoardMediaCarousel from "@/components/board-media-carousel";
-import HeroImage from "@/components/hero-image";
-import Comparison from "@/components/comparison";
+  chapters,
+  companyProcess,
+  companyServices,
+  companyStats,
+  servicesByChapter,
+} from "@/lib/company";
+import { siteUrl } from "@/lib/site";
+import { WHATSAPP_DISPLAY, WHATSAPP_MESSAGES, whatsappHref } from "@/lib/whatsapp";
+import CompanyHero from "@/components/company-hero";
 import NigeriaMap from "@/components/nigeria-map";
 import QuoteButton from "@/components/quote-button";
-import RailVideo from "@/components/rail-video";
-import WorkRail from "@/components/work-rail";
 import {
+  ArrowRight,
   ArrowUpRight,
   Download,
   Phone,
-  Plus,
   WhatsApp,
 } from "@/components/icons";
+
+export const metadata: Metadata = {
+  title: "Ephtech International: Design, Construction, Interiors & Materials",
+  description:
+    "Ephtech International Limited is a multi-disciplinary construction, interiors, property and materials company operating across Lagos, Owerri and Aba.",
+  alternates: { canonical: "/" },
+};
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -33,6 +43,7 @@ const structuredData = {
       "@id": `${siteUrl}/#organization`,
       name: "Ephtech International Ltd",
       url: siteUrl,
+      slogan: "Building a better tomorrow.",
       email: "ephtechinternational@yahoo.com",
       telephone: "+2348032519288",
       identifier: "RC 1216055",
@@ -58,35 +69,56 @@ const structuredData = {
           addressCountry: "NG",
         },
       })),
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Ephtech International services",
+        itemListElement: companyServices.map((service) => ({
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: service.title,
+            description: service.summary,
+            url: `${siteUrl}/services/${service.slug}`,
+          },
+        })),
+      },
     },
     {
       "@type": "Product",
-      name: product.name,
+      name: "Ephtech Board",
       brand: { "@type": "Brand", name: "Ephtech" },
-      category: product.category,
-      description: product.description,
-      additionalProperty: confirmedSpecs.map((spec) => ({
-        "@type": "PropertyValue",
-        name: spec.label,
-        value: formatSpec(spec),
-      })),
+      category: "Factory-finished building board",
+      description:
+        "A dry, factory-finished, moisture-resistant alternative to POP, plasterboard and gypsum for ceilings and walls.",
+      url: `${siteUrl}/board`,
     },
   ],
 };
 
-const CATHEDRAL_VIDEO =
-  "https://res.cloudinary.com/drikcqdzp/video/upload/w_640,q_auto,f_auto/ephtech/videos/cathedral.mp4";
-
-const siteWorkTeaser = [
+const selectedWork = [
   {
-    image: images.heroInstall,
-    alt: "Illustrative interior with a finished linear ceiling, concealed lighting and a panel wall.",
-    caption: "Linear ceilings",
+    image: workCeiling,
+    title: "Office fit-out",
+    service: "Ceilings & wall systems",
+    alt: "Completed office interior with a suspended ceiling and wall panels.",
   },
   {
-    image: images.mediaWall,
-    alt: "Illustrative interior with a media wall, TV recess, shelving and concealed lighting.",
-    caption: "Media walls",
+    image: workInterior,
+    title: "Residential finish",
+    service: "Interior finishing",
+    alt: "Finished living room with a white panel wall, ceiling and warm lighting.",
+  },
+  {
+    image: workBuild,
+    title: "Building in progress",
+    service: "Design & building projects",
+    alt: "Building under construction with columns, blockwork and formwork.",
+  },
+  {
+    image: workRealEstate,
+    title: "Residential development",
+    service: "Real estate",
+    alt: "Completed residential building with a gated frontage.",
   },
 ];
 
@@ -98,313 +130,277 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
 
-      <HeroImage video />
+      <CompanyHero />
 
-      {/* ---------------- trust band ---------------- */}
-      <section aria-label="Why Ephtech" className="border-y border-line bg-paper-2">
-        <div className="shell py-2 sm:grid sm:grid-cols-3 sm:gap-10 sm:py-6">
+      {/* ---------------- credibility band ---------------- */}
+      <section aria-label="Company at a glance" className="border-y border-line bg-paper-2">
+        <div className="shell grid gap-6 py-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-10">
           {[
-            {
-              label: "Accountability",
-              title: "One supplier. One installer. One contract.",
-              body: "Specified, supplied and installed by one team.",
-            },
-            {
-              label: "Coverage",
-              title: "Lagos, Owerri and Aba",
-              body: "Dispatch and technical support from all three branches, with nationwide delivery.",
-            },
-            {
-              label: "System",
-              title: "Board, grid and jointing compound",
-              body: "Supplied as one system so nothing is missing on site.",
-            },
+            { label: "Registered", title: companyStats.rc, body: "Ephtech International Limited" },
+            { label: "Coverage", title: companyStats.branches, body: "Branches and project teams" },
+            { label: "Capability", title: companyStats.chapters, body: "From planning to landscape" },
+            { label: "Accountability", title: companyStats.team, body: "One contract, one programme" },
           ].map((item) => (
-            <div
-              key={item.label}
-              className="border-b border-line py-4 last:border-b-0 sm:border-b-0 sm:py-0"
-            >
-              <span className="mono block text-[9px] tracking-[0.16em] uppercase text-muted">
+            <div key={item.label} className="border-l border-line pl-4 first:border-l-0 first:pl-0 sm:border-l sm:pl-4">
+              <span className="mono block text-[8.5px] tracking-[0.16em] uppercase text-muted">
                 {item.label}
               </span>
-              <p className="mt-2 font-display text-[17px] font-medium tracking-[-0.02em]">
+              <p className="mt-2 font-display text-[18px] font-medium tracking-[-0.02em]">
                 {item.title}
               </p>
-              <p className="mt-1.5 hidden text-[13px] leading-relaxed text-muted sm:block">
-                {item.body}
-              </p>
+              <p className="mt-1 text-[12px] leading-relaxed text-muted">{item.body}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* ---------------- product + work rail ---------------- */}
-      <WorkRail />
-
-      {/* ---------------- problem + comparison ---------------- */}
-      <section id="problem" className="section scroll-mt-24">
+      {/* ---------------- capabilities ---------------- */}
+      <section id="services" className="section scroll-mt-24">
         <div className="shell">
-          <Comparison />
-        </div>
-      </section>
-
-      {/* ---------------- board overview ---------------- */}
-      <section id="board" className="section scroll-mt-24">
-        <div className="shell">
-          <div className="grid gap-10 lg:grid-cols-12 lg:gap-x-16 lg:gap-y-8">
-            <div className="lg:col-span-5 lg:col-start-1 lg:row-start-1">
-              <span className="eyebrow text-muted" data-reveal>
-                02: The board
-              </span>
-              <h2 className="h2 mt-5" data-reveal>
-                The board,
-                <br />
-                up close.
-              </h2>
-              <p className="body-lg mt-6 max-w-md" data-reveal>
-                Ephtech Board is a dry, factory-finished, impact-resistant system that replaces wet
-                POP, plasterboard and fragile gypsum. The result is a ceiling that stays flat, holds
-                its edge and survives the climate it was built for.
-              </p>
+          <div className="grid gap-6 lg:grid-cols-12 lg:items-end">
+            <div className="lg:col-span-7" data-reveal>
+              <span className="eyebrow text-muted">What we do</span>
+              <h2 className="h2 mt-5">One company. Every stage.</h2>
             </div>
-
-            <div
-              className="lg:col-span-7 lg:col-start-6 lg:row-span-2 lg:row-start-1"
-              data-reveal
-            >
-              <BoardMediaCarousel />
-            </div>
-
-            <div className="lg:col-span-5 lg:col-start-1 lg:row-start-2">
-              <div>
-                {pillars.map((pillar, index) => (
-                  <div
-                    key={pillar.title}
-                    data-reveal
-                    className="grid grid-cols-[auto_1fr] gap-4 border-t border-line py-5"
-                  >
-                    <span className="mono pt-1 text-[10px] tracking-[0.14em] text-muted">
-                      0{index + 1}
-                    </span>
-                    <div>
-                      <h3 className="font-display text-xl font-medium tracking-[-0.025em]">
-                        {pillar.title}
-                      </h3>
-                      <p className="mt-2 max-w-md text-[13.5px] leading-relaxed text-muted">
-                        {pillar.body}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <p
-                className="mono mt-5 text-[8.5px] leading-relaxed tracking-[0.12em] uppercase text-muted"
-                data-reveal
-              >
-                {confirmedSpecs.map((spec) => `${spec.label}: ${formatSpec(spec)}`).join(" · ")}
-              </p>
-
-              <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3" data-reveal>
-                <QuoteButton className="btn btn-primary" message={WHATSAPP_MESSAGES.system}>
-                  Request a quote
-                  <WhatsApp className="h-4 w-4" />
-                </QuoteButton>
-                <Link href="/board" className="link-underline text-[13px] font-medium">
-                  See the full system
-                  <ArrowUpRight className="h-3.5 w-3.5" />
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ---------------- built on site (teaser) ---------------- */}
-      <section id="site-work" className="section scroll-mt-24 bg-paper-2">
-        <div className="shell">
-          <div className="flex flex-col items-start justify-between gap-5 md:flex-row md:items-end">
-            <div data-reveal>
-              <span className="eyebrow text-muted">03: Built on site</span>
-              <h2 className="h2 mt-4">The finish, up close.</h2>
-            </div>
-            <p className="body-lg max-w-sm md:text-right" data-reveal>
-              A completed cathedral ceiling, plus ceiling and joinery details from the same dry
-              system.
+            <p className="body-lg lg:col-span-5" data-reveal>
+              Five connected chapters — plan, build, finish, supply and place — delivered by one
+              team across Nigeria.
             </p>
           </div>
 
-          <div className="mt-10 grid gap-8 lg:grid-cols-12 lg:items-center lg:gap-12">
-            <div className="lg:col-span-7" data-reveal>
-              <span className="eyebrow text-muted">Recent project</span>
-              <h3 className="h3 mt-3 max-w-lg">A cathedral ceiling, set out in grid.</h3>
-              <p className="body-lg mt-4 max-w-md">
-                A suspended grid with a feature cross, finished in a church interior. The same
-                board system, specified and installed by one team.
-              </p>
-              <p className="mono mt-5 text-[8.5px] leading-relaxed tracking-[0.12em] uppercase text-muted">
-                Suspended grid · Feature cross · Paint-ready finish
-              </p>
-            </div>
-
-            <figure className="lg:col-span-5" data-reveal>
-              <div className="media relative aspect-[3/4]">
-                <RailVideo
-                  src={CATHEDRAL_VIDEO}
-                  poster={cathedralCeiling.src}
-                  label="Completed cathedral ceiling with a suspended grid and a feature cross."
-                  startAt={10}
-                />
-                <span className="mono absolute top-3 left-3 bg-amber px-2 py-1 text-[8px] tracking-[0.14em] uppercase text-forest">
-                  Completed installation
-                </span>
-              </div>
-              <figcaption className="mono mt-3 text-[8.5px] tracking-[0.14em] uppercase text-muted">
-                Cathedral ceiling · Suspended grid with feature cross
-              </figcaption>
-            </figure>
+          <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-6" data-reveal-group>
+            {chapters.map((chapter, index) => {
+              const chapterServices = servicesByChapter(chapter.id);
+              const span = index < 3 ? "lg:col-span-2" : "lg:col-span-3";
+              return (
+                <Link
+                  key={chapter.id}
+                  href={`/services#${chapter.id}`}
+                  className={`group block ${span}`}
+                >
+                  <div className="media relative aspect-[4/3] overflow-hidden">
+                    <Image
+                      src={chapter.image}
+                      alt={chapter.alt}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      placeholder="blur"
+                      className="photo-grade object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                    />
+                    <span className="mono absolute top-3 left-3 bg-paper/92 px-2 py-1 text-[8px] tracking-[0.14em] uppercase text-ink">
+                      {chapter.index} / {chapter.name}
+                    </span>
+                    {chapter.id === "build" ? (
+                      <span className="mono absolute right-3 bottom-3 bg-forest/80 px-2 py-1 text-[7.5px] tracking-[0.12em] uppercase text-paper/80">
+                        Illustrative
+                      </span>
+                    ) : null}
+                  </div>
+                  <div className="mt-4 border-t border-line pt-3">
+                    <h3 className="font-display text-xl font-medium tracking-[-0.025em]">
+                      {chapter.title}
+                    </h3>
+                    <p className="mt-2 text-[12.5px] leading-relaxed text-muted">{chapter.summary}</p>
+                    <p className="mono mt-3 text-[8px] leading-relaxed tracking-[0.1em] uppercase text-muted">
+                      {chapterServices.map((service) => service.title).join(" · ")}
+                    </p>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
 
-          <div className="mt-10 grid gap-3 sm:grid-cols-2" data-reveal-group>
-            {siteWorkTeaser.map((item) => (
-              <figure key={item.caption}>
-                <div className="media relative aspect-[16/10]">
-                  <Image
-                    src={item.image}
-                    alt={item.alt}
-                    fill
-                    sizes="(max-width: 640px) 100vw, 50vw"
-                    placeholder="blur"
-                    className="photo-grade object-cover"
-                  />
-                </div>
-                <figcaption className="mono mt-3 text-[8.5px] tracking-[0.14em] uppercase text-muted">
-                  {item.caption}
-                </figcaption>
-              </figure>
-            ))}
-          </div>
-
-          <p className="mono mt-6 text-[8.5px] leading-relaxed tracking-[0.12em] uppercase text-muted">
-            Completed installation filmed on site. Supporting interiors are illustrative.
-          </p>
-
-          <div className="mt-6 flex flex-wrap items-center justify-between gap-4 border-t border-line pt-5">
-            <Link href="/projects" className="btn btn-ghost justify-center">
-              See all site work
-              <ArrowUpRight className="h-3.5 w-3.5" />
+          <div className="mt-10 flex flex-wrap items-center justify-between gap-4 border-t border-line pt-5" data-reveal>
+            <Link href="/services" className="btn btn-ghost">
+              Explore all services
+              <ArrowRight className="h-3.5 w-3.5" />
             </Link>
-            <QuoteButton className="link-underline shrink-0 text-[13px] font-medium">
-              Discuss a project
+            <QuoteButton className="link-underline text-[13px] font-medium">
+              Start a project
               <WhatsApp className="h-3.5 w-3.5" />
             </QuoteButton>
           </div>
         </div>
       </section>
 
-      {/* ---------------- one team (summary) ---------------- */}
-      <section id="services" className="section scroll-mt-24 bg-forest text-paper">
+      {/* ---------------- selected work ---------------- */}
+      <section className="section bg-paper-2">
         <div className="shell">
-          <div className="grid gap-6 lg:grid-cols-12 lg:items-end">
-            <div className="lg:col-span-7" data-reveal>
-              <span className="eyebrow text-amber/80">04: One team, start to finish</span>
-              <h2 className="h2 mt-5 text-paper">
-                One team from specification to handover.
-              </h2>
+          <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
+            <div data-reveal>
+              <span className="eyebrow text-muted">Selected work</span>
+              <h2 className="h2 mt-4">Finished rooms. Working sites.</h2>
             </div>
-            <div className="lg:col-span-5" data-reveal>
-              <p className="body-lg text-paper/55">
-                The board is the core. The wider divisions below are delivered by the same team,
-                under one contract and one programme.
-              </p>
-              <p className="mono mt-4 text-[8.5px] leading-relaxed tracking-[0.12em] uppercase text-paper/45">
-                Civil engineers · Quantity surveyors · Interior finishing specialists
-              </p>
-            </div>
+            <p className="body-lg max-w-sm md:text-right" data-reveal>
+              A company built across the whole project — from structure and services to the last
+              ceiling detail.
+            </p>
           </div>
 
-          <div className="mt-12 grid gap-x-8 sm:grid-cols-2 lg:grid-cols-3" data-reveal-group>
-            {services.map((service) => (
-              <div key={service.index} className="border-t border-paper/12 py-5">
-                <span className="mono text-[9px] tracking-[0.14em] text-amber/60">
-                  {service.index}
-                </span>
-                <h3 className="mt-2 font-display text-xl font-medium tracking-[-0.025em]">
-                  {service.title}
-                </h3>
-                <p className="mono mt-2 text-[8.5px] leading-relaxed tracking-[0.1em] uppercase text-paper/50">
-                  {service.deliverables.join(" · ")}
-                </p>
-              </div>
+          <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4" data-reveal-group>
+            {selectedWork.map((item) => (
+              <Link key={item.title} href="/projects" className="group block">
+                <div className="media relative aspect-[4/5] overflow-hidden">
+                  <Image
+                    src={item.image}
+                    alt={item.alt}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    placeholder="blur"
+                    className="photo-grade object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                  />
+                  <span className="mono absolute top-3 left-3 bg-paper/92 px-2 py-1 text-[8px] tracking-[0.14em] uppercase text-ink">
+                    Completed work
+                  </span>
+                </div>
+                <div className="mt-3 flex items-center justify-between gap-3 border-t border-line pt-2.5">
+                  <div>
+                    <h3 className="font-display text-lg font-medium tracking-[-0.02em]">
+                      {item.title}
+                    </h3>
+                    <p className="mono mt-1 text-[8px] tracking-[0.12em] uppercase text-muted">
+                      {item.service}
+                    </p>
+                  </div>
+                  <ArrowUpRight className="h-3.5 w-3.5 text-muted transition-colors group-hover:text-forest" />
+                </div>
+              </Link>
             ))}
           </div>
 
-          <div className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-3 border-t border-paper/12 pt-6" data-reveal>
-            <QuoteButton className="btn btn-primary">
-              Request a quote
-              <WhatsApp className="h-4 w-4" />
-            </QuoteButton>
-            <Link href="/services" className="link-underline text-[13px] font-medium text-paper">
-              Explore all six divisions
+          <div className="mt-8 flex justify-end" data-reveal>
+            <Link href="/projects" className="link-underline text-[13px] font-medium">
+              See the work
               <ArrowUpRight className="h-3.5 w-3.5" />
             </Link>
           </div>
         </div>
       </section>
 
-      {/* ---------------- faq (short) ---------------- */}
-      <section id="faq" className="section scroll-mt-24">
+      {/* ---------------- products ---------------- */}
+      <section className="section">
         <div className="shell">
-          <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
-            <div className="lg:col-span-4" data-reveal>
-              <span className="eyebrow text-muted">05: Questions</span>
-              <h2 className="h2 mt-5">Before you specify.</h2>
-              <p className="body-lg mt-5 max-w-sm">
-                Straight answers on delivery, samples, installation and pricing.
+          <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
+            <div className="lg:col-span-6" data-reveal>
+              <span className="eyebrow text-muted">Products & materials</span>
+              <h2 className="h2 mt-4">
+                The board is one product.
+                <br />
+                The company is the system.
+              </h2>
+              <p className="body-lg mt-6 max-w-lg">
+                Ephtech Board is our flagship factory-finished board, supported by ceiling systems,
+                building materials and imported finishes. Explore the product range as part of the
+                wider Ephtech service.
               </p>
-            </div>
-            <div className="lg:col-span-8">
-              {homeFaqs.map((faq) => (
-                <details key={faq.q} className="group border-t border-line py-5" data-reveal>
-                  <summary className="flex cursor-pointer list-none items-start justify-between gap-6 font-display text-xl font-medium tracking-[-0.025em] [&::-webkit-details-marker]:hidden">
-                    <span>{faq.q}</span>
-                    <Plus className="mt-1 h-4 w-4 shrink-0 text-muted transition-transform duration-300 group-open:rotate-45" />
-                  </summary>
-                  <p className="mt-3 max-w-2xl text-[14px] leading-relaxed text-muted">{faq.a}</p>
-                </details>
-              ))}
-              <div className="flex flex-wrap items-center justify-between gap-4 border-t border-line pt-5">
-                <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
-                  <Link href="/board#faq" className="link-underline text-[13px] font-medium">
-                    All questions
-                    <ArrowUpRight className="h-3.5 w-3.5" />
-                  </Link>
-                  <Link href="/contact" className="link-underline text-[13px] font-medium">
-                    Ask something else
-                    <ArrowUpRight className="h-3.5 w-3.5" />
-                  </Link>
-                </div>
-                <QuoteButton className="btn btn-primary">
-                  Request a quote
-                  <WhatsApp className="h-4 w-4" />
-                </QuoteButton>
+              <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3">
+                <Link href="/products" className="btn btn-primary">
+                  Explore products
+                  <ArrowRight className="h-3.5 w-3.5" />
+                </Link>
+                <Link href="/board" className="link-underline text-[13px] font-medium">
+                  Ephtech Board
+                  <ArrowUpRight className="h-3.5 w-3.5" />
+                </Link>
               </div>
             </div>
+            <Link href="/board" className="group block lg:col-span-6" data-reveal>
+              <div className="media relative aspect-[16/10] overflow-hidden">
+                <Image
+                  src={boardProduct}
+                  alt="Stack of Ephtech boards showing the factory-finished face."
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  placeholder="blur"
+                  className="photo-grade object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                />
+                <span className="mono absolute top-3 left-3 bg-paper/92 px-2 py-1 text-[8px] tracking-[0.14em] uppercase text-ink">
+                  Flagship product
+                </span>
+              </div>
+              <div className="mt-3 flex items-center justify-between border-t border-line pt-3">
+                <span className="font-display text-xl font-medium tracking-[-0.025em]">
+                  Ephtech Board
+                </span>
+                <span className="mono text-[8px] tracking-[0.12em] uppercase text-muted">
+                  Factory-finished board system
+                </span>
+              </div>
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* ---------------- branches + quote ---------------- */}
+      {/* ---------------- process ---------------- */}
+      <section className="section bg-forest text-paper">
+        <div className="shell">
+          <div className="grid gap-6 lg:grid-cols-12 lg:items-end">
+            <div className="lg:col-span-7" data-reveal>
+              <span className="eyebrow text-amber/80">How we work</span>
+              <h2 className="h2 mt-5 text-paper">One team. Five stages. No hand-offs.</h2>
+            </div>
+            <p className="body-lg lg:col-span-5 text-paper/55" data-reveal>
+              The same company can carry the brief, the build, the finish and the final handover.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-5" data-reveal-group>
+            {companyProcess.map((step) => (
+              <div key={step.index} className="border-t border-paper/12 pt-4">
+                <span className="mono text-[9px] tracking-[0.14em] uppercase text-amber/60">
+                  {step.index}
+                </span>
+                <h3 className="mt-2 font-display text-lg font-medium tracking-[-0.02em]">
+                  {step.title}
+                </h3>
+                <p className="mt-2 text-[12.5px] leading-relaxed text-paper/55">{step.body}</p>
+              </div>
+            ))}
+          </div>
+
+          <figure className="mt-10" data-reveal>
+            <div className="media relative aspect-[16/7] overflow-hidden">
+              <Image
+                src={teamSite}
+                alt="Ephtech team on a construction site."
+                fill
+                sizes="100vw"
+                placeholder="blur"
+                className="photo-grade object-cover"
+              />
+              <span className="mono absolute bottom-3 left-3 bg-forest/80 px-2 py-1 text-[8px] tracking-[0.14em] uppercase text-paper/80">
+                One team · Client site
+              </span>
+            </div>
+            <figcaption className="mono mt-3 text-[8px] tracking-[0.14em] uppercase text-paper/45">
+              The same team across design, construction, finishing and supply.
+            </figcaption>
+          </figure>
+
+          <div className="mt-8 flex flex-wrap items-center gap-x-7 gap-y-3 border-t border-paper/12 pt-5" data-reveal>
+            <QuoteButton className="btn btn-primary">
+              Start a project
+              <WhatsApp className="h-4 w-4" />
+            </QuoteButton>
+            <Link href="/about" className="link-underline text-[13px] font-medium text-paper">
+              About Ephtech
+              <ArrowUpRight className="h-3.5 w-3.5" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ---------------- branches ---------------- */}
       <section id="contact" className="section scroll-mt-24">
         <div className="shell">
           <div className="grid gap-6 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-7" data-reveal>
-              <span className="eyebrow text-muted">06: Where we are</span>
+              <span className="eyebrow text-muted">Where we are</span>
               <h2 className="h2 mt-5">Three branches. One standard.</h2>
             </div>
             <p className="body-lg lg:col-span-5" data-reveal>
-              Dispatch and technical support from Lagos (South-West), Owerri and Aba (South-East),
-              with delivery scheduled to site nationwide.
+              Coordination and support from Lagos, Owerri and Aba, with project delivery across
+              Nigeria.
             </p>
           </div>
 
@@ -486,32 +482,31 @@ export default function Home() {
               <ArrowUpRight className="h-3.5 w-3.5" />
             </Link>
           </div>
-
         </div>
       </section>
 
-      {/* ---------------- closing quote ---------------- */}
-      <section id="quote" aria-label="Request a quote" className="section pt-0">
+      {/* ---------------- closing ---------------- */}
+      <section id="quote" aria-label="Start a project" className="section pt-0">
         <div className="shell">
           <div className="grid gap-8 bg-amber p-6 text-forest sm:p-8 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-8" data-reveal>
               <span className="eyebrow text-forest/55">Next step</span>
               <h2 className="h2 mt-4">
-                Specify it once.
+                Tell us what
                 <br />
-                Build it right.
+                you&apos;re building.
               </h2>
               <p className="mt-5 max-w-lg text-[15px] leading-relaxed text-forest/70">
-                Send drawings for a material take-off, or download the company profile and compare
-                the system yourself.
+                A room, a building, a road or a property. We will confirm the scope and the right
+                team to lead it.
               </p>
               <p className="mono mt-5 text-[8.5px] leading-relaxed tracking-[0.12em] uppercase text-forest/55">
-                Send drawings · Receive a take-off · Dispatch or install
+                Brief · Scope · Programme · One accountable team
               </p>
             </div>
             <div className="flex flex-col gap-3 lg:col-span-4" data-reveal>
-              <QuoteButton className="btn btn-dark w-full">
-                Request a quote
+              <QuoteButton className="btn btn-dark w-full" message={WHATSAPP_MESSAGES.general}>
+                Start a project
                 <WhatsApp className="h-4 w-4" />
               </QuoteButton>
               <a
@@ -519,7 +514,7 @@ export default function Home() {
                 download
                 className="btn btn-ghost w-full border-forest/25 text-forest hover:border-forest hover:bg-forest hover:text-paper"
               >
-                Download profile
+                Download company profile
                 <Download className="h-3.5 w-3.5" />
               </a>
             </div>

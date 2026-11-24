@@ -20,14 +20,14 @@ import {
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contact Ephtech International in Lagos, Owerri and Aba. Request a quote, ask for a sample, or arrange a material take-off for your project.",
+    "Contact Ephtech International in Lagos, Owerri and Aba. Discuss a building project, interior, material supply, property or external works.",
   alternates: { canonical: "/contact" },
 };
 
 const channels = [
   {
     label: "WhatsApp",
-    detail: "Chat with the inventory team",
+    detail: "Chat with the project team",
     href: whatsappHref(WHATSAPP_MESSAGES.general),
     icon: WhatsApp,
     external: true,
@@ -59,10 +59,10 @@ export default function ContactPage() {
   return (
     <main id="main" className="bg-paper text-ink">
       <PageIntro
-        eyebrow="06: Where we are"
-        title="Three branches. One standard."
-        lede="Dispatch and technical support from Lagos (South-West), Owerri and Aba (South-East), with delivery scheduled to site nationwide."
-        note="Quote requests are reviewed within one business day."
+        eyebrow="Contact"
+        title="Talk to one team."
+        lede="A building project, an interior, a material schedule or a property. Tell us what you are planning and we will point you to the right chapter."
+        note="Project enquiries are reviewed within one business day."
       />
 
       {/* ---------------- map + branches ---------------- */}
@@ -155,8 +155,8 @@ export default function ContactPage() {
               <h2 className="h2 mt-4">Choose the channel.</h2>
             </div>
             <p className="body-lg max-w-sm md:text-right" data-reveal>
-              WhatsApp is fastest for quotes and samples. Phone and email work for drawings,
-              documents and formal enquiries.
+              WhatsApp is fastest for project enquiries. Phone and email work for drawings,
+              documents and formal correspondence.
             </p>
           </div>
 
@@ -191,12 +191,12 @@ export default function ContactPage() {
           </div>
 
           <div className="mt-8 flex flex-wrap items-center gap-x-7 gap-y-3">
-            <Link href="/board#faq" className="link-underline text-[13px] font-medium">
-              Read the FAQ
+            <Link href="/services" className="link-underline text-[13px] font-medium">
+              Explore our services
               <ArrowUpRight className="h-3.5 w-3.5" />
             </Link>
             <p className="mono text-[8.5px] leading-relaxed tracking-[0.12em] uppercase text-muted">
-              Nationwide delivery · Delivery window confirmed with your quote
+              Nationwide delivery · Scope confirmed with your project team
             </p>
           </div>
         </div>
@@ -209,18 +209,18 @@ export default function ContactPage() {
             <div className="lg:col-span-8" data-reveal>
               <span className="eyebrow text-forest/55">Next step</span>
               <h2 className="h2 mt-4">
-                Send the drawings.
+                Send the brief.
                 <br />
-                We will do the take-off.
+                We will find the right team.
               </h2>
               <p className="mt-5 max-w-lg text-[15px] leading-relaxed text-forest/70">
-                Share your plans or a schedule of areas and we will confirm the system, the
-                quantities and the delivery window.
+                Share a drawing, a site address or a scope. We will confirm the right chapter,
+                the programme and the next step.
               </p>
             </div>
             <div className="flex flex-col gap-3 lg:col-span-4" data-reveal>
               <QuoteButton className="btn btn-dark w-full">
-                Request a quote
+                Start a project
                 <WhatsApp className="h-4 w-4" />
               </QuoteButton>
               <a

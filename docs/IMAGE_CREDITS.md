@@ -86,3 +86,67 @@ before launch, or replace them with real Ephtech photography.
 - URL: https://www.pexels.com/photo/living-room-interior-design-17240682/
 - License: Pexels License. Free for commercial use. Attribution is not required.
 - Usage: cropped to 16:9, slowly zoomed, and graded into the hero video.
+
+## Company pivot — temporary stock imagery
+
+These images are illustrative and are labelled as such in the UI. They are not
+presented as Ephtech projects and should be replaced with client originals when
+available.
+
+### Company hero
+
+- File: `src/assets/images/company-hero.jpg`
+- Photographer: Brian Jesus
+- Source: Pexels, photo 33851637
+- URL: https://www.pexels.com/photo/modern-building-construction-in-dublin-cityscape-33851637/
+- License: Pexels License. Free for commercial use. Attribution not required.
+- Usage: temporary homepage hero; marked “Illustrative brand image”.
+
+### Road construction service
+
+- File: `src/assets/images/service-road.jpg`
+- Photographer: Tolga Durum
+- Source: Pexels, photo 4390530
+- URL: https://www.pexels.com/photo/machine-on-road-construction-4390530/
+- License: Pexels License. Free for commercial use. Attribution not required.
+- Usage: Build chapter and Road Construction service; labelled illustrative.
+
+### Importation service
+
+- File: `src/assets/images/service-import.jpg`
+- Photographer: Diego F. Parra
+- Source: Pexels, photo 24244230
+- URL: https://www.pexels.com/photo/containers-in-warehouse-24244230/
+- License: Pexels License. Free for commercial use. Attribution not required.
+- Usage: Importation service; labelled illustrative.
+
+### Landscaping service
+
+- File: `src/assets/images/service-landscaping.jpg`
+- Photographer: Curtis Adams
+- Source: Pexels, photo 5502214
+- URL: https://www.pexels.com/photo/concrete-house-with-green-grass-on-the-lawn-5502214/
+- License: Pexels License. Free for commercial use. Attribution not required.
+- Usage: Landscaping service and project gallery; labelled illustrative.
+
+## Client-supplied company media
+
+Source folder: `~/Desktop/ephtech-media/` (WhatsApp export; originals retained).
+
+Copied into `src/assets/images` for the company-first build:
+
+- `work-plan.jpg` — construction site / building in progress
+- `work-build.jpg` — site structure and blockwork
+- `work-ceiling.jpg` — completed office ceiling and wall panels
+- `work-ceiling-detail.jpg` — completed ceiling/wall detail
+- `work-interior.jpg` — completed residential interior
+- `work-detail.jpg` — completed decorative interior
+- `work-stairs.jpg` — completed staircase and wall finish
+- `work-construction.jpg` — foundation/structural works
+- `work-real-estate.jpg` — completed residential exterior
+- `team-site.jpg` — Ephtech team on site
+
+These are presented as **client work / completed work**, not stock. Confirm
+ownership, project permissions and written approval before public launch.
+WhatsApp compression limits full-bleed use; request originals for hero-scale
+placements.

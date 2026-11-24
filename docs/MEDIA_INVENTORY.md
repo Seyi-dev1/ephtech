@@ -56,7 +56,7 @@ Strong candidates:
 - **44, 46** — blockwork and site progress
 - Videos **03, 05, 06, 12, 13, 14, 15** — site, earthworks, concrete and structure
 
-### 03 Finish — Olavic Ceiling and Wall Systems
+### 03 Finish — Ceiling & Wall Systems
 
 Strong candidates:
 

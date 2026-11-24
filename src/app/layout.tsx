@@ -32,23 +32,25 @@ const instrumentSerif = Instrument_Serif({
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Ephtech International: Engineered Ceilings & Interior Systems",
+    default: "Ephtech International: Design, Construction, Interiors & Materials",
     template: "%s | Ephtech International",
   },
   description:
-    "Ephtech Board is the dry alternative to POP and gypsum, formulated to resist moisture. Specified, supplied and installed by one accountable team across Lagos, Owerri and Aba.",
+    "A multi-disciplinary construction, interiors, property and materials company. Ephtech International plans, builds, finishes and supplies across Lagos, Owerri and Aba.",
   keywords: [
-    "Ephtech Board",
-    "POP ceiling alternative Nigeria",
-    "suspended ceiling Lagos",
-    "drywall partition Owerri",
-    "building materials Aba",
+    "Ephtech International",
+    "construction company Nigeria",
+    "design and build Lagos",
     "interior finishing Nigeria",
+    "building materials Lagos",
+    "road construction Nigeria",
+    "real estate development Nigeria",
+    "landscaping Lagos",
   ],
   openGraph: {
-    title: "Ephtech International: Engineered Ceilings & Interior Systems",
+    title: "Ephtech International: Design, Construction, Interiors & Materials",
     description:
-      "The dry alternative to POP and gypsum, formulated to resist moisture. Specified, supplied and installed by one accountable team.",
+      "Design, construction, interiors, property and materials — one accountable team across Nigeria.",
     type: "website",
     locale: "en_NG",
     siteName: "Ephtech International",

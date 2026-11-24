@@ -54,7 +54,7 @@ export default function PrivacyPage() {
             <ul className="list-disc space-y-2 pl-5">
               <li>To prepare and send your quotation and material take-off.</li>
               <li>To confirm availability and schedule delivery or installation.</li>
-              <li>To answer questions about the specification, samples or warranty.</li>
+              <li>To answer questions about a project, materials or service.</li>
               <li>To meet our accounting and legal obligations.</li>
             </ul>
             <p>We do not sell your information or use it for unrelated advertising.</p>

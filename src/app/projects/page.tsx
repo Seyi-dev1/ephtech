@@ -1,58 +1,81 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import livingRoomCeiling from "@/assets/images/living-room-ceiling.jpg";
-import officeCeiling from "@/assets/images/office-ceiling.jpg";
-import conferenceHallCeiling from "@/assets/images/conference-hall-ceiling.jpg";
-import { images } from "@/lib/data";
+import serviceLandscaping from "@/assets/images/service-landscaping.jpg";
+import serviceRoad from "@/assets/images/service-road.jpg";
+import workBuild from "@/assets/images/work-build.jpg";
+import workCeiling from "@/assets/images/work-ceiling.jpg";
+import workDetail from "@/assets/images/work-detail.jpg";
+import workInterior from "@/assets/images/work-interior.jpg";
+import workRealEstate from "@/assets/images/work-real-estate.jpg";
+import workStairs from "@/assets/images/work-stairs.jpg";
 import PageIntro from "@/components/page-intro";
 import QuoteButton from "@/components/quote-button";
-import SiteGallery from "@/components/site-gallery";
-import { ArrowUpRight, WhatsApp } from "@/components/icons";
+import { ArrowRight, ArrowUpRight, WhatsApp } from "@/components/icons";
 
 export const metadata: Metadata = {
-  title: "Site work",
+  title: "Projects",
   description:
-    "Ceiling, wall and joinery details the Ephtech system is specified for, with illustrative interiors from residential, commercial and civic settings.",
+    "Selected construction, interiors, ceilings, real estate and external works by Ephtech International. Client media and clearly-labelled illustrative images.",
   alternates: { canonical: "/projects" },
 };
 
-const projectShots = [
+const work = [
   {
-    image: livingRoomCeiling,
-    category: "Residential",
-    title: "Homes and duplexes",
-    alt: "Modern living room with a white board ceiling and recessed lighting.",
+    image: workCeiling,
+    title: "Office fit-out",
+    service: "Ceilings & wall systems",
+    note: "Completed work",
+    alt: "Completed office interior with a suspended ceiling and wall panels.",
   },
   {
-    image: officeCeiling,
-    category: "Commercial",
-    title: "Offices and mixed-use",
-    alt: "Modern office interior with a white suspended ceiling and LED strip lighting.",
+    image: workInterior,
+    title: "Residential finish",
+    service: "Interior finishing",
+    note: "Completed work",
+    alt: "Finished living room with a white panel wall, ceiling and warm lighting.",
   },
   {
-    image: conferenceHallCeiling,
-    category: "Civic & institutional",
-    title: "Halls, schools and hospitals",
-    alt: "Conference hall with a large white suspended ceiling and recessed lighting.",
+    image: workStairs,
+    title: "Staircase & joinery",
+    service: "Interior finishing",
+    note: "Completed work",
+    alt: "Finished staircase with a panelled wall and concealed lighting.",
   },
   {
-    image: images.ceilingDetail,
-    category: "Ceilings",
-    title: "Stepped and cove-lit set-outs",
-    alt: "Illustrative interior with a decorative stepped ceiling and recessed lighting.",
+    image: workBuild,
+    title: "Building in progress",
+    service: "Design & building projects",
+    note: "Completed work",
+    alt: "Building under construction with columns, blockwork and formwork.",
   },
   {
-    image: images.mediaWall,
-    category: "Joinery",
-    title: "Media walls and bulkheads",
-    alt: "Illustrative interior with a media wall, TV recess, shelving and concealed lighting.",
+    image: workRealEstate,
+    title: "Residential development",
+    service: "Real estate",
+    note: "Completed work",
+    alt: "Completed residential building with a gated frontage.",
   },
   {
-    image: images.panelInstall,
-    category: "Walls",
-    title: "Partitions and wall linings",
-    alt: "Illustrative interior with large wall panels being fixed.",
+    image: workDetail,
+    title: "Feature interior",
+    service: "Interior finishing",
+    note: "Completed work",
+    alt: "Decorative interior with a feature wall, curtains and ceiling detail.",
+  },
+  {
+    image: serviceRoad,
+    title: "Road works",
+    service: "Road construction",
+    note: "Illustrative image",
+    alt: "Road roller compacting asphalt on a road construction site.",
+  },
+  {
+    image: serviceLandscaping,
+    title: "Landscape frontage",
+    service: "Landscaping",
+    note: "Illustrative image",
+    alt: "Modern house with a green lawn, garden and landscaped frontage.",
   },
 ];
 
@@ -60,50 +83,50 @@ export default function ProjectsPage() {
   return (
     <main id="main" className="bg-paper text-ink">
       <PageIntro
-        eyebrow="03: Built on site"
-        title="The finish, up close."
-        lede="Ceiling, wall and joinery details the Ephtech system is specified for. The work is shown by application and setting, not by invented case-study names."
-        note="Photography is illustrative. Project references are available on request."
+        eyebrow="Projects · Across the company"
+        title="Built across the whole project."
+        lede="Construction, ceilings, interiors, real estate and external works. The work is shown by service and setting, without inventing project names."
+        note="Client-supplied work is marked “Completed work.” Online images are illustrative and marked “Illustrative image.”"
       />
-
-      <SiteGallery />
 
       <section className="section">
         <div className="shell">
           <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
             <div data-reveal>
-              <span className="eyebrow text-muted">By setting</span>
-              <h2 className="h2 mt-4">Where the system is used.</h2>
+              <span className="eyebrow text-muted">Selected work</span>
+              <h2 className="h2 mt-4">The evidence.</h2>
             </div>
             <p className="body-lg max-w-sm md:text-right" data-reveal>
-              Residential, commercial and civic settings, plus the ceiling, wall and joinery
-              details that carry the finish.
+              A cross-section of the company’s work — from the first structure to the final room.
             </p>
           </div>
 
-          <div
-            className="mt-10 grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3"
-            data-reveal-group
-          >
-            {projectShots.map((shot) => (
-              <article key={shot.title}>
-                <div className="media relative aspect-[4/3]">
+          <div className="mt-10 grid gap-x-4 gap-y-10 sm:grid-cols-2 lg:grid-cols-3" data-reveal-group>
+            {work.map((item) => (
+              <article key={item.title}>
+                <div className="media relative aspect-[4/3] overflow-hidden">
                   <Image
-                    src={shot.image}
-                    alt={shot.alt}
+                    src={item.image}
+                    alt={item.alt}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     placeholder="blur"
                     className="photo-grade object-cover"
                   />
                   <span className="mono absolute top-3 left-3 bg-paper/92 px-2 py-1 text-[8px] tracking-[0.14em] uppercase text-ink">
-                    {shot.category}
+                    {item.note}
                   </span>
                 </div>
-                <div className="mt-4 border-t border-line pt-3">
-                  <h3 className="font-display text-2xl font-medium tracking-[-0.03em]">
-                    {shot.title}
-                  </h3>
+                <div className="mt-3 border-t border-line pt-3">
+                  <div className="flex items-start justify-between gap-3">
+                    <h3 className="font-display text-xl font-medium tracking-[-0.025em]">
+                      {item.title}
+                    </h3>
+                    <ArrowUpRight className="mt-1 h-3.5 w-3.5 text-muted" />
+                  </div>
+                  <p className="mono mt-2 text-[8px] tracking-[0.12em] uppercase text-muted">
+                    {item.service}
+                  </p>
                 </div>
               </article>
             ))}
@@ -111,7 +134,7 @@ export default function ProjectsPage() {
 
           <div className="mt-12 flex flex-wrap items-center justify-between gap-4 border-t border-line pt-5" data-reveal>
             <p className="mono max-w-md text-[8.5px] leading-relaxed tracking-[0.12em] uppercase text-muted">
-              Ask for project references and site visits for work comparable to yours.
+              Project references and site visits are available on request.
             </p>
             <QuoteButton className="link-underline shrink-0 text-[13px] font-medium">
               Discuss a project
@@ -121,29 +144,29 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      <section className="section pt-0">
+      <section className="section border-y border-line bg-paper-2">
         <div className="shell">
-          <div className="grid gap-8 bg-forest p-6 text-paper sm:p-8 lg:grid-cols-12 lg:items-end">
-            <div className="lg:col-span-8" data-reveal>
-              <span className="eyebrow text-amber/80">The system behind the finish</span>
-              <h2 className="h2 mt-4 text-paper">
-                The finish is only
-                <br />
-                as good as the board.
-              </h2>
-              <p className="mt-5 max-w-lg text-[15px] leading-relaxed text-paper/60">
-                Every detail above starts with the same dry, factory-finished board system.
+          <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
+            <div className="lg:col-span-7" data-reveal>
+              <span className="eyebrow text-muted">More than one trade</span>
+              <h2 className="h2 mt-4">The work crosses chapters.</h2>
+              <p className="body-lg mt-5 max-w-lg">
+                A single project can move through planning, building, finishing and supply. These
+                images show the range, not a single product.
               </p>
             </div>
-            <div className="flex flex-col gap-3 lg:col-span-4" data-reveal>
-              <Link href="/board" className="btn btn-primary w-full">
-                Explore the board
-                <ArrowUpRight className="h-3.5 w-3.5" />
+            <div className="flex flex-col gap-3 lg:col-span-4 lg:col-start-9" data-reveal>
+              <Link href="/services" className="btn btn-primary w-full">
+                Explore our services
+                <ArrowRight className="h-3.5 w-3.5" />
               </Link>
-              <QuoteButton className="btn btn-ghost w-full border-paper/25 text-paper hover:border-paper hover:bg-paper hover:text-forest">
-                Request a quote
-                <WhatsApp className="h-4 w-4" />
-              </QuoteButton>
+              <Link
+                href="/contact"
+                className="btn btn-ghost w-full"
+              >
+                Discuss your project
+                <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
             </div>
           </div>
         </div>

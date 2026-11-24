@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { companyServices } from "@/lib/company";
 import { siteUrl } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -8,10 +9,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "weekly" | "monthly" | "yearly";
   }> = [
     { path: "", priority: 1, changeFrequency: "weekly" },
-    { path: "/board", priority: 0.9, changeFrequency: "monthly" },
-    { path: "/services", priority: 0.8, changeFrequency: "monthly" },
+    { path: "/services", priority: 0.9, changeFrequency: "monthly" },
     { path: "/projects", priority: 0.8, changeFrequency: "monthly" },
+    { path: "/products", priority: 0.8, changeFrequency: "monthly" },
+    { path: "/about", priority: 0.7, changeFrequency: "monthly" },
     { path: "/contact", priority: 0.8, changeFrequency: "monthly" },
+    { path: "/board", priority: 0.7, changeFrequency: "monthly" },
+    ...companyServices.map((service) => ({
+      path: `/services/${service.slug}`,
+      priority: 0.7,
+      changeFrequency: "monthly" as const,
+    })),
     { path: "/privacy", priority: 0.2, changeFrequency: "yearly" },
     { path: "/terms", priority: 0.2, changeFrequency: "yearly" },
   ];
