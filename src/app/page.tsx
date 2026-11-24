@@ -37,7 +37,7 @@ const structuredData = {
       "@id": `${siteUrl}/#organization`,
       name: "Ephtech International Ltd",
       url: siteUrl,
-      slogan: "Building a better tomorrow.",
+      slogan: "One team. From plan to place.",
       email: "ephtechinternational@yahoo.com",
       telephone: "+2348032519288",
       identifier: "RC 1216055",

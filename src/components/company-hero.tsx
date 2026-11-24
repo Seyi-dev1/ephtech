@@ -51,18 +51,18 @@ export default function CompanyHero() {
               </span>
               <h1 className="hero-image__title">
                 <span className="hero-image__line">
-                  <span data-hero-line>Building a</span>
+                  <span data-hero-line>One team.</span>
                 </span>
                 <span className="hero-image__line">
                   <span data-hero-line>
-                    <em>better</em> tomorrow<span className="hero-image__dot">.</span>
+                    From plan to <em>place</em>.
                   </span>
                 </span>
               </h1>
 
               <p data-hero-fade className="hero-image__lede mt-6">
-                A multi-disciplinary construction, interiors, property and materials company.
-                We plan, build, finish and supply — one accountable team across Nigeria.
+                Design, construction, interiors, materials and property — one accountable team
+                across Lagos, Owerri and Aba.
               </p>
 
               <div
