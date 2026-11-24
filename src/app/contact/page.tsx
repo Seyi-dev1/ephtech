@@ -61,7 +61,7 @@ export default function ContactPage() {
       <PageIntro
         eyebrow="Contact"
         title="Talk to one team."
-        lede="A building project, an interior, a material schedule or a property. Tell us what you are planning and we will point you to the right chapter."
+        lede="A building project, an interior, a material schedule or a property. Tell us what you are planning and we will point you to the right service and team."
         note="Project enquiries are reviewed within one business day."
       />
 
@@ -214,7 +214,7 @@ export default function ContactPage() {
                 We will find the right team.
               </h2>
               <p className="mt-5 max-w-lg text-[15px] leading-relaxed text-forest/70">
-                Share a drawing, a site address or a scope. We will confirm the right chapter,
+                Share a drawing, a site address or a scope. We will confirm the right services,
                 the programme and the next step.
               </p>
             </div>

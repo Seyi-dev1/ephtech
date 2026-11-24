@@ -4,12 +4,12 @@ import Link from "next/link";
 import teamSite from "@/assets/images/team-site.jpg";
 import workBuild from "@/assets/images/work-build.jpg";
 import { branches } from "@/lib/data";
-import { chapters, companyProcess, companyStats, servicesByChapter } from "@/lib/company";
+import { companyPrinciples, companyServices, companyStats } from "@/lib/company";
 import { WHATSAPP_MESSAGES } from "@/lib/whatsapp";
 import NigeriaMap from "@/components/nigeria-map";
 import PageIntro from "@/components/page-intro";
 import QuoteButton from "@/components/quote-button";
-import { ArrowRight, Phone, WhatsApp } from "@/components/icons";
+import { ArrowRight, ArrowUpRight, Phone, WhatsApp } from "@/components/icons";
 
 export const metadata: Metadata = {
   title: "About",
@@ -41,7 +41,7 @@ export default function AboutPage() {
               </p>
               <p className="mt-4 text-[14px] leading-relaxed text-muted">
                 Our teams work from the first brief to the final handover, with the same standard
-                of coordination and site discipline across every chapter.
+                of coordination and site discipline across every service.
               </p>
               <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3">
                 <Link href="/services" className="btn btn-primary">
@@ -83,7 +83,7 @@ export default function AboutPage() {
           <div className="grid gap-6 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-7" data-reveal>
               <span className="eyebrow text-muted">What we cover</span>
-              <h2 className="h2 mt-4">Five chapters. One company.</h2>
+              <h2 className="h2 mt-4">Eight services. One company.</h2>
             </div>
             <p className="body-lg lg:col-span-5" data-reveal>
               Choose a single service or bring us in across the whole project. The scope changes;
@@ -91,22 +91,23 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="mt-10 grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-5" data-reveal-group>
-            {chapters.map((chapter) => (
-              <div key={chapter.id} className="border-t border-line pt-4">
-                <span className="mono text-[9px] tracking-[0.14em] uppercase text-amber">
-                  {chapter.index}
-                </span>
-                <h3 className="mt-2 font-display text-xl font-medium tracking-[-0.025em]">
-                  {chapter.name}
-                </h3>
-                <p className="mt-2 text-[12.5px] leading-relaxed text-muted">{chapter.summary}</p>
-                <p className="mono mt-3 text-[8px] leading-relaxed tracking-[0.1em] uppercase text-muted">
-                  {servicesByChapter(chapter.id)
-                    .map((service) => service.title)
-                    .join(" · ")}
-                </p>
-              </div>
+          <div className="mt-10 grid gap-x-10 gap-y-2 sm:grid-cols-2" data-reveal-group>
+            {companyServices.map((service) => (
+              <Link
+                key={service.slug}
+                href={`/services/${service.slug}`}
+                className="group flex items-start justify-between gap-4 border-t border-line py-4"
+              >
+                <div>
+                  <h3 className="font-display text-xl font-medium tracking-[-0.025em]">
+                    {service.title}
+                  </h3>
+                  <p className="mt-1 max-w-lg text-[12.5px] leading-relaxed text-muted">
+                    {service.summary}
+                  </p>
+                </div>
+                <ArrowUpRight className="mt-1 h-3.5 w-3.5 shrink-0 text-muted transition-colors group-hover:text-forest" />
+              </Link>
             ))}
           </div>
         </div>
@@ -132,23 +133,20 @@ export default function AboutPage() {
             </figure>
             <div className="lg:col-span-7" data-reveal>
               <span className="eyebrow text-muted">How we work</span>
-              <h2 className="h2 mt-4">The brief stays connected to the build.</h2>
+              <h2 className="h2 mt-4">The brief stays connected to the work.</h2>
               <p className="body-lg mt-6">
-                Projects move through five stages, but the team does not change hands. That is how
-                design intent, material decisions and site reality stay aligned.
+                We scope the services your project actually needs, then keep the same team close
+                to the work from brief to handover.
               </p>
               <div className="mt-8">
-                {companyProcess.map((step) => (
-                  <div key={step.index} className="grid grid-cols-[auto_1fr] gap-4 border-t border-line py-4">
-                    <span className="mono pt-1 text-[9px] tracking-[0.14em] text-muted">
-                      {step.index}
-                    </span>
-                    <div>
-                      <h3 className="font-display text-lg font-medium tracking-[-0.02em]">
-                        {step.title}
-                      </h3>
-                      <p className="mt-1 text-[12.5px] leading-relaxed text-muted">{step.body}</p>
-                    </div>
+                {companyPrinciples.map((principle) => (
+                  <div key={principle.title} className="border-t border-line py-4">
+                    <h3 className="font-display text-lg font-medium tracking-[-0.02em]">
+                      {principle.title}
+                    </h3>
+                    <p className="mt-1 text-[12.5px] leading-relaxed text-muted">
+                      {principle.body}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -232,8 +230,8 @@ export default function AboutPage() {
                 one team.
               </h2>
               <p className="mt-5 max-w-lg text-[15px] leading-relaxed text-forest/70">
-                Bring us a brief, a drawing or a site. We will confirm the right chapter and the
-                team to lead it.
+                Bring us a brief, a drawing or a site. We will confirm the right services and the
+                team to lead them.
               </p>
             </div>
             <div className="flex flex-col gap-3 lg:col-span-4" data-reveal>

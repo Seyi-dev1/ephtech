@@ -2,13 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import {
-  companyProcess,
-  companyServices,
-  getChapter,
-  getCompanyService,
-  servicesByChapter,
-} from "@/lib/company";
+import { companyPrinciples, companyServices, getCompanyService } from "@/lib/company";
 import { WHATSAPP_MESSAGES } from "@/lib/whatsapp";
 import QuoteButton from "@/components/quote-button";
 import { ArrowRight, ArrowUpRight, WhatsApp } from "@/components/icons";
@@ -38,13 +32,9 @@ export default async function ServicePage({ params }: PageProps) {
   const service = getCompanyService(slug);
   if (!service) notFound();
 
-  const chapter = getChapter(service.chapter);
-  if (!chapter) notFound();
-
-  const related = servicesByChapter(service.chapter).filter((item) => item.slug !== service.slug);
-  const otherChapters = companyServices.filter(
-    (item) => item.chapter !== service.chapter && item.slug !== service.slug,
-  );
+  const related = companyServices
+    .filter((item) => item.slug !== service.slug)
+    .slice(0, 3);
 
   return (
     <main id="main" className="bg-paper text-ink">
@@ -58,9 +48,7 @@ export default async function ServicePage({ params }: PageProps) {
           </Link>
           <div className="mt-10 grid gap-8 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-8">
-              <span className="eyebrow block text-muted">
-                Chapter {chapter.index} · {chapter.name}
-              </span>
+              <span className="eyebrow block text-muted">Ephtech service</span>
               <h1 className="mt-4 max-w-4xl font-display text-[clamp(2.6rem,5.4vw,4.6rem)] leading-[0.95] font-medium tracking-[-0.045em]">
                 {service.title}
               </h1>
@@ -72,7 +60,7 @@ export default async function ServicePage({ params }: PageProps) {
                   {service.imageNote}
                 </span>
                 <p className="mt-2 text-[13px] leading-relaxed text-muted">
-                  Part of the {chapter.name.toLowerCase()} chapter.
+                  One of eight services delivered by the Ephtech team.
                 </p>
               </div>
             </div>
@@ -99,7 +87,7 @@ export default async function ServicePage({ params }: PageProps) {
                 </span>
               </div>
               <p className="mono mt-3 text-[8px] tracking-[0.14em] uppercase text-muted">
-                {chapter.index} / {chapter.name} · {service.title}
+                Service · {service.title}
               </p>
             </div>
 
@@ -158,38 +146,36 @@ export default async function ServicePage({ params }: PageProps) {
 
       <section className="section">
         <div className="shell">
-          <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end" data-reveal>
-            <div>
-              <span className="eyebrow text-muted">How we work</span>
-              <h2 className="h2 mt-4">One team. Five stages.</h2>
+          <div className="grid gap-10 lg:grid-cols-12 lg:items-start lg:gap-14">
+            <div className="lg:col-span-5" data-reveal>
+              <span className="eyebrow text-muted">What you can expect</span>
+              <h2 className="h2 mt-4">One team. Clear scope.</h2>
+              <p className="body-lg mt-5">
+                This service can stand alone or sit inside a wider Ephtech scope. The work is
+                agreed before mobilisation.
+              </p>
             </div>
-            <p className="body-lg max-w-sm md:text-right">
-              Each stage is agreed before mobilisation, with one point of accountability.
-            </p>
-          </div>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-5" data-reveal-group>
-            {companyProcess.map((step) => (
-              <div key={step.index} className="border-t border-line pt-4">
-                <span className="mono text-[9px] tracking-[0.14em] uppercase text-muted">
-                  {step.index}
-                </span>
-                <h3 className="mt-2 font-display text-lg font-medium tracking-[-0.02em]">
-                  {step.title}
-                </h3>
-                <p className="mt-2 text-[12.5px] leading-relaxed text-muted">{step.body}</p>
-              </div>
-            ))}
+            <div className="lg:col-span-7" data-reveal>
+              {companyPrinciples.map((principle) => (
+                <div key={principle.title} className="border-t border-line py-4 last:border-b">
+                  <h3 className="font-display text-xl font-medium tracking-[-0.025em]">
+                    {principle.title}
+                  </h3>
+                  <p className="mt-1.5 text-[13px] leading-relaxed text-muted">{principle.body}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {(related.length > 0 || otherChapters.length > 0) && (
+      {related.length > 0 && (
         <section className="section border-t border-line bg-paper-2">
           <div className="shell">
             <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
               <div data-reveal>
                 <span className="eyebrow text-muted">Related services</span>
-                <h2 className="h2 mt-4">The next chapter.</h2>
+                <h2 className="h2 mt-4">Other services.</h2>
               </div>
               <Link href="/services" className="link-underline text-[13px] font-medium" data-reveal>
                 All services
@@ -198,14 +184,14 @@ export default async function ServicePage({ params }: PageProps) {
             </div>
 
             <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3" data-reveal-group>
-              {[...related, ...otherChapters].slice(0, 3).map((item) => (
+              {related.map((item) => (
                 <Link
                   key={item.slug}
                   href={`/services/${item.slug}`}
                   className="group border-t border-line pt-4"
                 >
                   <span className="mono text-[8px] tracking-[0.12em] uppercase text-muted">
-                    {getChapter(item.chapter)?.name}
+                    Ephtech service
                   </span>
                   <h3 className="mt-2 font-display text-xl font-medium tracking-[-0.025em]">
                     {item.title}

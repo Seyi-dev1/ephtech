@@ -142,7 +142,6 @@ Copied into `src/assets/images` for the company-first build:
 - `work-interior.jpg` — completed residential interior
 - `work-detail.jpg` — completed decorative interior
 - `work-stairs.jpg` — completed staircase and wall finish
-- `work-construction.jpg` — foundation/structural works
 - `work-real-estate.jpg` — completed residential exterior
 - `team-site.jpg` — Ephtech team on site
 

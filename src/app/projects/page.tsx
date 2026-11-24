@@ -149,10 +149,10 @@ export default function ProjectsPage() {
           <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-7" data-reveal>
               <span className="eyebrow text-muted">More than one trade</span>
-              <h2 className="h2 mt-4">The work crosses chapters.</h2>
+              <h2 className="h2 mt-4">The work spans services.</h2>
               <p className="body-lg mt-5 max-w-lg">
-                A single project can move through planning, building, finishing and supply. These
-                images show the range, not a single product.
+                A single project can draw on construction, finishing and supply. These images show
+                the range, not a single product.
               </p>
             </div>
             <div className="flex flex-col gap-3 lg:col-span-4 lg:col-start-9" data-reveal>

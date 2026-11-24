@@ -12,22 +12,9 @@ import workPlan from "@/assets/images/work-plan.jpg";
 import workRealEstate from "@/assets/images/work-real-estate.jpg";
 import workStairs from "@/assets/images/work-stairs.jpg";
 
-export type ChapterId = "plan" | "build" | "finish" | "supply" | "place";
-
-export type Chapter = {
-  id: ChapterId;
-  index: string;
-  name: string;
-  title: string;
-  summary: string;
-  image: StaticImageData;
-  alt: string;
-};
-
 export type CompanyService = {
   slug: string;
   title: string;
-  chapter: ChapterId;
   summary: string;
   description: string;
   image: StaticImageData;
@@ -37,68 +24,14 @@ export type CompanyService = {
   outcomes: string[];
 };
 
-export const chapters: Chapter[] = [
-  {
-    id: "plan",
-    index: "01",
-    name: "Plan",
-    title: "Design & building projects",
-    summary:
-      "Project planning, design coordination and building delivery from the first drawing to handover.",
-    image: workPlan,
-    alt: "Building under construction with columns, blockwork and formwork.",
-  },
-  {
-    id: "build",
-    index: "02",
-    name: "Build",
-    title: "Roads & civil works",
-    summary:
-      "Road construction, earthworks, drainage and external works delivered with the same site discipline as our buildings.",
-    image: serviceRoad,
-    alt: "Road roller compacting asphalt on a road construction site.",
-  },
-  {
-    id: "finish",
-    index: "03",
-    name: "Finish",
-    title: "Ceilings, walls & interiors",
-    summary:
-      "Ceiling and wall systems, dry partitioning, joinery and interior finishing under one installation team.",
-    image: workCeiling,
-    alt: "Completed office interior with a suspended ceiling and wall panels.",
-  },
-  {
-    id: "supply",
-    index: "04",
-    name: "Supply",
-    title: "Materials & importation",
-    summary:
-      "Building materials, modern systems, importation and site delivery — specified and supplied as one package.",
-    image: boardProduct,
-    alt: "Stack of Ephtech boards showing the factory-finished face.",
-  },
-  {
-    id: "place",
-    index: "05",
-    name: "Place",
-    title: "Real estate & landscaping",
-    summary:
-      "Property development, residential and commercial places, external works and landscape environments.",
-    image: workRealEstate,
-    alt: "Completed residential building with a gated frontage.",
-  },
-];
-
 export const companyServices: CompanyService[] = [
   {
     slug: "design-and-building-projects",
     title: "Design & Building Projects",
-    chapter: "plan",
     summary:
       "A single team to take a building project from early design coordination through construction and handover.",
     description:
-      "We coordinate the design, the programme and the site team so the building you brief is the building that gets delivered. The service covers project planning, design coordination, construction delivery and handover support, with clear reporting at every stage.",
+      "We coordinate the design, the programme and the site team so the building you brief is the building that gets delivered. The service covers project planning, design coordination, construction delivery and handover support, with clear reporting throughout.",
     image: workPlan,
     alt: "Building under construction with columns, blockwork and formwork.",
     imageNote: "Completed work",
@@ -118,7 +51,6 @@ export const companyServices: CompanyService[] = [
   {
     slug: "road-construction",
     title: "Road Construction",
-    chapter: "build",
     summary:
       "Roads, drainage and external works planned around the site, the traffic and the long-term maintenance of the surface.",
     description:
@@ -142,7 +74,6 @@ export const companyServices: CompanyService[] = [
   {
     slug: "ceiling-and-wall-systems",
     title: "Ceiling & Wall Systems",
-    chapter: "finish",
     summary:
       "Suspended ceilings, dry partitions and wall linings specified, supplied and installed by one team.",
     description:
@@ -166,7 +97,6 @@ export const companyServices: CompanyService[] = [
   {
     slug: "interior-finishing",
     title: "Interior Finishing",
-    chapter: "finish",
     summary:
       "Turnkey fit-out, feature walls, staircases, joinery and the final details that make a space feel complete.",
     description:
@@ -190,7 +120,6 @@ export const companyServices: CompanyService[] = [
   {
     slug: "building-materials-supply",
     title: "Supply & Installation of Building Materials",
-    chapter: "supply",
     summary:
       "Boards, ceiling systems, grids, channels and accessories supplied as one package — with installation support when needed.",
     description:
@@ -214,7 +143,6 @@ export const companyServices: CompanyService[] = [
   {
     slug: "building-materials-importation",
     title: "Importation of Modern Building Materials",
-    chapter: "supply",
     summary:
       "Sourcing and importing modern materials for projects that need a specification beyond the local catalogue.",
     description:
@@ -238,7 +166,6 @@ export const companyServices: CompanyService[] = [
   {
     slug: "real-estate",
     title: "Real Estate",
-    chapter: "place",
     summary:
       "Property development and residential or commercial places, from land and concept through delivery.",
     description:
@@ -262,7 +189,6 @@ export const companyServices: CompanyService[] = [
   {
     slug: "landscaping",
     title: "Landscaping",
-    chapter: "place",
     summary:
       "External environments, planting, paving and the landscape details that complete a property.",
     description:
@@ -285,50 +211,34 @@ export const companyServices: CompanyService[] = [
   },
 ];
 
-export const servicesByChapter = (id: ChapterId) =>
-  companyServices.filter((service) => service.chapter === id);
-
-export const getChapter = (id: ChapterId) =>
-  chapters.find((chapter) => chapter.id === id);
-
 export const getCompanyService = (slug: string) =>
   companyServices.find((service) => service.slug === slug);
 
 export const companyStats = {
   rc: "RC 1216055",
   branches: "Lagos · Owerri · Aba",
-  chapters: "5 chapters · 8 services",
+  services: "Eight services",
   team: "One accountable team",
 };
 
-export const companyProcess = [
+export const companyPrinciples = [
   {
-    index: "01",
-    title: "Brief",
-    body: "We start with the site, the use and the budget — not a catalogue of products.",
+    title: "One accountable team",
+    body: "The same company can carry the brief, the build, the finish and the supply — or step in for a single service.",
   },
   {
-    index: "02",
-    title: "Plan",
-    body: "Design coordination, programme, materials and the right delivery team are agreed before mobilisation.",
+    title: "Scope agreed first",
+    body: "We confirm what is included, what is not, and the programme before mobilisation.",
   },
   {
-    index: "03",
-    title: "Build",
-    body: "Civil, structural and building works are sequenced around access, safety and the programme.",
+    title: "Materials confirmed",
+    body: "Systems, quantities and delivery are checked against the drawings and the site.",
   },
   {
-    index: "04",
-    title: "Finish",
-    body: "Ceilings, walls, joinery and interior finishes are delivered by the same accountable team.",
-  },
-  {
-    index: "05",
-    title: "Hand over",
-    body: "Snagging, documentation and aftercare close the loop — inside and out.",
+    title: "Finish and aftercare",
+    body: "Snagging, documentation and a clear handover close the job properly.",
   },
 ];
-
 
 export const companyImage = workStairs;
 export const companyDetail = workDetail;

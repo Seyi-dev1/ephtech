@@ -8,13 +8,7 @@ import workCeiling from "@/assets/images/work-ceiling.jpg";
 import workInterior from "@/assets/images/work-interior.jpg";
 import workRealEstate from "@/assets/images/work-real-estate.jpg";
 import { branches } from "@/lib/data";
-import {
-  chapters,
-  companyProcess,
-  companyServices,
-  companyStats,
-  servicesByChapter,
-} from "@/lib/company";
+import { companyPrinciples, companyServices, companyStats } from "@/lib/company";
 import { siteUrl } from "@/lib/site";
 import { WHATSAPP_DISPLAY, WHATSAPP_MESSAGES, whatsappHref } from "@/lib/whatsapp";
 import CompanyHero from "@/components/company-hero";
@@ -138,7 +132,7 @@ export default function Home() {
           {[
             { label: "Registered", title: companyStats.rc, body: "Ephtech International Limited" },
             { label: "Coverage", title: companyStats.branches, body: "Branches and project teams" },
-            { label: "Capability", title: companyStats.chapters, body: "From planning to landscape" },
+            { label: "Capability", title: companyStats.services, body: "From planning to landscape" },
             { label: "Accountability", title: companyStats.team, body: "One contract, one programme" },
           ].map((item) => (
             <div key={item.label} className="border-l border-line pl-4 first:border-l-0 first:pl-0 sm:border-l sm:pl-4">
@@ -154,60 +148,47 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ---------------- capabilities ---------------- */}
+      {/* ---------------- services ---------------- */}
       <section id="services" className="section scroll-mt-24">
         <div className="shell">
           <div className="grid gap-6 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-7" data-reveal>
               <span className="eyebrow text-muted">What we do</span>
-              <h2 className="h2 mt-5">One company. Every stage.</h2>
+              <h2 className="h2 mt-5">The services we deliver.</h2>
             </div>
             <p className="body-lg lg:col-span-5" data-reveal>
-              Five connected chapters — plan, build, finish, supply and place — delivered by one
-              team across Nigeria.
+              Eight services across construction, interiors, materials and property. Start with
+              one, or bring us in across the whole project — the scope is yours.
             </p>
           </div>
 
-          <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-6" data-reveal-group>
-            {chapters.map((chapter, index) => {
-              const chapterServices = servicesByChapter(chapter.id);
-              const span = index < 3 ? "lg:col-span-2" : "lg:col-span-3";
-              return (
-                <Link
-                  key={chapter.id}
-                  href={`/services#${chapter.id}`}
-                  className={`group block ${span}`}
-                >
-                  <div className="media relative aspect-[4/3] overflow-hidden">
-                    <Image
-                      src={chapter.image}
-                      alt={chapter.alt}
-                      fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      placeholder="blur"
-                      className="photo-grade object-cover transition-transform duration-700 group-hover:scale-[1.02]"
-                    />
-                    <span className="mono absolute top-3 left-3 bg-paper/92 px-2 py-1 text-[8px] tracking-[0.14em] uppercase text-ink">
-                      {chapter.index} / {chapter.name}
-                    </span>
-                    {chapter.id === "build" ? (
-                      <span className="mono absolute right-3 bottom-3 bg-forest/80 px-2 py-1 text-[7.5px] tracking-[0.12em] uppercase text-paper/80">
-                        Illustrative
-                      </span>
-                    ) : null}
-                  </div>
-                  <div className="mt-4 border-t border-line pt-3">
+          <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4" data-reveal-group>
+            {companyServices.map((service) => (
+              <Link key={service.slug} href={`/services/${service.slug}`} className="group block">
+                <div className="media relative aspect-[4/3] overflow-hidden">
+                  <Image
+                    src={service.image}
+                    alt={service.alt}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    placeholder="blur"
+                    className="photo-grade object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                  />
+                  <span className="mono absolute top-3 left-3 bg-paper/92 px-2 py-1 text-[8px] tracking-[0.14em] uppercase text-ink">
+                    {service.imageNote}
+                  </span>
+                </div>
+                <div className="mt-4 border-t border-line pt-3">
+                  <div className="flex items-start justify-between gap-3">
                     <h3 className="font-display text-xl font-medium tracking-[-0.025em]">
-                      {chapter.title}
+                      {service.title}
                     </h3>
-                    <p className="mt-2 text-[12.5px] leading-relaxed text-muted">{chapter.summary}</p>
-                    <p className="mono mt-3 text-[8px] leading-relaxed tracking-[0.1em] uppercase text-muted">
-                      {chapterServices.map((service) => service.title).join(" · ")}
-                    </p>
+                    <ArrowUpRight className="mt-1 h-3.5 w-3.5 shrink-0 text-muted transition-colors group-hover:text-forest" />
                   </div>
-                </Link>
-              );
-            })}
+                  <p className="mt-2 text-[12.5px] leading-relaxed text-muted">{service.summary}</p>
+                </div>
+              </Link>
+            ))}
           </div>
 
           <div className="mt-10 flex flex-wrap items-center justify-between gap-4 border-t border-line pt-5" data-reveal>
@@ -331,29 +312,29 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ---------------- process ---------------- */}
+      {/* ---------------- principles ---------------- */}
       <section className="section bg-forest text-paper">
         <div className="shell">
           <div className="grid gap-6 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-7" data-reveal>
               <span className="eyebrow text-amber/80">How we work</span>
-              <h2 className="h2 mt-5 text-paper">One team. Five stages. No hand-offs.</h2>
+              <h2 className="h2 mt-5 text-paper">One team. Clear scope. No hand-offs.</h2>
             </div>
             <p className="body-lg lg:col-span-5 text-paper/55" data-reveal>
-              The same company can carry the brief, the build, the finish and the final handover.
+              Use one service or combine several. The scope is agreed around your project, not a
+              fixed package.
             </p>
           </div>
 
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-5" data-reveal-group>
-            {companyProcess.map((step) => (
-              <div key={step.index} className="border-t border-paper/12 pt-4">
-                <span className="mono text-[9px] tracking-[0.14em] uppercase text-amber/60">
-                  {step.index}
-                </span>
-                <h3 className="mt-2 font-display text-lg font-medium tracking-[-0.02em]">
-                  {step.title}
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4" data-reveal-group>
+            {companyPrinciples.map((principle) => (
+              <div key={principle.title} className="border-t border-paper/12 pt-4">
+                <h3 className="mt-1 font-display text-lg font-medium tracking-[-0.02em]">
+                  {principle.title}
                 </h3>
-                <p className="mt-2 text-[12.5px] leading-relaxed text-paper/55">{step.body}</p>
+                <p className="mt-2 text-[12.5px] leading-relaxed text-paper/55">
+                  {principle.body}
+                </p>
               </div>
             ))}
           </div>

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { chapters, companyProcess, servicesByChapter } from "@/lib/company";
+import { companyPrinciples, companyServices } from "@/lib/company";
 import { WHATSAPP_MESSAGES } from "@/lib/whatsapp";
 import PageIntro from "@/components/page-intro";
 import QuoteButton from "@/components/quote-button";
@@ -10,7 +10,7 @@ import { ArrowRight, ArrowUpRight, WhatsApp } from "@/components/icons";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Eight integrated services across five chapters: design and building projects, road construction, ceilings and wall systems, interior finishing, building materials, importation, real estate and landscaping.",
+    "Eight services from Ephtech International: design and building projects, road construction, ceiling and wall systems, interior finishing, building materials, importation, real estate and landscaping.",
   alternates: { canonical: "/services" },
 };
 
@@ -18,171 +18,132 @@ export default function ServicesPage() {
   return (
     <main id="main" className="bg-paper text-ink">
       <PageIntro
-        eyebrow="Services · 5 chapters · 8 services"
-        title="One company. Every stage."
-        lede="Ephtech International plans, builds, finishes, supplies and develops. The same accountable team can carry a project from the first brief to the final landscape detail."
+        eyebrow="Services · Eight services"
+        title="The services we deliver."
+        lede="Construction, interiors, materials and property. Use one service or combine several — the scope is built around your project, not a fixed package."
         note="Project photography is client-supplied. Online images are illustrative and marked as such."
       />
 
-      <nav aria-label="Service chapters" className="border-b border-line bg-paper">
-        <div className="shell flex flex-wrap gap-x-6 gap-y-2 py-4">
-          {chapters.map((chapter) => (
-            <a
-              key={chapter.id}
-              href={`#${chapter.id}`}
-              className="mono text-[9px] tracking-[0.14em] uppercase text-muted transition-colors hover:text-forest"
-            >
-              {chapter.index} {chapter.name}
-            </a>
-          ))}
-        </div>
-      </nav>
-
       <section className="section">
         <div className="shell">
-          <div className="mb-12 grid gap-5 border-b border-line pb-8 lg:grid-cols-12 lg:items-end">
+          <div className="mb-10 grid gap-5 border-b border-line pb-8 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-7" data-reveal>
-              <span className="eyebrow text-muted">The chapters</span>
-              <h2 className="h2 mt-4">The whole build, under one name.</h2>
+              <span className="eyebrow text-muted">What we do</span>
+              <h2 className="h2 mt-4">Eight services. One company.</h2>
             </div>
             <p className="body-lg lg:col-span-5" data-reveal>
-              Not every project needs every chapter. Every project gets the same standard of
-              coordination, documentation and site discipline.
+              Most clients start with one service and add others as the project grows. You are not
+              committing to a fixed sequence.
             </p>
           </div>
 
-          <div className="space-y-16 lg:space-y-24">
-            {chapters.map((chapter, chapterIndex) => {
-              const chapterServices = servicesByChapter(chapter.id);
-              const imageFirst = chapterIndex % 2 === 0;
-              return (
-                <section
-                  key={chapter.id}
-                  id={chapter.id}
-                  className="scroll-mt-24 grid gap-8 lg:grid-cols-12 lg:items-start lg:gap-12"
-                >
-                  <div
-                    className={`lg:col-span-6 ${imageFirst ? "" : "lg:order-2"}`}
-                    data-reveal
-                  >
-                    <div className="media relative aspect-[4/3] overflow-hidden">
-                      <Image
-                        src={chapter.image}
-                        alt={chapter.alt}
-                        fill
-                        sizes="(max-width: 1024px) 100vw, 50vw"
-                        placeholder="blur"
-                        className="photo-grade object-cover"
-                      />
-                      <span className="mono absolute top-3 left-3 bg-paper/92 px-2 py-1 text-[8px] tracking-[0.14em] uppercase text-ink">
-                        {chapter.index} / {chapter.name}
-                      </span>
-                      <span className="mono absolute right-3 bottom-3 bg-forest/80 px-2 py-1 text-[7.5px] tracking-[0.12em] uppercase text-paper/80">
-                        {chapter.id === "build" ? "Illustrative image" : "Client work"}
-                      </span>
+          <div className="grid gap-x-5 gap-y-12 sm:grid-cols-2" data-reveal-group>
+            {companyServices.map((service) => (
+              <article key={service.slug}>
+                <Link href={`/services/${service.slug}`} className="group block">
+                  <div className="media relative aspect-[16/10] overflow-hidden">
+                    <Image
+                      src={service.image}
+                      alt={service.alt}
+                      fill
+                      sizes="(max-width: 640px) 100vw, 50vw"
+                      placeholder="blur"
+                      className="photo-grade object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                    />
+                    <span className="mono absolute top-3 left-3 bg-paper/92 px-2 py-1 text-[8px] tracking-[0.14em] uppercase text-ink">
+                      {service.imageNote}
+                    </span>
+                  </div>
+                  <div className="mt-4 border-t border-line pt-3">
+                    <div className="flex items-start justify-between gap-3">
+                      <h3 className="font-display text-2xl font-medium tracking-[-0.03em]">
+                        {service.title}
+                      </h3>
+                      <ArrowUpRight className="mt-1.5 h-4 w-4 shrink-0 text-muted transition-colors group-hover:text-forest" />
                     </div>
-                    <p className="mono mt-3 text-[8px] leading-relaxed tracking-[0.12em] uppercase text-muted">
-                      {chapter.summary}
+                    <p className="mt-2 max-w-xl text-[13.5px] leading-relaxed text-muted">
+                      {service.summary}
+                    </p>
+                    <p className="mono mt-3 text-[8px] leading-relaxed tracking-[0.1em] uppercase text-muted">
+                      {service.capabilities.slice(0, 3).join(" · ")}
                     </p>
                   </div>
-
-                  <div className={`lg:col-span-6 ${imageFirst ? "" : "lg:order-1"}`}>
-                    <div data-reveal>
-                      <span className="eyebrow text-muted">Chapter {chapter.index}</span>
-                      <h2 className="h2 mt-3">{chapter.title}</h2>
-                    </div>
-
-                    <div className="mt-7">
-                      {chapterServices.map((service, index) => (
-                        <Link
-                          key={service.slug}
-                          href={`/services/${service.slug}`}
-                          className="group grid grid-cols-[auto_1fr_auto] items-start gap-4 border-t border-line py-5 transition-colors hover:bg-paper-2/60"
-                        >
-                          <span className="mono pt-1 text-[10px] tracking-[0.14em] text-muted">
-                            0{index + 1}
-                          </span>
-                          <div>
-                            <h3 className="font-display text-xl font-medium tracking-[-0.025em]">
-                              {service.title}
-                            </h3>
-                            <p className="mt-1.5 max-w-lg text-[13px] leading-relaxed text-muted">
-                              {service.summary}
-                            </p>
-                          </div>
-                          <ArrowUpRight className="mt-1 h-4 w-4 text-muted transition-colors group-hover:text-forest" />
-                        </Link>
-                      ))}
-                      <div className="border-t border-line pt-4">
-                        <Link
-                          href={`/services/${chapterServices[0].slug}`}
-                          className="link-underline text-[12px] font-medium"
-                        >
-                          Explore {chapter.name.toLowerCase()}
-                          <ArrowUpRight className="h-3.5 w-3.5" />
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-              );
-            })}
+                </Link>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="section border-y border-line bg-forest text-paper">
+      <section className="section border-y border-line bg-paper-2">
         <div className="shell">
-          <div className="grid gap-6 lg:grid-cols-12 lg:items-end">
+          <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-7" data-reveal>
-              <span className="eyebrow text-amber/80">How we work</span>
-              <h2 className="h2 mt-5 text-paper">One team. Five stages. No hand-offs.</h2>
+              <span className="eyebrow text-muted">No fixed package</span>
+              <h2 className="h2 mt-4">Choose the services your project needs.</h2>
+              <p className="body-lg mt-5 max-w-lg">
+                A client may need a single ceiling installation, a material supply, a road or a
+                complete building. We scope the work that is actually required and leave the rest
+                open.
+              </p>
             </div>
-            <p className="body-lg lg:col-span-5 text-paper/55" data-reveal>
-              The same company can carry the brief, the build, the finish and the final handover.
-            </p>
-          </div>
-
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-5" data-reveal-group>
-            {companyProcess.map((step) => (
-              <div key={step.index} className="border-t border-paper/12 pt-4">
-                <span className="mono text-[9px] tracking-[0.14em] uppercase text-amber/60">
-                  {step.index}
-                </span>
-                <h3 className="mt-2 font-display text-lg font-medium tracking-[-0.02em]">
-                  {step.title}
-                </h3>
-                <p className="mt-2 text-[12.5px] leading-relaxed text-paper/55">{step.body}</p>
+            <div className="lg:col-span-4 lg:col-start-9" data-reveal>
+              <p className="mono text-[8.5px] leading-relaxed tracking-[0.12em] uppercase text-muted">
+                One service or several. Same standard.
+              </p>
+              <div className="mt-5 flex flex-col gap-3">
+                <QuoteButton className="btn btn-primary w-full" message={WHATSAPP_MESSAGES.general}>
+                  Discuss your scope
+                  <WhatsApp className="h-4 w-4" />
+                </QuoteButton>
+                <Link href="/projects" className="btn btn-ghost w-full">
+                  See the work
+                  <ArrowRight className="h-3.5 w-3.5" />
+                </Link>
               </div>
-            ))}
-          </div>
-
-          <div className="mt-12 flex flex-wrap items-center gap-x-7 gap-y-3 border-t border-paper/12 pt-6" data-reveal>
-            <QuoteButton className="btn btn-primary">
-              Start a project
-              <WhatsApp className="h-4 w-4" />
-            </QuoteButton>
-            <Link href="/projects" className="link-underline text-[13px] font-medium text-paper">
-              See the work
-              <ArrowUpRight className="h-3.5 w-3.5" />
-            </Link>
+            </div>
           </div>
         </div>
       </section>
 
       <section className="section">
+        <div className="shell">
+          <div className="grid gap-10 lg:grid-cols-12 lg:items-start lg:gap-14">
+            <div className="lg:col-span-5" data-reveal>
+              <span className="eyebrow text-muted">What you can expect</span>
+              <h2 className="h2 mt-4">One team. Clear scope. No hand-offs.</h2>
+              <p className="body-lg mt-5">
+                The same company can carry the brief, the build, the finish and the supply — or
+                step in for a single service.
+              </p>
+            </div>
+            <div className="lg:col-span-7" data-reveal>
+              {companyPrinciples.map((principle) => (
+                <div key={principle.title} className="border-t border-line py-4 last:border-b">
+                  <h3 className="font-display text-xl font-medium tracking-[-0.025em]">
+                    {principle.title}
+                  </h3>
+                  <p className="mt-1.5 text-[13px] leading-relaxed text-muted">{principle.body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section pt-0">
         <div className="shell">
           <div className="grid gap-8 bg-amber p-6 text-forest sm:p-8 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-8" data-reveal>
-              <span className="eyebrow text-forest/55">Not sure where to start?</span>
+              <span className="eyebrow text-forest/55">Next step</span>
               <h2 className="h2 mt-4">
                 Tell us what you are building.
                 <br />
-                We will find the right chapter.
+                We will scope the right services.
               </h2>
               <p className="mt-5 max-w-lg text-[15px] leading-relaxed text-forest/70">
-                Send a brief, a drawing or a site address. We will confirm the scope, the right
-                team and the next step.
+                Send a brief, a drawing or a site address. We will confirm the scope and the next
+                step.
               </p>
             </div>
             <div className="flex flex-col gap-3 lg:col-span-4" data-reveal>

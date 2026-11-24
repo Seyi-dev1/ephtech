@@ -19,28 +19,30 @@ DNA and change what leads the page.
 
 ### Positioning
 
-> **One company. Every stage.**
+> **One company. A full range of services.**
 >
 > Ephtech International plans, builds, finishes, supplies and develops — one
-> accountable team across Lagos, Owerri and Aba.
+> accountable team across Lagos, Owerri and Aba. Clients can take one service
+> or combine several.
 
 The client’s existing line, **“…Building a Better Tomorrow,”** can remain the
 brand promise and hero language.
 
 ## 2. Service architecture
 
-The client supplied eight services. They map cleanly to five chapters:
+The client supplied eight services. The site presents them directly, without
+framing them as a mandatory sequence:
 
-| Chapter | Client service | What it covers |
-|---|---|---|
-| **01 Plan** | Design and Building Projects | Concept, design coordination, building projects and delivery |
-| **02 Build** | Road Construction | Civil works, roads, drainage and external works |
-| **03 Finish** | Ceiling & Wall Systems | Ceiling and wall systems, installation and finishes |
-| **03 Finish** | Interior Finishing | Fit-out, feature walls, staircases, painting and detail work |
-| **04 Supply** | Supply & Installation of Modern Building Materials | Materials supply, systems and installation support |
-| **04 Supply** | Importation of Modern Building Materials | Sourcing and importation of modern materials |
-| **05 Place** | Real Estate | Property development and real-estate projects |
-| **05 Place** | Landscaping | External environments, planting and landscape works |
+| Service | What it covers |
+|---|---|
+| Design and Building Projects | Concept, design coordination, building projects and delivery |
+| Road Construction | Civil works, roads, drainage and external works |
+| Ceiling & Wall Systems | Ceiling and wall systems, installation and finishes |
+| Interior Finishing | Fit-out, feature walls, staircases, painting and detail work |
+| Supply & Installation of Modern Building Materials | Materials supply, systems and installation support |
+| Importation of Modern Building Materials | Sourcing and importation of modern materials |
+| Real Estate | Property development and real-estate projects |
+| Landscaping | External environments, planting and landscape works |
 
 **Ephtech Board** sits inside the Supply/Finish capability as the flagship
 product. It gets its own product page, not the homepage.
@@ -51,7 +53,7 @@ product. It gets its own product page, not the homepage.
 ```text
 /                         Company-led home
 /about                    Company, branches, process, credentials
-/services                 Service hub — five chapters, eight services
+/services                 Eight services
 /services/[slug]          Individual service pages
 /projects                 Selected work across the company
 /products                 Products and systems
@@ -72,9 +74,9 @@ A company-level editorial page, not a product catalogue:
    a better tomorrow.” Subline covering design, construction, interiors,
    property and materials. CTAs: “Explore our services” and “Watch the showreel.”
 2. **Credibility strip** — RC 1216055 · Lagos, Owerri, Aba · one accountable
-   team · the five chapters.
-3. **What we do** — five large media chapters: Plan, Build, Finish, Supply,
-   Place. Each lists its services and links to the hub.
+   team · eight services.
+3. **What we do** — the eight services presented directly, with a note that
+   clients can take one service or combine several.
 4. **Selected work** — three or four project dossiers with service/sector tags
    and strong imagery.
 5. **Products & materials** — a proper product shelf. Ephtech Board is featured
@@ -120,7 +122,7 @@ the texture of a site journal, and the clarity of a product catalogue.
 ### Keep
 
 - Paper / forest / amber palette
-- Instrument Serif for company statements and chapter titles
+- Instrument Serif for company statements and service titles
 - Instrument Sans for interface and body
 - IBM Plex Mono for project metadata
 - Editorial grid, generous margins, grain and restrained linework

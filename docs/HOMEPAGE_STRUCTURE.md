@@ -10,7 +10,7 @@ for Ephtech International Limited. The board remains a product page.
 ```text
 /                         Company home
 /about                    Company, process and branches
-/services                 Services hub — 5 chapters, 8 services
+/services                 Eight services
 /services/[slug]          Individual service pages
 /projects                 Selected work across the company
 /products                 Products, systems and materials
@@ -22,27 +22,32 @@ for Ephtech International Limited. The board remains a product page.
 
 1. **Hero** — company-level film/still, “Building a better tomorrow.”, services
    and work CTAs.
-2. **Credibility band** — RC number, branches, five chapters and one-team
+2. **Credibility band** — RC number, branches, eight services and one-team
    accountability.
-3. **What we do** — five media chapters: Plan, Build, Finish, Supply, Place, with
-   the eight services nested underneath.
+3. **What we do** — the eight services presented directly, with a note that
+   clients can take one service or combine several.
 4. **Selected work** — four project cards spanning interiors, construction and
    real estate, labelled as completed work.
 5. **Products & materials** — Ephtech Board featured as one product within the
    wider range.
-6. **How we work** — five stages and a full-width site-team image.
+6. **How we work** — four working principles and a full-width site-team image.
+   No fixed sequence or mandatory package.
 7. **Branches** — Nigeria map and the three branch addresses.
 8. **Closing CTA** — start a project / download company profile.
 
-## Service chapters
+## Services
 
-| Chapter | Services |
-|---|---|
-| Plan | Design & Building Projects |
-| Build | Road Construction |
-| Finish | Ceiling & Wall Systems; Interior Finishing |
-| Supply | Supply & Installation of Building Materials; Importation of Modern Building Materials |
-| Place | Real Estate; Landscaping |
+- Design & Building Projects
+- Road Construction
+- Ceiling & Wall Systems
+- Interior Finishing
+- Supply & Installation of Building Materials
+- Importation of Modern Building Materials
+- Real Estate
+- Landscaping
+
+The site does not present these as a mandatory sequence. Clients can scope one
+service or combine several.
 
 ## Media rules
 

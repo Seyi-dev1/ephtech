@@ -35,7 +35,7 @@ a glossy luxury-property aesthetic or a pure product catalogue.
 
 ## Proposed service mapping
 
-### 01 Plan — Design and Building Projects
+### Design & Building Projects
 
 Strong candidates:
 
@@ -45,7 +45,7 @@ Strong candidates:
 - **42** — industrial/structural roof or frame
 - Video **10** — talking-head clip (could support a company story or testimonial)
 
-### 02 Build — Road Construction
+### Road Construction
 
 Strong candidates:
 
@@ -56,7 +56,7 @@ Strong candidates:
 - **44, 46** — blockwork and site progress
 - Videos **03, 05, 06, 12, 13, 14, 15** — site, earthworks, concrete and structure
 
-### 03 Finish — Ceiling & Wall Systems
+### Ceiling & Wall Systems
 
 Strong candidates:
 
@@ -76,7 +76,7 @@ Strong candidates:
 - **48** — ornate interior finishing
 - Videos **01, 04, 07, 09, 11** — ceiling, LED, installation and cathedral
 
-### 03 Finish — Interior Finishing
+### Interior Finishing
 
 Use the strongest finished interiors from the ceiling group, plus:
 
@@ -87,7 +87,7 @@ Use the strongest finished interiors from the ceiling group, plus:
 - **17, 19, 38, 41** — material/detail shots (38 and 41 are low resolution; use
   only at small sizes)
 
-### 04 Supply — Supply & Installation of Modern Building Materials
+### Supply & Installation of Building Materials
 
 - Video **02** — packaging
 - Video **09** — board installation
@@ -95,7 +95,7 @@ Use the strongest finished interiors from the ceiling group, plus:
 - **02** — board flyer; source only
 - **38** — close-up board/ceiling detail (low resolution)
 
-### 04 Supply — Importation of Modern Building Materials
+### Importation of Modern Building Materials
 
 The library has limited direct import/warehouse imagery. Best current support:
 
@@ -106,7 +106,7 @@ The library has limited direct import/warehouse imagery. Best current support:
 This service needs original photography of stock, warehouse, imported materials
 or dispatch if the client has it.
 
-### 05 Place — Real Estate
+### Real Estate
 
 Strong candidates:
 
@@ -118,7 +118,7 @@ Strong candidates:
 - **51** — finished white house (low resolution; not a hero)
 - Video **08** — orange building exterior
 
-### 05 Place — Landscaping
+### Landscaping
 
 Limited. Best current candidates:
 

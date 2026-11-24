@@ -86,7 +86,7 @@ export default function CompanyHero() {
                 className="mono mt-7 text-[8.5px] tracking-[0.14em] uppercase text-paper/45"
                 data-hero-fade
               >
-                Design · Build · Finish · Supply · Place
+                Eight services · One accountable team
               </p>
             </div>
           </div>
