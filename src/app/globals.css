@@ -538,17 +538,17 @@ body {
   background:
     linear-gradient(
       90deg,
-      rgba(6, 10, 8, 0.66) 0%,
-      rgba(6, 10, 8, 0.5) 34%,
-      rgba(6, 10, 8, 0.18) 66%,
-      rgba(6, 10, 8, 0) 82%
+      rgba(6, 10, 8, 0.76) 0%,
+      rgba(6, 10, 8, 0.6) 34%,
+      rgba(6, 10, 8, 0.24) 66%,
+      rgba(6, 10, 8, 0) 84%
     ),
     radial-gradient(70% 55% at 78% 18%, rgba(233, 162, 59, 0.04), transparent 62%),
     radial-gradient(
       95% 90% at 0% 78%,
-      rgba(6, 10, 8, 0.8) 0%,
-      rgba(6, 10, 8, 0.52) 40%,
-      rgba(6, 10, 8, 0) 75%
+      rgba(6, 10, 8, 0.86) 0%,
+      rgba(6, 10, 8, 0.58) 40%,
+      rgba(6, 10, 8, 0) 76%
     ),
     linear-gradient(
       180deg,
@@ -578,7 +578,9 @@ body {
   line-height: 0.88;
   letter-spacing: -0.06em;
   text-wrap: balance;
-  text-shadow: 0 2px 36px rgba(10, 42, 30, 0.22);
+  text-shadow:
+    0 2px 36px rgba(10, 42, 30, 0.32),
+    0 1px 2px rgba(6, 10, 8, 0.28);
 }
 
 .hero-image__line {
@@ -671,12 +673,12 @@ body {
   .hero-image--video .hero-image__wash {
     background: linear-gradient(
       180deg,
-      rgba(6, 10, 8, 0.42) 0%,
-      rgba(6, 10, 8, 0.12) 16%,
-      rgba(6, 10, 8, 0.28) 34%,
-      rgba(6, 10, 8, 0.56) 54%,
-      rgba(6, 10, 8, 0.72) 74%,
-      rgba(6, 10, 8, 0.8) 100%
+      rgba(6, 10, 8, 0.6) 0%,
+      rgba(6, 10, 8, 0.34) 14%,
+      rgba(6, 10, 8, 0.5) 34%,
+      rgba(6, 10, 8, 0.68) 54%,
+      rgba(6, 10, 8, 0.8) 74%,
+      rgba(6, 10, 8, 0.88) 100%
     );
   }
 
@@ -964,6 +966,10 @@ body {
     display: flex;
     align-items: center;
     transition: opacity 0.35s ease;
+  }
+
+  .site-nav.is-over-hero .site-nav__logo-tone {
+    filter: drop-shadow(0 1px 3px rgba(6, 10, 8, 0.5));
   }
 
   .nav-quote {

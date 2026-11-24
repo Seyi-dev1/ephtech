@@ -21,14 +21,20 @@ These are stock interiors, not Ephtech projects. They are used to test the motio
 - Usage: homepage "Built on site" feature (section 03).
 - Confirm ownership and permission before naming the client or building.
 
-## Company hero — temporary stock video
+## Company hero — temporary four-scene montage
 
-- File: `public/videos/company-hero.mp4`
-- Poster: `public/videos/company-hero-poster.jpg`
-- Source: Pexels video 8964731
-- Photographer: Mikael Blomkvist
-- URL: https://www.pexels.com/video/a-man-and-woman-walking-at-the-construction-site-8964731/
-- License: Pexels License. Free for commercial use. Attribution not required.
-- Usage: temporary company homepage hero, trimmed to 10 seconds and reduced to
-  960×540. Labelled “Illustrative brand image”. Replace with an Ephtech brand
-  film when available.
+- Files: `public/videos/company-hero.mp4` and
+  `public/videos/company-hero-poster.jpg`
+- Edit: four 3.5-second scenes with 0.8-second crossfades; 960×540; muted;
+  trimmed from the sources below. The hero is labelled “Illustrative brand image”.
+- License: Pexels License for all four clips. Free for commercial use.
+- Scene 1 — two Black women engineers on site: Kindel Media, Pexels video 8487867
+  https://www.pexels.com/video/close-up-of-women-talking-at-a-construction-site-8487867/
+- Scene 2 — finished living room: Max Vakhtbovych, Pexels video 7533207
+  https://www.pexels.com/video/a-modern-living-room-7533207/
+- Scene 3 — designed office interior: Luke Holley, Pexels video 34626856
+  https://www.pexels.com/video/modern-office-space-with-artistic-design-34626856/
+- Scene 4 — completed house and landscaped garden: Alef Morais, Pexels video 40808151
+  https://www.pexels.com/video/modern-tropical-house-with-lush-garden-40808151/
+- Usage: temporary company homepage hero. Replace with an Ephtech brand film when
+  available.
