@@ -51,11 +51,11 @@ export default function CompanyHero() {
               </span>
               <h1 className="hero-image__title">
                 <span className="hero-image__line">
-                  <span data-hero-line>One team.</span>
+                  <span data-hero-line>Success</span>
                 </span>
                 <span className="hero-image__line">
                   <span data-hero-line>
-                    From plan to <em>place</em>.
+                    through <em>Excellence</em>
                   </span>
                 </span>
               </h1>

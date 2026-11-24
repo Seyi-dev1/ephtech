@@ -33,7 +33,7 @@ export default function AboutPage() {
           <div className="grid gap-10 lg:grid-cols-12 lg:items-start lg:gap-14">
             <div className="lg:col-span-5" data-reveal>
               <span className="eyebrow text-muted">Who we are</span>
-              <h2 className="h2 mt-4">One team. From plan to place.</h2>
+              <h2 className="h2 mt-4">Success through Excellence</h2>
               <p className="body-lg mt-6">
                 Ephtech brings design, construction, interiors, materials and property under one
                 company. That range matters because projects rarely fit into a single trade: a

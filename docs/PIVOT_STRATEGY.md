@@ -25,10 +25,9 @@ DNA and change what leads the page.
 > accountable team across Lagos, Owerri and Aba. Clients can take one service
 > or combine several.
 
-The hero now leads with **“One team. From plan to place.”** — a concrete
-statement of the company’s range and single-point accountability. The client’s
-existing **“…Building a Better Tomorrow”** line can remain as a vision line in
-company boilerplate if desired, but it no longer carries the hero.
+The brand tagline is now **“Success through Excellence”** and the hero leads
+with it. The subline carries the company’s range: “Ephtech International Ltd is
+a construction, interiors, materials and property company across Nigeria.”
 
 ## 2. Service architecture
 
@@ -72,9 +71,10 @@ can be added at launch. The main nav becomes:
 
 A company-level editorial page, not a product catalogue:
 
-1. **Hero** — a company film or strong project still. Headline “One team. From
-   plan to place.” Subline covering design, construction, interiors, property
-   and materials. CTAs: “Explore our services” and “See our work.”
+1. **Hero** — a company film or strong project still. Tagline “Success through
+   Excellence”. Subline describing the company’s construction, interiors,
+   materials and property work across Nigeria. CTAs: “Explore our services” and
+   “See our work.”
 2. **Credibility strip** — RC 1216055 · Lagos, Owerri, Aba · one accountable
    team · eight services.
 3. **What we do** — the eight services presented directly, with a note that

@@ -20,7 +20,7 @@ for Ephtech International Limited. The board remains a product page.
 
 ## Homepage
 
-1. **Hero** — company-level film/still, “One team. From plan to place.”, services
+1. **Hero** — company-level film/still, “Success through Excellence”, services
    and work CTAs.
 2. **Credibility band** — RC number, branches, eight services and one-team
    accountability.
