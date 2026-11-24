@@ -61,8 +61,8 @@ export default function CompanyHero() {
               </h1>
 
               <p data-hero-fade className="hero-image__lede mt-6">
-                Design, construction, interiors, materials and property — one accountable team
-                across Lagos, Owerri and Aba.
+                Ephtech International Ltd is a construction, interiors, materials and property
+                company across Nigeria.
               </p>
 
               <div
