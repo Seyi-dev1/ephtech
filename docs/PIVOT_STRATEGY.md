@@ -1,0 +1,192 @@
+# Ephtech pivot: company-first strategy
+
+**Status:** pre-build direction. No site pages have been changed yet.
+
+**Visual direction board:** [`pivot/visual-direction.jpg`](./pivot/visual-direction.jpg)
+
+## 1. The shift
+
+The current site is a product microsite for Ephtech Board. The client wants a
+company site for **Ephtech International Limited**, with the board positioned as
+one product the company sells.
+
+The pivot is therefore about **narrative and structure**, not a full rebrand.
+The existing visual identity is a strong asset: paper, forest, amber, Instrument
+Serif/Sans, Plex Mono, restrained linework and an editorial grid. We keep that
+DNA and change what leads the page.
+
+### Positioning
+
+> **One company. Every stage.**
+>
+> Ephtech International plans, builds, finishes, supplies and develops — one
+> accountable team across Lagos, Owerri and Aba.
+
+The client’s existing line, **“…Building a Better Tomorrow,”** can remain the
+brand promise and hero language.
+
+## 2. Service architecture
+
+The client supplied eight services. They map cleanly to five chapters:
+
+| Chapter | Client service | What it covers |
+|---|---|---|
+| **01 Plan** | Design and Building Projects | Concept, design coordination, building projects and delivery |
+| **02 Build** | Road Construction | Civil works, roads, drainage and external works |
+| **03 Finish** | Olavic Ceiling and Wall Systems | Ceiling and wall systems, installation and finishes |
+| **03 Finish** | Interior Finishing | Fit-out, feature walls, staircases, painting and detail work |
+| **04 Supply** | Supply & Installation of Modern Building Materials | Materials supply, systems and installation support |
+| **04 Supply** | Importation of Modern Building Materials | Sourcing and importation of modern materials |
+| **05 Place** | Real Estate | Property development and real-estate projects |
+| **05 Place** | Landscaping | External environments, planting and landscape works |
+
+**Ephtech Board** sits inside the Supply/Finish capability as the flagship
+product. It gets its own product page, not the homepage.
+
+> Confirm the exact spelling and meaning of **“Olavic”** with the client before
+> writing public copy.
+
+## 3. Information architecture
+
+```text
+/                         Company-led home
+/about                    Company, branches, process, credentials
+/services                 Service hub — five chapters, eight services
+/services/[slug]          Individual service pages
+/projects                 Portfolio index, filterable by service/sector
+/projects/[slug]          Project dossier / case study
+/products                 Products and systems
+/products/ephtech-board   Ephtech Board product page
+/contact                  Quote and contact
+```
+
+The current `/board` content moves to `/products/ephtech-board`. Add a redirect
+if that URL has been shared. The main nav becomes:
+
+**Services · Projects · Products · About · Contact** + **Start a project**
+
+## 4. Homepage concept
+
+A company-level editorial page, not a product catalogue:
+
+1. **Hero** — a company film or strong project still. Headline around “Building
+   a better tomorrow.” Subline covering design, construction, interiors,
+   property and materials. CTAs: “Explore our services” and “Watch the showreel.”
+2. **Credibility strip** — RC 1216055 · Lagos, Owerri, Aba · one accountable
+   team · the five chapters.
+3. **What we do** — five large media chapters: Plan, Build, Finish, Supply,
+   Place. Each lists its services and links to the hub.
+4. **Selected work** — three or four project dossiers with service/sector tags
+   and strong imagery.
+5. **Products & materials** — a proper product shelf. Ephtech Board is featured
+   as one product among other systems and materials.
+6. **How we work** — design-to-handover process and one-team accountability.
+7. **Company** — story, branches, scale, sectors, people.
+8. **Closing CTA** — “Tell us what you’re building.”
+
+## 5. Page templates
+
+### Service page
+
+- Hero media and one-line promise
+- Who it is for / what it covers
+- Capabilities and deliverables
+- Process and materials
+- 2–3 related projects
+- Related services
+- Quote CTA
+
+### Project dossier
+
+- Full-bleed lead image or short film
+- Scope, location, sector, year, services used
+- 5–10 images / clips, including process and detail
+- Outcome and, where approved, client quote
+- Next project / related service links
+
+### Product page
+
+- Product hero and product photography
+- What it is, where it is used, system components
+- Confirmed specifications only
+- Installation and finish guidance
+- Related project proof
+- Quote / specification CTA
+
+## 6. Design direction
+
+**Built-environment editorial.** The confidence of an architectural monograph,
+the texture of a site journal, and the clarity of a product catalogue.
+
+### Keep
+
+- Paper / forest / amber palette
+- Instrument Serif for company statements and chapter titles
+- Instrument Sans for interface and body
+- IBM Plex Mono for project metadata
+- Editorial grid, generous margins, grain and restrained linework
+- Native scroll and quiet motion
+
+### Evolve
+
+- More full-bleed photography, fewer board diagrams on the homepage
+- Larger serif statements; less technical annotation in brand sections
+- Full-width image bands, asymmetric editorial grids and contact-sheet
+  galleries
+- Warm stone/greige as a secondary surface
+- Project metadata and captions that make the work feel documented
+- One hero film maximum; poster-first media everywhere else
+
+### Avoid
+
+- Generic construction-template imagery
+- Using the client’s marketing flyers or social screenshots as site media
+- Upscaling low-resolution WhatsApp images into full-bleed heroes
+- Multiple autoplay videos on one page
+- Scroll-jacking or heavy parallax, especially after removing Lenis
+
+## 7. Media strategy
+
+The library is documentary and mixed-quality. Treat it as evidence, not
+decoration.
+
+- **Tier A:** high-resolution images and original video for heroes and
+  full-bleed moments.
+- **Tier B:** 1080px-class images for cards, split layouts and project galleries.
+- **Tier C:** detail crops, low-resolution process shots and material samples.
+- **Source only:** flyers, screenshots and social graphics — use for information,
+  not as site imagery.
+
+Every media block should answer: **what service or project does this prove?**
+
+See [`MEDIA_INVENTORY.md`](./MEDIA_INVENTORY.md) and the contact sheets in
+[`docs/pivot`](./pivot/).
+
+## 8. Content requirements
+
+- Real project names, locations, dates and written client permission
+- Verified service descriptions, not invented capabilities
+- Confirmed product specifications
+- Team/leadership information if available
+- Certifications, memberships and HSE information if available
+- Testimonials or client quotes only with approval
+- Image and video credits, including owner-supplied assets
+
+## 9. Phased plan
+
+1. **Audit and brief** — media inventory, service map, open questions (this doc).
+2. **Direction** — visual direction board, homepage wireframe, service-hub
+   structure.
+3. **Build foundation** — global design system, navigation, homepage, service hub.
+4. **Content** — eight service pages, three to four project dossiers, about page.
+5. **Products and polish** — product pages, media performance, SEO, accessibility,
+   QA and launch.
+
+## 10. Decisions needed
+
+- Confirm “Olavic” and the exact public service names.
+- Confirm priority services and sectors.
+- Provide real project names, locations and permissions.
+- Decide whether Real Estate needs listings or a marketing page only.
+- Confirm the board moves to `/products/ephtech-board`.
+- Provide the best available originals for hero imagery and film.

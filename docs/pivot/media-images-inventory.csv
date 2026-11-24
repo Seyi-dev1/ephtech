@@ -1,0 +1,52 @@
+index,file,type,width,height,bytes,sha256
+01,"cathedral.jpeg",image,810,1080,103224,e2d38395b05a0743
+02,"logo-material.jpeg",image,723,1080,159349,c6d1b77501ecb2ed
+03,"staircase.jpeg",image,1013,1080,73786,0f2c0d3cf952106e
+04,"WhatsApp Image 2026-11-22 at 10.50.54 (1).jpeg",image,1080,605,49652,c7e6b5be0297248b
+05,"WhatsApp Image 2026-11-22 at 10.50.54 (2).jpeg",image,1080,617,61409,acf2ced9bdb765d3
+06,"WhatsApp Image 2026-11-22 at 10.50.54 (3).jpeg",image,1013,1080,73786,0f2c0d3cf952106e
+07,"WhatsApp Image 2026-11-22 at 10.50.54 (4).jpeg",image,1010,1080,76638,b2e9c28eeba97bd9
+08,"WhatsApp Image 2026-11-22 at 10.50.54.jpeg",image,1080,659,56965,149fb3e0ed82726b
+09,"WhatsApp Image 2026-11-22 at 13.49.47 (7).jpeg",image,1080,605,49652,c7e6b5be0297248b
+10,"WhatsApp Image 2026-11-22 at 13.49.47 (8).jpeg",image,1080,617,61409,acf2ced9bdb765d3
+11,"WhatsApp Image 2026-11-22 at 13.49.47 (9).jpeg",image,1013,1080,73786,0f2c0d3cf952106e
+12,"WhatsApp Image 2026-11-22 at 13.49.48 (1).jpeg",image,1010,1080,76638,b2e9c28eeba97bd9
+13,"WhatsApp Image 2026-11-23 at 17.45.50.jpeg",image,1080,267,44958,56c94cb8a8dc5133
+14,"WhatsApp Image 2026-11-23 at 18.02.30 (1).jpeg",image,1080,810,66167,de60fafb25c7abf8
+15,"WhatsApp Image 2026-11-23 at 18.02.30 (2).jpeg",image,531,1080,55421,58cc1c66c100fb37
+16,"WhatsApp Image 2026-11-23 at 18.02.30 (3).jpeg",image,499,1080,90087,f11f14d2af7aa18f
+17,"WhatsApp Image 2026-11-23 at 18.02.30.jpeg",image,1080,810,58471,77a50378fab199ae
+18,"WhatsApp Image 2026-11-23 at 18.02.31 (1).jpeg",image,498,1080,97045,821d4efd5ed05c1a
+19,"WhatsApp Image 2026-11-23 at 18.02.31.jpeg",image,499,1080,47246,ba650bc5c2e1cea8
+20,"WhatsApp Image 2026-11-23 at 18.02.33 (1).jpeg",image,1080,810,98533,38e601711a9fc65f
+21,"WhatsApp Image 2026-11-23 at 18.02.33 (2).jpeg",image,498,1080,97113,95bd2511347f9671
+22,"WhatsApp Image 2026-11-23 at 18.02.33 (3).jpeg",image,499,1080,75742,0a6ac6da580c0730
+23,"WhatsApp Image 2026-11-23 at 18.02.33 (4).jpeg",image,1080,810,175798,43237cbabee852ba
+24,"WhatsApp Image 2026-11-23 at 18.02.33 (5).jpeg",image,1080,810,164547,190330a6741a4c00
+25,"WhatsApp Image 2026-11-23 at 18.02.33 (6).jpeg",image,810,1080,143480,650e3b0e7b125b82
+26,"WhatsApp Image 2026-11-23 at 18.02.33 (7).jpeg",image,1080,810,137450,56bf051132bc4eef
+27,"WhatsApp Image 2026-11-23 at 18.02.33.jpeg",image,810,1080,68558,ee20e7887c91c9ae
+28,"WhatsApp Image 2026-11-23 at 18.02.34 (1).jpeg",image,720,900,102508,0e384049cfe2e1c4
+29,"WhatsApp Image 2026-11-23 at 18.02.34 (2).jpeg",image,720,540,73868,9c66bf4682ba8780
+30,"WhatsApp Image 2026-11-23 at 18.02.34 (3).jpeg",image,1080,607,122818,2aafaae9edd22c6e
+31,"WhatsApp Image 2026-11-23 at 18.02.34 (4).jpeg",image,1080,607,91601,16da8ad0326a3e6a
+32,"WhatsApp Image 2026-11-23 at 18.02.34 (5).jpeg",image,1080,810,103432,2c45d8e09c3539a2
+33,"WhatsApp Image 2026-11-23 at 18.02.34 (6).jpeg",image,810,1080,214969,f6aee1578525029c
+34,"WhatsApp Image 2026-11-23 at 18.02.34 (7).jpeg",image,1080,810,137576,d67d11efa2a2eb32
+35,"WhatsApp Image 2026-11-23 at 18.02.34 (8).jpeg",image,1080,810,157765,75e3201ba5278c93
+36,"WhatsApp Image 2026-11-23 at 18.02.34 (9).jpeg",image,1077,1028,85270,d31140b989eb835b
+37,"WhatsApp Image 2026-11-23 at 18.02.34 (10).jpeg",image,810,1080,229214,d57bb84a66d9ecf3
+38,"WhatsApp Image 2026-11-23 at 18.02.34 (11).jpeg",image,619,495,21381,9f79d7c4f34b3eba
+39,"WhatsApp Image 2026-11-23 at 18.02.34 (12).jpeg",image,1080,810,248227,b86074dfe54d0114
+40,"WhatsApp Image 2026-11-23 at 18.02.34 (13).jpeg",image,540,960,57905,6d98b8b4546261df
+41,"WhatsApp Image 2026-11-23 at 18.02.34 (14).jpeg",image,473,1024,20112,b2d44a7cb4587462
+42,"WhatsApp Image 2026-11-23 at 18.02.34.jpeg",image,810,1080,198757,4492582a72f8344e
+43,"WhatsApp Image 2026-11-23 at 18.02.35 (1).jpeg",image,810,1080,189864,5e59008e4d3d6fc6
+44,"WhatsApp Image 2026-11-23 at 18.02.35 (2).jpeg",image,1080,810,213252,710e16b260b1ef8a
+45,"WhatsApp Image 2026-11-23 at 18.02.35 (3).jpeg",image,1080,810,172711,f625eb08cbec8065
+46,"WhatsApp Image 2026-11-23 at 18.02.35 (4).jpeg",image,1080,810,201178,eb58899af18be6e6
+47,"WhatsApp Image 2026-11-23 at 18.02.35 (5).jpeg",image,810,1080,188067,8666f57412fda04e
+48,"WhatsApp Image 2026-11-23 at 18.02.35 (6).jpeg",image,810,1080,141510,d71679b852fcb918
+49,"WhatsApp Image 2026-11-23 at 18.02.35 (7).jpeg",image,1080,810,154071,7474448349e58cc1
+50,"WhatsApp Image 2026-11-23 at 18.02.35 (8).jpeg",image,810,1080,163877,9758984363ba6df4
+51,"WhatsApp Image 2026-11-23 at 18.02.35.jpeg",image,705,584,71073,e10cfeb6831166b1
