@@ -77,16 +77,6 @@ composition. They are presented as illustrative in the UI, not as Ephtech
 project photographs. Complete the source and licence record for every file
 before launch, or replace them with real Ephtech photography.
 
-## Hero video — second scene
-
-**“Bright and spacious minimalist living room with modern furniture and wooden flooring.”**
-
-- Photographer: Hiroom
-- Source: Pexels, photo 17240682
-- URL: https://www.pexels.com/photo/living-room-interior-design-17240682/
-- License: Pexels License. Free for commercial use. Attribution is not required.
-- Usage: cropped to 16:9, slowly zoomed, and graded into the hero video.
-
 ## Company pivot — temporary stock imagery
 
 These images are illustrative and are labelled as such in the UI. They are not
@@ -100,7 +90,8 @@ available.
 - Source: Pexels, photo 33851637
 - URL: https://www.pexels.com/photo/modern-building-construction-in-dublin-cityscape-33851637/
 - License: Pexels License. Free for commercial use. Attribution not required.
-- Usage: temporary homepage hero; marked “Illustrative brand image”.
+- Usage: poster/fallback image for the homepage hero; the montage itself is
+  marked “Illustrative brand imagery”.
 
 ### Road construction service
 
@@ -129,6 +120,19 @@ available.
 - License: Pexels License. Free for commercial use. Attribution not required.
 - Usage: Landscaping service and project gallery; labelled illustrative.
 
+### Hero video (temporary four-scene montage)
+
+- Files: `public/videos/company-hero.mp4` and
+  `public/videos/company-hero-poster.jpg`
+- Edit: 15.6 seconds, 1920×1080, 30 fps; four 4.5-second scenes with 0.8-second
+  crossfades. Scenes 1–3 use live camera movement; scene 4 is a high-resolution
+  still with a slow tilt. There is no synthetic zoom.
+- All four scenes are Pexels stock. The hero label reads “Illustrative brand
+  imagery”; none of this is presented as Ephtech project footage.
+- Full source list and URLs: [`docs/VIDEO_CREDITS.md`](VIDEO_CREDITS.md).
+- Usage: temporary company homepage hero. Replace with an Ephtech brand film when
+  suitable client footage is available.
+
 ## Client-supplied company media
 
 Source folder: `~/Desktop/ephtech-media/` (WhatsApp export; originals retained).
@@ -150,22 +154,4 @@ ownership, project permissions and written approval before public launch.
 WhatsApp compression limits full-bleed use; request originals for hero-scale
 placements.
 
-### Hero video (temporary four-scene montage)
 
-- Files: `public/videos/company-hero.mp4` and
-  `public/videos/company-hero-poster.jpg`
-- Edit: four 3.5-second scenes with 0.8-second crossfades; 960×540; muted.
-  Scene 1 is stock; scenes 2–4 are client-supplied stills with a slow zoom. The
-  hero label reads “Client work + illustrative scene”.
-- License: Pexels License for all four clips. Free for commercial use.
-- Scene 1 — two Black women engineers on site: **Kindel Media**, Pexels video
-  [8487867](https://www.pexels.com/video/close-up-of-women-talking-at-a-construction-site-8487867/).
-  Stock / illustrative.
-- Scene 2 — furnished apartment with white ceiling: **client-supplied**
-  `work-interior.jpg` (from `WhatsApp Image 2026-11-22 at 10.50.54 (2).jpeg`).
-- Scene 3 — office with suspended white ceiling: **client-supplied**
-  `work-ceiling.jpg` (from `WhatsApp Image 2026-11-22 at 10.50.54.jpeg`).
-- Scene 4 — completed Nigerian residence: **client-supplied**
-  `work-real-estate.jpg` (from `WhatsApp Image 2026-11-23 at 18.02.34 (9).jpeg`).
-- Usage: temporary company homepage hero. Replace with an Ephtech brand film when
-  available.

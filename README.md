@@ -54,9 +54,9 @@ npm run start
 
 ## What is temporary
 
-- The homepage hero mixes a temporary stock opening scene with client-supplied
-  interior and exterior stills. Stock is labelled **Illustrative**; the hero
-  label reads “Client work + illustrative scene”.
+- The homepage hero is a temporary four-scene stock montage: engineers, a
+  furnished apartment, a conference room and a Nigerian villa. It is labelled
+  **Illustrative brand imagery** and is not presented as Ephtech project footage.
 - The road-construction, importation and landscaping images are temporary stock
   and are labelled **Illustrative**.
 - Client project names and locations are withheld pending approval.

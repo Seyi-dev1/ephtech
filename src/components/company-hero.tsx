@@ -105,7 +105,7 @@ export default function CompanyHero() {
         </div>
       </div>
       <span className="mono absolute right-[clamp(20px,4vw,64px)] bottom-[clamp(24px,4vw,44px)] z-10 text-[7.5px] tracking-[0.14em] uppercase text-paper/45">
-        Client work + illustrative scene
+        Illustrative brand imagery
       </span>
     </section>
   );
