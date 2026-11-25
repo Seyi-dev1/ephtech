@@ -35,6 +35,16 @@ projects when the client supplies suitable horizontal footage.
   gallery and played only on request.
 - Confirm project permissions before public launch.
 
+## Interior Finishing gallery (client-supplied)
+
+- Source folder: `~/Desktop/ephtech-media/_sorted/03-finish-interiors/`.
+- Files: `public/videos/finish-interiors/01.mp4` through `05.mp4`.
+- Posters: `public/media/finish-interiors/video-01.jpg` through
+  `video-05.jpg`.
+- Five client clips, each trimmed to the first 20 seconds for the gallery,
+  transcoded for web and played only on request.
+- Confirm project permissions before public launch.
+
 ## Cathedral installation (owner-supplied)
 
 - Source: Supplied locally (`Desktop/cathedral-video.mp4`).

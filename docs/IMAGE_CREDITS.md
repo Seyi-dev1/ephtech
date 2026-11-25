@@ -182,6 +182,17 @@ Source folders: `~/Desktop/ephtech-media/_sorted/01-plan-design/` and
 - These are client site records, not stock. Confirm project permissions before
   public launch.
 
+## Interior Finishing gallery (client-supplied)
+
+Source folder: `~/Desktop/ephtech-media/_sorted/03-finish-interiors/`.
+
+- 18 images copied to `public/media/finish-interiors/01.jpg` through
+  `18.jpg`.
+- 5 video posters copied to `public/media/finish-interiors/video-01.jpg`
+  through `video-05.jpg`.
+- These are client work, including ceiling, wall, staircase and cathedral
+  finishes. Confirm project permissions before public launch.
+
 ## Client-supplied company media
 
 Source folder: `~/Desktop/ephtech-media/` (WhatsApp export; originals retained).
