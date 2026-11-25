@@ -140,30 +140,41 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4" data-reveal-group>
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:gap-6" data-reveal-group>
             {companyServices.map((service) => (
-              <Link key={service.slug} href={`/services/${service.slug}`} className="group block">
-                <div className="media relative aspect-[4/3] overflow-hidden">
+              <Link
+                key={service.slug}
+                href={`/services/${service.slug}`}
+                className="group relative block overflow-hidden bg-forest"
+              >
+                <div className="media relative aspect-[16/11]">
                   <Image
                     src={service.image}
                     alt={service.alt}
                     fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     placeholder="blur"
-                    className="photo-grade object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                    className="photo-grade object-cover"
                   />
-                  <span className="mono absolute top-3 left-3 bg-paper/92 px-2 py-1 text-[8px] tracking-[0.14em] uppercase text-ink">
+                  <div className="service-card__scrim absolute inset-0" aria-hidden="true" />
+                  <span className="mono absolute top-3 left-3 z-10 bg-paper/92 px-2 py-1 text-[8px] tracking-[0.14em] uppercase text-ink">
                     {service.imageNote}
                   </span>
-                </div>
-                <div className="mt-4 border-t border-line pt-3">
-                  <div className="flex items-start justify-between gap-3">
-                    <h3 className="font-display text-xl font-medium tracking-[-0.025em]">
-                      {service.title}
-                    </h3>
-                    <ArrowUpRight className="mt-1 h-3.5 w-3.5 shrink-0 text-muted transition-colors group-hover:text-forest" />
+                  <div className="absolute inset-x-0 bottom-0 z-10 p-5 sm:p-6">
+                    <div className="flex items-end justify-between gap-5">
+                      <div>
+                        <h3 className="font-display text-[clamp(1.4rem,2.4vw,2.1rem)] leading-[1.02] font-medium tracking-[-0.03em] text-paper">
+                          {service.title}
+                        </h3>
+                        <p className="service-card__summary mt-2 max-w-[38ch] text-[12px] leading-relaxed text-paper/75">
+                          {service.cardSummary}
+                        </p>
+                      </div>
+                      <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-paper/35 text-paper transition-colors duration-300 group-hover:border-amber group-hover:bg-amber group-hover:text-forest">
+                        <ArrowUpRight className="h-4 w-4" />
+                      </span>
+                    </div>
                   </div>
-                  <p className="mt-2 text-[12.5px] leading-relaxed text-muted">{service.summary}</p>
                 </div>
               </Link>
             ))}
