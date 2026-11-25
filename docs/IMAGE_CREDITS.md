@@ -106,22 +106,28 @@ available.
 ### Road construction gallery
 
 - Files: `src/assets/images/service-road-paving.jpg`,
-  `src/assets/images/service-road-finish.jpg`
+  `src/assets/images/service-road-finish.jpg`,
+  `src/assets/images/service-road-machinery.jpg`
 - `service-road-paving.jpg`: Tom Schamberger, Pexels photo 34053335.
   https://www.pexels.com/photo/road-construction-in-hood-river-oregon-34053335/
 - `service-road-finish.jpg`: Wolfgang Weiser, Pexels photo 38733805.
   https://www.pexels.com/photo/road-construction-in-geesthacht-schleswig-holstein-38733805/
+- `service-road-machinery.jpg`: Zeleboba, Pexels photo 34338597.
+  https://www.pexels.com/photo/road-construction-machinery-in-urban-setting-34338597/
 - License: Pexels License. Free for commercial use. Attribution not required.
 - Usage: service detail gallery; labelled illustrative.
 
 ### Importation gallery
 
 - Files: `src/assets/images/service-import-ship.jpg`,
-  `src/assets/images/service-import-port.jpg`
+  `src/assets/images/service-import-port.jpg`,
+  `src/assets/images/service-import-cranes.jpg`
 - `service-import-ship.jpg`: Marcello Sokal, Pexels photo 8555366.
   https://www.pexels.com/photo/view-of-a-loaded-with-containers-cargo-ship-8555366/
 - `service-import-port.jpg`: Nezaket, Pexels photo 31244440.
   https://www.pexels.com/photo/vibrant-container-port-with-cargo-cranes-31244440/
+- `service-import-cranes.jpg`: Wolfgang Weiser, Pexels photo 20581299.
+  https://www.pexels.com/photo/cranes-over-a-container-ship-20581299/
 - License: Pexels License. Free for commercial use. Attribution not required.
 - Usage: service detail gallery; labelled illustrative.
 

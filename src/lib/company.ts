@@ -1,20 +1,24 @@
 import type { StaticImageData } from "next/image";
 import boardProduct from "@/assets/images/board-product.jpg";
 import panelInstall from "@/assets/images/panel-install.jpg";
+import projectCivic from "@/assets/images/project-civic.jpg";
 import projectCommercial from "@/assets/images/project-commercial.jpg";
 import projectResidence from "@/assets/images/project-residence.jpg";
 import serviceDesignPlan from "@/assets/images/service-design-plan.jpg";
 import serviceImport from "@/assets/images/service-import.jpg";
+import serviceImportCranes from "@/assets/images/service-import-cranes.jpg";
 import serviceImportPort from "@/assets/images/service-import-port.jpg";
 import serviceImportShip from "@/assets/images/service-import-ship.jpg";
 import serviceLandscaping from "@/assets/images/service-landscaping.jpg";
 import serviceRoad from "@/assets/images/service-road.jpg";
 import serviceRoadFinish from "@/assets/images/service-road-finish.jpg";
+import serviceRoadMachinery from "@/assets/images/service-road-machinery.jpg";
 import serviceRoadPaving from "@/assets/images/service-road-paving.jpg";
 import siteDrone from "@/assets/images/site-drone.jpg";
 import teamSite from "@/assets/images/team-site.jpg";
 import workBuild from "@/assets/images/work-build.jpg";
 import workCeiling from "@/assets/images/work-ceiling.jpg";
+import workCeilingDetail from "@/assets/images/work-ceiling-detail.jpg";
 import workDetail from "@/assets/images/work-detail.jpg";
 import workInterior from "@/assets/images/work-interior.jpg";
 import workRealEstate from "@/assets/images/work-real-estate.jpg";
@@ -68,6 +72,11 @@ export const companyServices: CompanyService[] = [
         alt: "Aerial view of a construction site with groundworks and site team.",
         note: "Illustrative image",
       },
+      {
+        image: teamSite,
+        alt: "Ephtech team on a construction site.",
+        note: "Completed work",
+      },
     ],
     capabilities: [
       "Project planning and programme development",
@@ -107,6 +116,11 @@ export const companyServices: CompanyService[] = [
       {
         image: serviceRoadFinish,
         alt: "Newly paved road with traffic barriers during construction.",
+        note: "Illustrative image",
+      },
+      {
+        image: serviceRoadMachinery,
+        alt: "Heavy machinery lined up for road construction.",
         note: "Illustrative image",
       },
     ],
@@ -150,6 +164,11 @@ export const companyServices: CompanyService[] = [
         alt: "Finished staircase with a panelled wall and concealed lighting.",
         note: "Completed work",
       },
+      {
+        image: workDetail,
+        alt: "Completed decorative interior with a detailed ceiling and wall finish.",
+        note: "Completed work",
+      },
     ],
     capabilities: [
       "Suspended ceilings and dry partitions",
@@ -191,6 +210,11 @@ export const companyServices: CompanyService[] = [
         alt: "Ceiling and wall panels being installed on site.",
         note: "Illustrative image",
       },
+      {
+        image: workCeilingDetail,
+        alt: "Completed ceiling and wall detail.",
+        note: "Completed work",
+      },
     ],
     capabilities: [
       "Ephtech Board and factory-finished panels",
@@ -230,6 +254,11 @@ export const companyServices: CompanyService[] = [
       {
         image: serviceImportPort,
         alt: "Container port with cranes, cargo ship and stacked containers.",
+        note: "Illustrative image",
+      },
+      {
+        image: serviceImportCranes,
+        alt: "Cargo cranes working over a container ship at port.",
         note: "Illustrative image",
       },
     ],
@@ -273,6 +302,11 @@ export const companyServices: CompanyService[] = [
         alt: "Modern commercial building with a pool and terrace.",
         note: "Illustrative image",
       },
+      {
+        image: projectCivic,
+        alt: "Contemporary civic building with a dramatic geometric facade.",
+        note: "Illustrative image",
+      },
     ],
     capabilities: [
       "Residential and commercial property development",
@@ -313,6 +347,11 @@ export const companyServices: CompanyService[] = [
         image: workRealEstate,
         alt: "Completed residential exterior with a planted frontage and paved access.",
         note: "Completed work",
+      },
+      {
+        image: projectCommercial,
+        alt: "Landscaped terrace and pool area at a modern property.",
+        note: "Illustrative image",
       },
     ],
     capabilities: [
