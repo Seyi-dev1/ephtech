@@ -193,52 +193,6 @@ export const companyServices: CompanyService[] = [
     ],
   },
   {
-    slug: "road-construction",
-    title: "Road Construction",
-    summary:
-      "Roads, drainage and external works planned around the site, the traffic and the long-term maintenance of the surface.",
-    cardSummary: "Roads, drainage and external works built around the site.",
-    description:
-      "Our civil works cover road formation, earthworks, drainage, paving and finishing. We plan the works around access and site logistics, then deliver a surface that drains, holds its profile and stands up to daily use.",
-    image: serviceRoad,
-    alt: "Road roller compacting asphalt on a road construction site.",
-    imageNote: "Illustrative image",
-    gallery: [
-      {
-        image: serviceRoad,
-        alt: "Road roller compacting asphalt on a road construction site.",
-        note: "Illustrative image",
-      },
-      {
-        image: serviceRoadPaving,
-        alt: "Paving equipment and crew laying asphalt on a road.",
-        note: "Illustrative image",
-      },
-      {
-        image: serviceRoadFinish,
-        alt: "Newly paved road with traffic barriers during construction.",
-        note: "Illustrative image",
-      },
-      {
-        image: serviceRoadMachinery,
-        alt: "Heavy machinery lined up for road construction.",
-        note: "Illustrative image",
-      },
-    ],
-    capabilities: [
-      "Road formation and earthworks",
-      "Drainage and stormwater works",
-      "Paving, asphalt and surface finishing",
-      "Kerbs, access and external works",
-      "Site logistics and traffic planning",
-    ],
-    outcomes: [
-      "Drainage considered before the surface is laid",
-      "Works sequenced around access and live sites",
-      "A maintainable finish, not just a finished surface",
-    ],
-  },
-  {
     slug: "interior-finishing",
     title: "Interior Finishing",
     summary:
@@ -382,6 +336,52 @@ export const companyServices: CompanyService[] = [
       "One team responsible for ceilings, walls and the finished room",
       "Dry installation with no curing downtime",
       "A clean, coordinated handover",
+    ],
+  },
+  {
+    slug: "road-construction",
+    title: "Road Construction",
+    summary:
+      "Roads, drainage and external works planned around the site, the traffic and the long-term maintenance of the surface.",
+    cardSummary: "Roads, drainage and external works built around the site.",
+    description:
+      "Our civil works cover road formation, earthworks, drainage, paving and finishing. We plan the works around access and site logistics, then deliver a surface that drains, holds its profile and stands up to daily use.",
+    image: serviceRoad,
+    alt: "Road roller compacting asphalt on a road construction site.",
+    imageNote: "Illustrative image",
+    gallery: [
+      {
+        image: serviceRoad,
+        alt: "Road roller compacting asphalt on a road construction site.",
+        note: "Illustrative image",
+      },
+      {
+        image: serviceRoadPaving,
+        alt: "Paving equipment and crew laying asphalt on a road.",
+        note: "Illustrative image",
+      },
+      {
+        image: serviceRoadFinish,
+        alt: "Newly paved road with traffic barriers during construction.",
+        note: "Illustrative image",
+      },
+      {
+        image: serviceRoadMachinery,
+        alt: "Heavy machinery lined up for road construction.",
+        note: "Illustrative image",
+      },
+    ],
+    capabilities: [
+      "Road formation and earthworks",
+      "Drainage and stormwater works",
+      "Paving, asphalt and surface finishing",
+      "Kerbs, access and external works",
+      "Site logistics and traffic planning",
+    ],
+    outcomes: [
+      "Drainage considered before the surface is laid",
+      "Works sequenced around access and live sites",
+      "A maintainable finish, not just a finished surface",
     ],
   },
   {
