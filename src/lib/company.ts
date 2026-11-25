@@ -6,7 +6,6 @@ import serviceLandscaping from "@/assets/images/service-landscaping.jpg";
 import serviceRoad from "@/assets/images/service-road.jpg";
 import teamSite from "@/assets/images/team-site.jpg";
 import workBuild from "@/assets/images/work-build.jpg";
-import workCeiling from "@/assets/images/work-ceiling.jpg";
 import workDetail from "@/assets/images/work-detail.jpg";
 import workInterior from "@/assets/images/work-interior.jpg";
 import workRealEstate from "@/assets/images/work-real-estate.jpg";
@@ -75,50 +74,26 @@ export const companyServices: CompanyService[] = [
     ],
   },
   {
-    slug: "ceiling-and-wall-systems",
-    title: "Ceiling & Wall Systems",
-    summary:
-      "Suspended ceilings, dry partitions and wall linings specified, supplied and installed by one team.",
-    cardSummary: "Suspended ceilings, partitions and wall linings, supplied and installed.",
-    description:
-      "From a simple flat ceiling to stepped set-outs, concealed lighting and acoustic partitions, we specify the right system and install it cleanly. The Ephtech Board system sits at the centre of this service, supported by grids, channels, jointing compounds and trained crews.",
-    image: workCeiling,
-    alt: "Completed office interior with a suspended ceiling and wall panels.",
-    imageNote: "Completed work",
-    capabilities: [
-      "Suspended ceiling systems",
-      "Dry-wall partitions and wall linings",
-      "Feature ceilings and concealed lighting",
-      "Acoustic and moisture-resistant systems",
-      "Jointing, finishing and paint-ready surfaces",
-    ],
-    outcomes: [
-      "Flat, consistent ceiling planes",
-      "Dry installation with no curing downtime",
-      "A finish detailed for the way the room is used",
-    ],
-  },
-  {
     slug: "interior-finishing",
     title: "Interior Finishing",
     summary:
-      "Turnkey fit-out, feature walls, staircases, joinery and the final details that make a space feel complete.",
-    cardSummary: "Fit-out, joinery and the final finishes that complete a space.",
+      "Turnkey fit-out, suspended ceilings, partitions, feature walls, staircases, joinery and the final details that complete a space.",
+    cardSummary: "Ceilings, partitions, joinery and final finishes.",
     description:
-      "We take interiors from bare shell to a finished, usable space. The scope can include partitions, wall panels, staircases, built-in joinery, screeding, painting and the final coordination of lighting and finishes.",
+      "We take interiors from bare shell to a finished, usable space. The scope covers suspended ceilings, dry partitions, wall linings, feature walls, staircases, built-in joinery, screeding, painting and the final coordination of lighting and finishes.",
     image: workInterior,
     alt: "Finished living room with a white panel wall, ceiling and warm lighting.",
     imageNote: "Completed work",
     capabilities: [
-      "Turnkey interior fit-out",
-      "Feature walls and wall panels",
+      "Suspended ceilings and dry partitions",
+      "Feature walls, wall linings and acoustic options",
       "Staircases and built-in joinery",
       "Screeding, painting and surface finishes",
       "Lighting and finish coordination",
     ],
     outcomes: [
-      "One team responsible for the finished room",
-      "Details resolved before installation",
+      "One team responsible for ceilings, walls and the finished room",
+      "Dry installation with no curing downtime",
       "A clean, coordinated handover",
     ],
   },

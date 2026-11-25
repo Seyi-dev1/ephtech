@@ -38,7 +38,6 @@ for Ephtech International Limited. The board remains a product page.
 
 - Design & Building Projects
 - Road Construction
-- Ceiling & Wall Systems
 - Interior Finishing
 - Supply & Installation of Building Materials
 - Importation of Modern Building Materials

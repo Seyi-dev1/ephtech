@@ -791,13 +791,8 @@ body {
   filter: saturate(0.82) contrast(1.04) brightness(0.99);
 }
 
-.service-card__scrim {
-  background: linear-gradient(
-    180deg,
-    rgba(6, 10, 8, 0.02) 0%,
-    rgba(6, 10, 8, 0.16) 38%,
-    rgba(6, 10, 8, 0.88) 100%
-  );
+.service-card__body {
+  background: rgba(6, 10, 8, 0.86);
 }
 
 /* ---------- room studies ---------- */

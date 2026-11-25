@@ -10,7 +10,7 @@ import { ArrowRight, ArrowUpRight, WhatsApp } from "@/components/icons";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Services from Ephtech International across design and building, road construction, ceiling and wall systems, interior finishing, building materials, importation, real estate and landscaping.",
+    "Services from Ephtech International across design and building, road construction, interior finishing, building materials, importation, real estate and landscaping.",
   alternates: { canonical: "/services" },
 };
 

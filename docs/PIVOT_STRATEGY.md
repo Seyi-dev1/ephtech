@@ -39,8 +39,7 @@ without framing them as a mandatory sequence:
 |---|---|
 | Design and Building Projects | Concept, design coordination, building projects and delivery |
 | Road Construction | Civil works, roads, drainage and external works |
-| Ceiling & Wall Systems | Ceiling and wall systems, installation and finishes |
-| Interior Finishing | Fit-out, feature walls, staircases, painting and detail work |
+| Interior Finishing | Fit-out, suspended ceilings, partitions, feature walls, staircases and finishes |
 | Supply & Installation of Modern Building Materials | Materials supply, systems and installation support |
 | Importation of Modern Building Materials | Sourcing and importation of modern materials |
 | Real Estate | Property development and real-estate projects |
@@ -188,8 +187,8 @@ See [`MEDIA_INVENTORY.md`](./MEDIA_INVENTORY.md) and the contact sheets in
 
 ## 10. Decisions needed
 
-- Confirm the exact public service names. “Olavic” has been replaced with
-  “Ceiling & Wall Systems” in the implementation.
+- Confirm the exact public service names. Ceilings and wall systems are now part
+  of Interior Finishing rather than a separate service.
 - Confirm priority services and sectors.
 - Provide real project names, locations and permissions.
 - Decide whether Real Estate needs listings or a marketing page only.

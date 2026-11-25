@@ -47,9 +47,9 @@ npm run start
 - Company name, RC number, addresses, phone number and service scope are based on
   the supplied company profile and the owner’s service list.
 - Client-supplied photography is presented as completed work where appropriate.
-- The services are: design and building projects, road construction, ceiling and
-  wall systems, interior finishing, building materials supply, importation,
-  real estate and landscaping. Clients can take one service or combine several.
+- The services are: design and building projects, road construction, interior
+  finishing, building materials supply, importation, real estate and landscaping.
+  Clients can take one service or combine several.
 
 ## What is temporary
 

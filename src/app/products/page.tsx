@@ -19,11 +19,11 @@ export const metadata: Metadata = {
 
 const products = [
   {
-    title: "Ceiling & Wall Systems",
+    title: "Interior Systems",
     note: "System",
     image: workCeiling,
     alt: "Completed office interior with a suspended ceiling and wall panels.",
-    href: "/services/ceiling-and-wall-systems",
+    href: "/services/interior-finishing",
     body: "Suspended ceilings, dry partitions, wall linings and the components that make the system work.",
     imageNote: "Client work",
   },

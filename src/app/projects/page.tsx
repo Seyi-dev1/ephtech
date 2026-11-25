@@ -24,7 +24,7 @@ const work = [
   {
     image: workCeiling,
     title: "Office fit-out",
-    service: "Ceilings & wall systems",
+    service: "Interior finishing",
     note: "Completed work",
     alt: "Completed office interior with a suspended ceiling and wall panels.",
   },

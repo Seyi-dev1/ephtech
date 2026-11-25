@@ -93,7 +93,7 @@ const selectedWork = [
   {
     image: workCeiling,
     title: "Office fit-out",
-    service: "Ceilings & wall systems",
+    service: "Interior finishing",
     alt: "Completed office interior with a suspended ceiling and wall panels.",
   },
   {
@@ -142,13 +142,15 @@ export default function Home() {
           </div>
 
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6" data-reveal-group>
-            {companyServices.map((service) => (
+            {companyServices.map((service, index) => (
               <Link
                 key={service.slug}
                 href={`/services/${service.slug}`}
-                className="group relative block overflow-hidden bg-forest"
+                className={`group relative block overflow-hidden bg-forest ${
+                  index === companyServices.length - 1 ? "lg:col-start-2" : ""
+                }`}
               >
-                <div className="media relative aspect-[16/11]">
+                <div className="media relative aspect-[5/4] lg:aspect-[16/11]">
                   <Image
                     src={service.image}
                     alt={service.alt}
@@ -157,11 +159,10 @@ export default function Home() {
                     placeholder="blur"
                     className="photo-grade object-cover"
                   />
-                  <div className="service-card__scrim absolute inset-0" aria-hidden="true" />
                   <span className="mono absolute top-3 left-3 z-10 bg-paper/92 px-2 py-1 text-[8px] tracking-[0.14em] uppercase text-ink">
                     {service.imageNote}
                   </span>
-                  <div className="absolute inset-x-0 bottom-0 z-10 p-5 sm:p-6">
+                  <div className="service-card__body absolute inset-x-0 bottom-0 z-10 p-5 pt-16 sm:p-6 sm:pt-20">
                     <div className="flex items-end justify-between gap-5">
                       <div>
                         <h3 className="font-display text-[clamp(1.4rem,2.4vw,2.1rem)] leading-[1.02] font-medium tracking-[-0.03em] text-paper">
