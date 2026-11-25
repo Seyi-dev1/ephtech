@@ -23,6 +23,7 @@ export default function ServiceGalleryCarousel({ items, serviceTitle }: Props) {
   const trackRef = useRef<HTMLDivElement>(null);
   const offsetRef = useRef(0);
   const groupWidthRef = useRef(1);
+  const pointerDownRef = useRef(false);
   const draggingRef = useRef(false);
   const videoPlayingRef = useRef(false);
   const lastXRef = useRef(0);
@@ -59,7 +60,12 @@ export default function ServiceGalleryCarousel({ items, serviceTitle }: Props) {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
 
     const tick = () => {
-      if (!draggingRef.current && !videoPlayingRef.current && !reduced.matches) {
+      if (
+        !pointerDownRef.current &&
+        !draggingRef.current &&
+        !videoPlayingRef.current &&
+        !reduced.matches
+      ) {
         offsetRef.current -= 0.65;
         wrapOffset();
         applyOffset();
@@ -75,15 +81,22 @@ export default function ServiceGalleryCarousel({ items, serviceTitle }: Props) {
   }, [copies]);
 
   const onPointerDown = (event: ReactPointerEvent<HTMLDivElement>) => {
-    draggingRef.current = true;
+    pointerDownRef.current = true;
+    draggingRef.current = false;
     lastXRef.current = event.clientX;
     pointerIdRef.current = event.pointerId;
-    event.currentTarget.setPointerCapture(event.pointerId);
   };
 
   const onPointerMove = (event: ReactPointerEvent<HTMLDivElement>) => {
-    if (!draggingRef.current) return;
+    if (!pointerDownRef.current) return;
     const delta = event.clientX - lastXRef.current;
+
+    if (!draggingRef.current) {
+      if (Math.abs(delta) < 6) return;
+      draggingRef.current = true;
+      event.currentTarget.setPointerCapture(event.pointerId);
+    }
+
     lastXRef.current = event.clientX;
     offsetRef.current += delta;
     wrapOffset();
@@ -91,10 +104,17 @@ export default function ServiceGalleryCarousel({ items, serviceTitle }: Props) {
   };
 
   const onPointerUp = (event: ReactPointerEvent<HTMLDivElement>) => {
+    pointerDownRef.current = false;
     draggingRef.current = false;
     if (pointerIdRef.current !== null && event.currentTarget.hasPointerCapture(pointerIdRef.current)) {
       event.currentTarget.releasePointerCapture(pointerIdRef.current);
     }
+    pointerIdRef.current = null;
+  };
+
+  const onPointerLeave = () => {
+    if (draggingRef.current) return;
+    pointerDownRef.current = false;
     pointerIdRef.current = null;
   };
 
@@ -110,6 +130,7 @@ export default function ServiceGalleryCarousel({ items, serviceTitle }: Props) {
         onPointerMove={onPointerMove}
         onPointerUp={onPointerUp}
         onPointerCancel={onPointerUp}
+        onPointerLeave={onPointerLeave}
       >
         {slides.map((item, index) => (
           <div
@@ -127,7 +148,6 @@ export default function ServiceGalleryCarousel({ items, serviceTitle }: Props) {
                 playsInline
                 preload="none"
                 aria-label={item.alt}
-                onPointerDown={(event) => event.stopPropagation()}
                 onPlay={() => {
                   videoPlayingRef.current = true;
                 }}
