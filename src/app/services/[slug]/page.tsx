@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { companyPrinciples, companyServices, getCompanyService } from "@/lib/company";
 import { WHATSAPP_MESSAGES } from "@/lib/whatsapp";
 import QuoteButton from "@/components/quote-button";
+import ServiceGalleryCarousel from "@/components/service-gallery-carousel";
 import { ArrowRight, ArrowUpRight, WhatsApp } from "@/components/icons";
 
 type PageProps = {
@@ -33,7 +34,6 @@ export default async function ServicePage({ params }: PageProps) {
   if (!service) notFound();
 
   const related = companyServices.filter((item) => item.slug !== service.slug).slice(0, 3);
-  const [lead, ...supporting] = service.gallery;
 
   return (
     <main id="main" className="bg-paper text-ink">
@@ -51,7 +51,7 @@ export default async function ServicePage({ params }: PageProps) {
             </span>
           </div>
 
-          <div className="mt-10 grid gap-10 lg:grid-cols-12 lg:items-stretch lg:gap-14">
+          <div className="mt-10 grid gap-10 lg:grid-cols-12 lg:items-start lg:gap-14">
             <div className="flex flex-col lg:col-span-7">
               <span className="eyebrow block text-muted">Ephtech service</span>
               <h1 className="mt-4 max-w-4xl font-display text-[clamp(2.6rem,5.4vw,4.6rem)] leading-[0.95] font-medium tracking-[-0.045em]">
@@ -68,27 +68,6 @@ export default async function ServicePage({ params }: PageProps) {
                   See our work
                   <ArrowUpRight className="h-3.5 w-3.5" />
                 </Link>
-              </div>
-
-              <div className="mt-auto grid gap-4 border-t border-line pt-5 sm:grid-cols-3">
-                <div>
-                  <span className="mono text-[8px] tracking-[0.14em] uppercase text-muted">
-                    Delivery
-                  </span>
-                  <p className="mt-1.5 text-[12.5px] leading-relaxed">Standalone or combined</p>
-                </div>
-                <div>
-                  <span className="mono text-[8px] tracking-[0.14em] uppercase text-muted">
-                    Coverage
-                  </span>
-                  <p className="mt-1.5 text-[12.5px] leading-relaxed">Lagos · Owerri · Aba</p>
-                </div>
-                <div>
-                  <span className="mono text-[8px] tracking-[0.14em] uppercase text-muted">
-                    Scope
-                  </span>
-                  <p className="mt-1.5 text-[12.5px] leading-relaxed">Agreed before mobilisation</p>
-                </div>
               </div>
             </div>
 
@@ -147,66 +126,24 @@ export default async function ServicePage({ params }: PageProps) {
         </div>
       </section>
 
-      {lead && (
-        <section className="section border-y border-line bg-paper-2">
-          <div className="shell">
-            <div className="grid gap-6 lg:grid-cols-12 lg:items-end">
-              <div className="lg:col-span-7" data-reveal>
-                <span className="eyebrow text-muted">Examples</span>
-                <h2 className="h2 mt-4">A closer look.</h2>
-              </div>
-              <p className="body-lg lg:col-span-5" data-reveal>
-                Representative examples of the work. Client work is labelled; stock imagery is
-                marked illustrative.
-              </p>
+      <section className="section border-y border-line bg-paper-2">
+        <div className="shell">
+          <div className="grid gap-6 lg:grid-cols-12 lg:items-end">
+            <div className="lg:col-span-7" data-reveal>
+              <span className="eyebrow text-muted">Examples</span>
+              <h2 className="h2 mt-4">A closer look.</h2>
             </div>
-
-            <div className="mt-10 grid gap-4 lg:grid-cols-12" data-reveal-group>
-              <figure className="lg:col-span-7">
-                <div className="media relative aspect-[3/2] overflow-hidden">
-                  <Image
-                    src={lead.image}
-                    alt={lead.alt}
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 58vw"
-                    placeholder="blur"
-                    className="photo-grade object-cover"
-                  />
-                  <span className="mono absolute top-3 left-3 bg-paper/92 px-2 py-1 text-[8px] tracking-[0.14em] uppercase text-ink">
-                    {lead.note}
-                  </span>
-                </div>
-                <figcaption className="mono mt-3 text-[8px] tracking-[0.14em] uppercase text-muted">
-                  {lead.note} · {service.title}
-                </figcaption>
-              </figure>
-
-              <div className="grid gap-4 lg:col-span-5">
-                {supporting.map((item, index) => (
-                  <figure key={`${item.alt}-${index}`}>
-                    <div className="media relative aspect-[16/10] overflow-hidden">
-                      <Image
-                        src={item.image}
-                        alt={item.alt}
-                        fill
-                        sizes="(max-width: 1024px) 100vw, 42vw"
-                        placeholder="blur"
-                        className="photo-grade object-cover"
-                      />
-                      <span className="mono absolute top-3 left-3 bg-paper/92 px-2 py-1 text-[8px] tracking-[0.14em] uppercase text-ink">
-                        {item.note}
-                      </span>
-                    </div>
-                    <figcaption className="mono mt-3 text-[8px] tracking-[0.14em] uppercase text-muted">
-                      {item.note} · {service.title}
-                    </figcaption>
-                  </figure>
-                ))}
-              </div>
-            </div>
+            <p className="body-lg lg:col-span-5" data-reveal>
+              Representative examples of the work. Client work is labelled; stock imagery is
+              marked illustrative.
+            </p>
           </div>
-        </section>
-      )}
+
+          <div className="mt-10" data-reveal>
+            <ServiceGalleryCarousel items={service.gallery} serviceTitle={service.title} />
+          </div>
+        </div>
+      </section>
 
       <section className="section border-b border-line bg-forest text-paper">
         <div className="shell">
