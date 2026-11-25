@@ -93,6 +93,16 @@ available.
 - Usage: poster/fallback image for the homepage hero; the montage itself is
   marked “Illustrative brand imagery”.
 
+### Design & Building Projects service
+
+- File: `src/assets/images/service-design-plan.jpg`
+- Photographer: Ivan S
+- Source: Pexels, photo 4458205
+- URL: https://www.pexels.com/photo/a-photo-of-a-floor-plan-4458205/
+- License: Pexels License. Free for commercial use. Attribution not required.
+- Usage: homepage Design & Building Projects card and service page; labelled
+  illustrative.
+
 ### Road construction service
 
 - File: `src/assets/images/service-road.jpg`

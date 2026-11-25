@@ -1,5 +1,6 @@
 import type { StaticImageData } from "next/image";
 import boardProduct from "@/assets/images/board-product.jpg";
+import serviceDesignPlan from "@/assets/images/service-design-plan.jpg";
 import serviceImport from "@/assets/images/service-import.jpg";
 import serviceLandscaping from "@/assets/images/service-landscaping.jpg";
 import serviceRoad from "@/assets/images/service-road.jpg";
@@ -8,7 +9,6 @@ import workBuild from "@/assets/images/work-build.jpg";
 import workCeiling from "@/assets/images/work-ceiling.jpg";
 import workDetail from "@/assets/images/work-detail.jpg";
 import workInterior from "@/assets/images/work-interior.jpg";
-import workPlan from "@/assets/images/work-plan.jpg";
 import workRealEstate from "@/assets/images/work-real-estate.jpg";
 import workStairs from "@/assets/images/work-stairs.jpg";
 
@@ -34,9 +34,9 @@ export const companyServices: CompanyService[] = [
     cardSummary: "From design coordination to construction and handover.",
     description:
       "We coordinate the design, the programme and the site team so the building you brief is the building that gets delivered. The service covers project planning, design coordination, construction delivery and handover support, with clear reporting throughout.",
-    image: workPlan,
-    alt: "Building under construction with columns, blockwork and formwork.",
-    imageNote: "Completed work",
+    image: serviceDesignPlan,
+    alt: "Architectural floor plan with room layouts and measured dimensions.",
+    imageNote: "Illustrative image",
     capabilities: [
       "Project planning and programme development",
       "Design coordination and buildability review",
