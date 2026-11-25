@@ -1,15 +1,30 @@
 import type { StaticImageData } from "next/image";
 import boardProduct from "@/assets/images/board-product.jpg";
+import panelInstall from "@/assets/images/panel-install.jpg";
+import projectCommercial from "@/assets/images/project-commercial.jpg";
+import projectResidence from "@/assets/images/project-residence.jpg";
 import serviceDesignPlan from "@/assets/images/service-design-plan.jpg";
 import serviceImport from "@/assets/images/service-import.jpg";
+import serviceImportPort from "@/assets/images/service-import-port.jpg";
+import serviceImportShip from "@/assets/images/service-import-ship.jpg";
 import serviceLandscaping from "@/assets/images/service-landscaping.jpg";
 import serviceRoad from "@/assets/images/service-road.jpg";
+import serviceRoadFinish from "@/assets/images/service-road-finish.jpg";
+import serviceRoadPaving from "@/assets/images/service-road-paving.jpg";
+import siteDrone from "@/assets/images/site-drone.jpg";
 import teamSite from "@/assets/images/team-site.jpg";
 import workBuild from "@/assets/images/work-build.jpg";
+import workCeiling from "@/assets/images/work-ceiling.jpg";
 import workDetail from "@/assets/images/work-detail.jpg";
 import workInterior from "@/assets/images/work-interior.jpg";
 import workRealEstate from "@/assets/images/work-real-estate.jpg";
 import workStairs from "@/assets/images/work-stairs.jpg";
+
+export type ServiceGalleryItem = {
+  image: StaticImageData;
+  alt: string;
+  note: "Completed work" | "Illustrative image";
+};
 
 export type CompanyService = {
   slug: string;
@@ -20,6 +35,7 @@ export type CompanyService = {
   image: StaticImageData;
   alt: string;
   imageNote: "Completed work" | "Illustrative image";
+  gallery: ServiceGalleryItem[];
   capabilities: string[];
   outcomes: string[];
 };
@@ -36,6 +52,23 @@ export const companyServices: CompanyService[] = [
     image: serviceDesignPlan,
     alt: "Architectural floor plan with room layouts and measured dimensions.",
     imageNote: "Illustrative image",
+    gallery: [
+      {
+        image: serviceDesignPlan,
+        alt: "Architectural floor plan with room layouts and measured dimensions.",
+        note: "Illustrative image",
+      },
+      {
+        image: workBuild,
+        alt: "Building under construction with columns, blockwork and formwork.",
+        note: "Completed work",
+      },
+      {
+        image: siteDrone,
+        alt: "Aerial view of a construction site with groundworks and site team.",
+        note: "Illustrative image",
+      },
+    ],
     capabilities: [
       "Project planning and programme development",
       "Design coordination and buildability review",
@@ -60,6 +93,23 @@ export const companyServices: CompanyService[] = [
     image: serviceRoad,
     alt: "Road roller compacting asphalt on a road construction site.",
     imageNote: "Illustrative image",
+    gallery: [
+      {
+        image: serviceRoad,
+        alt: "Road roller compacting asphalt on a road construction site.",
+        note: "Illustrative image",
+      },
+      {
+        image: serviceRoadPaving,
+        alt: "Paving equipment and crew laying asphalt on a road.",
+        note: "Illustrative image",
+      },
+      {
+        image: serviceRoadFinish,
+        alt: "Newly paved road with traffic barriers during construction.",
+        note: "Illustrative image",
+      },
+    ],
     capabilities: [
       "Road formation and earthworks",
       "Drainage and stormwater works",
@@ -84,6 +134,23 @@ export const companyServices: CompanyService[] = [
     image: workInterior,
     alt: "Finished living room with a white panel wall, ceiling and warm lighting.",
     imageNote: "Completed work",
+    gallery: [
+      {
+        image: workInterior,
+        alt: "Finished living room with a white panel wall, ceiling and warm lighting.",
+        note: "Completed work",
+      },
+      {
+        image: workCeiling,
+        alt: "Completed office interior with a suspended ceiling and wall panels.",
+        note: "Completed work",
+      },
+      {
+        image: workStairs,
+        alt: "Finished staircase with a panelled wall and concealed lighting.",
+        note: "Completed work",
+      },
+    ],
     capabilities: [
       "Suspended ceilings and dry partitions",
       "Feature walls, wall linings and acoustic options",
@@ -108,6 +175,23 @@ export const companyServices: CompanyService[] = [
     image: boardProduct,
     alt: "Stack of Ephtech boards showing the factory-finished face.",
     imageNote: "Completed work",
+    gallery: [
+      {
+        image: boardProduct,
+        alt: "Stack of Ephtech boards showing the factory-finished face.",
+        note: "Completed work",
+      },
+      {
+        image: workCeiling,
+        alt: "Completed office interior with a suspended ceiling and wall panels.",
+        note: "Completed work",
+      },
+      {
+        image: panelInstall,
+        alt: "Ceiling and wall panels being installed on site.",
+        note: "Illustrative image",
+      },
+    ],
     capabilities: [
       "Ephtech Board and factory-finished panels",
       "Suspended ceiling grids and channels",
@@ -132,6 +216,23 @@ export const companyServices: CompanyService[] = [
     image: serviceImport,
     alt: "Aerial view of a logistics port with shipping containers and cargo handling equipment.",
     imageNote: "Illustrative image",
+    gallery: [
+      {
+        image: serviceImport,
+        alt: "Aerial view of a logistics port with shipping containers and cargo handling equipment.",
+        note: "Illustrative image",
+      },
+      {
+        image: serviceImportShip,
+        alt: "Stacked shipping containers on a cargo ship.",
+        note: "Illustrative image",
+      },
+      {
+        image: serviceImportPort,
+        alt: "Container port with cranes, cargo ship and stacked containers.",
+        note: "Illustrative image",
+      },
+    ],
     capabilities: [
       "Supplier sourcing and product verification",
       "Shipping and clearing coordination",
@@ -156,6 +257,23 @@ export const companyServices: CompanyService[] = [
     image: workRealEstate,
     alt: "Completed residential building with a gated frontage.",
     imageNote: "Completed work",
+    gallery: [
+      {
+        image: workRealEstate,
+        alt: "Completed residential building with a gated frontage.",
+        note: "Completed work",
+      },
+      {
+        image: projectResidence,
+        alt: "Modern residential house with large glazing and landscaped surroundings.",
+        note: "Illustrative image",
+      },
+      {
+        image: projectCommercial,
+        alt: "Modern commercial building with a pool and terrace.",
+        note: "Illustrative image",
+      },
+    ],
     capabilities: [
       "Residential and commercial property development",
       "Land and feasibility coordination",
@@ -180,6 +298,23 @@ export const companyServices: CompanyService[] = [
     image: serviceLandscaping,
     alt: "Modern house with a green lawn, garden and landscaped frontage.",
     imageNote: "Illustrative image",
+    gallery: [
+      {
+        image: serviceLandscaping,
+        alt: "Modern house with a green lawn, garden and landscaped frontage.",
+        note: "Illustrative image",
+      },
+      {
+        image: projectResidence,
+        alt: "Modern residential house with mature planting and a landscaped setting.",
+        note: "Illustrative image",
+      },
+      {
+        image: workRealEstate,
+        alt: "Completed residential exterior with a planted frontage and paved access.",
+        note: "Completed work",
+      },
+    ],
     capabilities: [
       "Soft landscaping and planting",
       "Paving and external circulation",

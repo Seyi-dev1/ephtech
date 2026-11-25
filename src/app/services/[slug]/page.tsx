@@ -32,53 +32,74 @@ export default async function ServicePage({ params }: PageProps) {
   const service = getCompanyService(slug);
   if (!service) notFound();
 
-  const related = companyServices
-    .filter((item) => item.slug !== service.slug)
-    .slice(0, 3);
+  const related = companyServices.filter((item) => item.slug !== service.slug).slice(0, 3);
+  const [lead, ...supporting] = service.gallery;
 
   return (
     <main id="main" className="bg-paper text-ink">
       <section className="border-b border-line bg-paper-2">
         <div className="shell pt-[clamp(128px,17vh,184px)] pb-[clamp(48px,7vw,88px)]">
-          <Link
-            href="/services"
-            className="mono text-[10px] tracking-[0.16em] uppercase text-muted transition-colors hover:text-forest"
-          >
-            ← All services
-          </Link>
-          <div className="mt-10 grid gap-8 lg:grid-cols-12 lg:items-end">
-            <div className="lg:col-span-8">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <Link
+              href="/services"
+              className="mono text-[10px] tracking-[0.16em] uppercase text-muted transition-colors hover:text-forest"
+            >
+              ← All services
+            </Link>
+            <span className="mono text-[8.5px] tracking-[0.14em] uppercase text-muted">
+              Ephtech / Services
+            </span>
+          </div>
+
+          <div className="mt-10 grid gap-10 lg:grid-cols-12 lg:items-stretch lg:gap-14">
+            <div className="flex flex-col lg:col-span-7">
               <span className="eyebrow block text-muted">Ephtech service</span>
               <h1 className="mt-4 max-w-4xl font-display text-[clamp(2.6rem,5.4vw,4.6rem)] leading-[0.95] font-medium tracking-[-0.045em]">
                 {service.title}
               </h1>
               <p className="body-lg mt-6 max-w-2xl">{service.summary}</p>
-            </div>
-            <div className="lg:col-span-4">
-              <div className="border-t border-line pt-4">
-                <span className="mono text-[8.5px] tracking-[0.14em] uppercase text-muted">
-                  {service.imageNote}
-                </span>
-                <p className="mt-2 text-[13px] leading-relaxed text-muted">
-                  Delivered by the Ephtech team.
-                </p>
+
+              <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-3">
+                <QuoteButton className="btn btn-primary">
+                  Discuss this service
+                  <WhatsApp className="h-3.5 w-3.5" />
+                </QuoteButton>
+                <Link href="/projects" className="link-underline text-[13px] font-medium">
+                  See our work
+                  <ArrowUpRight className="h-3.5 w-3.5" />
+                </Link>
+              </div>
+
+              <div className="mt-auto grid gap-4 border-t border-line pt-5 sm:grid-cols-3">
+                <div>
+                  <span className="mono text-[8px] tracking-[0.14em] uppercase text-muted">
+                    Delivery
+                  </span>
+                  <p className="mt-1.5 text-[12.5px] leading-relaxed">Standalone or combined</p>
+                </div>
+                <div>
+                  <span className="mono text-[8px] tracking-[0.14em] uppercase text-muted">
+                    Coverage
+                  </span>
+                  <p className="mt-1.5 text-[12.5px] leading-relaxed">Lagos · Owerri · Aba</p>
+                </div>
+                <div>
+                  <span className="mono text-[8px] tracking-[0.14em] uppercase text-muted">
+                    Scope
+                  </span>
+                  <p className="mt-1.5 text-[12.5px] leading-relaxed">Agreed before mobilisation</p>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
 
-      <section className="section">
-        <div className="shell">
-          <div className="grid gap-10 lg:grid-cols-12 lg:gap-14">
-            <div className="lg:col-span-7" data-reveal>
-              <div className="media relative aspect-[16/10] overflow-hidden">
+            <figure className="lg:col-span-5">
+              <div className="media relative aspect-[4/5] overflow-hidden">
                 <Image
                   src={service.image}
                   alt={service.alt}
                   fill
                   priority
-                  sizes="(max-width: 1024px) 100vw, 58vw"
+                  sizes="(max-width: 1024px) 100vw, 42vw"
                   placeholder="blur"
                   className="photo-grade object-cover"
                 />
@@ -86,60 +107,131 @@ export default async function ServicePage({ params }: PageProps) {
                   {service.imageNote}
                 </span>
               </div>
-              <p className="mono mt-3 text-[8px] tracking-[0.14em] uppercase text-muted">
-                Service · {service.title}
-              </p>
+              <figcaption className="mono mt-3 text-[8px] tracking-[0.14em] uppercase text-muted">
+                {service.title} · Ephtech International
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="shell">
+          <div className="grid gap-10 lg:grid-cols-12 lg:gap-14">
+            <div className="lg:col-span-5" data-reveal>
+              <span className="eyebrow text-muted">The service</span>
+              <p className="body-lg mt-4">{service.description}</p>
             </div>
 
-            <div className="lg:col-span-5">
-              <div data-reveal>
-                <span className="eyebrow text-muted">The service</span>
-                <p className="body-lg mt-4">{service.description}</p>
-              </div>
-
-              <div className="mt-8">
+            <div className="lg:col-span-7" data-reveal>
+              <div className="flex items-end justify-between border-b border-line pb-3">
                 <span className="mono text-[8.5px] tracking-[0.14em] uppercase text-muted">
                   What it covers
                 </span>
-                <ul className="mt-4">
-                  {service.capabilities.map((capability, index) => (
-                    <li
-                      key={capability}
-                      className="grid grid-cols-[auto_1fr] gap-3 border-t border-line py-3 text-[13px] leading-relaxed text-ink"
-                    >
-                      <span className="mono pt-0.5 text-[8px] tracking-[0.12em] text-muted">
-                        0{index + 1}
-                      </span>
-                      <span>{capability}</span>
-                    </li>
-                  ))}
-                </ul>
+                <span className="mono text-[8px] tracking-[0.12em] uppercase text-muted">
+                  Scope
+                </span>
+              </div>
+              <div className="grid gap-x-8 sm:grid-cols-2">
+                {service.capabilities.map((capability, index) => (
+                  <div key={capability} className="border-b border-line py-4">
+                    <span className="mono text-[8px] tracking-[0.12em] text-muted">
+                      0{index + 1}
+                    </span>
+                    <p className="mt-2 text-[14px] leading-relaxed text-ink">{capability}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="section border-y border-line bg-paper-2">
-        <div className="shell">
-          <div className="grid gap-10 lg:grid-cols-12 lg:gap-14">
-            <div className="lg:col-span-5" data-reveal>
-              <span className="eyebrow text-muted">What good looks like</span>
-              <h2 className="h2 mt-4">The outcome, not just the scope.</h2>
+      {lead && (
+        <section className="section border-y border-line bg-paper-2">
+          <div className="shell">
+            <div className="grid gap-6 lg:grid-cols-12 lg:items-end">
+              <div className="lg:col-span-7" data-reveal>
+                <span className="eyebrow text-muted">Examples</span>
+                <h2 className="h2 mt-4">A closer look.</h2>
+              </div>
+              <p className="body-lg lg:col-span-5" data-reveal>
+                Representative examples of the work. Client work is labelled; stock imagery is
+                marked illustrative.
+              </p>
             </div>
-            <div className="lg:col-span-7" data-reveal>
-              {service.outcomes.map((outcome, index) => (
-                <div
-                  key={outcome}
-                  className="grid grid-cols-[auto_1fr] gap-4 border-t border-line py-4 last:border-b"
-                >
-                  <span className="mono pt-1 text-[9px] tracking-[0.14em] text-muted">
-                    0{index + 1}
+
+            <div className="mt-10 grid gap-4 lg:grid-cols-12" data-reveal-group>
+              <figure className="lg:col-span-7">
+                <div className="media relative aspect-[3/2] overflow-hidden">
+                  <Image
+                    src={lead.image}
+                    alt={lead.alt}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 58vw"
+                    placeholder="blur"
+                    className="photo-grade object-cover"
+                  />
+                  <span className="mono absolute top-3 left-3 bg-paper/92 px-2 py-1 text-[8px] tracking-[0.14em] uppercase text-ink">
+                    {lead.note}
                   </span>
-                  <p className="font-display text-lg font-medium tracking-[-0.02em]">{outcome}</p>
                 </div>
-              ))}
+                <figcaption className="mono mt-3 text-[8px] tracking-[0.14em] uppercase text-muted">
+                  {lead.note} · {service.title}
+                </figcaption>
+              </figure>
+
+              <div className="grid gap-4 lg:col-span-5">
+                {supporting.map((item, index) => (
+                  <figure key={`${item.alt}-${index}`}>
+                    <div className="media relative aspect-[16/10] overflow-hidden">
+                      <Image
+                        src={item.image}
+                        alt={item.alt}
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 42vw"
+                        placeholder="blur"
+                        className="photo-grade object-cover"
+                      />
+                      <span className="mono absolute top-3 left-3 bg-paper/92 px-2 py-1 text-[8px] tracking-[0.14em] uppercase text-ink">
+                        {item.note}
+                      </span>
+                    </div>
+                    <figcaption className="mono mt-3 text-[8px] tracking-[0.14em] uppercase text-muted">
+                      {item.note} · {service.title}
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
             </div>
+          </div>
+        </section>
+      )}
+
+      <section className="section border-b border-line bg-forest text-paper">
+        <div className="shell">
+          <div className="grid gap-6 lg:grid-cols-12 lg:items-end">
+            <div className="lg:col-span-7" data-reveal>
+              <span className="eyebrow text-amber/80">What good looks like</span>
+              <h2 className="h2 mt-4 text-paper">The outcome, not just the scope.</h2>
+            </div>
+            <p className="body-lg lg:col-span-5 text-paper/55" data-reveal>
+              The work is judged by what is left behind: a clean finish, a clear handover and a
+              space that holds up in use.
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-6 md:grid-cols-3" data-reveal-group>
+            {service.outcomes.map((outcome, index) => (
+              <div key={outcome} className="border-t border-paper/20 pt-4">
+                <span className="mono text-[8.5px] tracking-[0.14em] text-amber/80">
+                  0{index + 1}
+                </span>
+                <p className="mt-3 font-display text-[clamp(1.25rem,2vw,1.75rem)] leading-[1.12] tracking-[-0.025em] text-paper">
+                  {outcome}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -147,18 +239,21 @@ export default async function ServicePage({ params }: PageProps) {
       <section className="section">
         <div className="shell">
           <div className="grid gap-10 lg:grid-cols-12 lg:items-start lg:gap-14">
-            <div className="lg:col-span-5" data-reveal>
-              <span className="eyebrow text-muted">What you can expect</span>
+            <div className="lg:col-span-4" data-reveal>
+              <span className="eyebrow text-muted">How we work</span>
               <h2 className="h2 mt-4">One team. Clear scope.</h2>
               <p className="body-lg mt-5">
                 This service can stand alone or sit inside a wider Ephtech scope. The work is
                 agreed before mobilisation.
               </p>
             </div>
-            <div className="lg:col-span-7" data-reveal>
-              {companyPrinciples.map((principle) => (
-                <div key={principle.title} className="border-t border-line py-4 last:border-b">
-                  <h3 className="font-display text-xl font-medium tracking-[-0.025em]">
+            <div className="grid gap-x-8 sm:grid-cols-2 lg:col-span-8" data-reveal>
+              {companyPrinciples.map((principle, index) => (
+                <div key={principle.title} className="border-t border-line py-4">
+                  <span className="mono text-[8px] tracking-[0.12em] text-muted">
+                    0{index + 1}
+                  </span>
+                  <h3 className="mt-2 font-display text-xl font-medium tracking-[-0.025em]">
                     {principle.title}
                   </h3>
                   <p className="mt-1.5 text-[13px] leading-relaxed text-muted">{principle.body}</p>
@@ -183,24 +278,29 @@ export default async function ServicePage({ params }: PageProps) {
               </Link>
             </div>
 
-            <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3" data-reveal-group>
+            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3" data-reveal-group>
               {related.map((item) => (
-                <Link
-                  key={item.slug}
-                  href={`/services/${item.slug}`}
-                  className="group border-t border-line pt-4"
-                >
-                  <span className="mono text-[8px] tracking-[0.12em] uppercase text-muted">
-                    Ephtech service
-                  </span>
-                  <h3 className="mt-2 font-display text-xl font-medium tracking-[-0.025em]">
-                    {item.title}
-                  </h3>
-                  <p className="mt-2 text-[12.5px] leading-relaxed text-muted">{item.summary}</p>
-                  <span className="mt-4 inline-flex items-center gap-2 text-[12px] font-medium">
-                    Explore
-                    <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
-                  </span>
+                <Link key={item.slug} href={`/services/${item.slug}`} className="group block">
+                  <div className="media relative aspect-[4/3] overflow-hidden">
+                    <Image
+                      src={item.image}
+                      alt={item.alt}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      placeholder="blur"
+                      className="photo-grade object-cover"
+                    />
+                    <span className="mono absolute top-3 left-3 bg-paper/92 px-2 py-1 text-[8px] tracking-[0.14em] uppercase text-ink">
+                      {item.imageNote}
+                    </span>
+                  </div>
+                  <div className="mt-4 flex items-start justify-between gap-3 border-t border-line pt-3">
+                    <h3 className="font-display text-xl font-medium tracking-[-0.025em]">
+                      {item.title}
+                    </h3>
+                    <ArrowUpRight className="mt-1 h-3.5 w-3.5 shrink-0 text-muted transition-colors group-hover:text-forest" />
+                  </div>
+                  <p className="mt-2 text-[12.5px] leading-relaxed text-muted">{item.cardSummary}</p>
                 </Link>
               ))}
             </div>

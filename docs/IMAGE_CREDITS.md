@@ -103,6 +103,28 @@ available.
 - Usage: homepage Design & Building Projects card and service page; labelled
   illustrative.
 
+### Road construction gallery
+
+- Files: `src/assets/images/service-road-paving.jpg`,
+  `src/assets/images/service-road-finish.jpg`
+- `service-road-paving.jpg`: Tom Schamberger, Pexels photo 34053335.
+  https://www.pexels.com/photo/road-construction-in-hood-river-oregon-34053335/
+- `service-road-finish.jpg`: Wolfgang Weiser, Pexels photo 38733805.
+  https://www.pexels.com/photo/road-construction-in-geesthacht-schleswig-holstein-38733805/
+- License: Pexels License. Free for commercial use. Attribution not required.
+- Usage: service detail gallery; labelled illustrative.
+
+### Importation gallery
+
+- Files: `src/assets/images/service-import-ship.jpg`,
+  `src/assets/images/service-import-port.jpg`
+- `service-import-ship.jpg`: Marcello Sokal, Pexels photo 8555366.
+  https://www.pexels.com/photo/view-of-a-loaded-with-containers-cargo-ship-8555366/
+- `service-import-port.jpg`: Nezaket, Pexels photo 31244440.
+  https://www.pexels.com/photo/vibrant-container-port-with-cargo-cranes-31244440/
+- License: Pexels License. Free for commercial use. Attribution not required.
+- Usage: service detail gallery; labelled illustrative.
+
 ### Road construction service
 
 - File: `src/assets/images/service-road.jpg`
