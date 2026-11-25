@@ -3,10 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import boardProduct from "@/assets/images/board-product.jpg";
 import teamSite from "@/assets/images/team-site.jpg";
-import workBuild from "@/assets/images/work-build.jpg";
-import workCeiling from "@/assets/images/work-ceiling.jpg";
-import workInterior from "@/assets/images/work-interior.jpg";
-import workRealEstate from "@/assets/images/work-real-estate.jpg";
 import { branches } from "@/lib/data";
 import { companyPrinciples, companyServices } from "@/lib/company";
 import { siteUrl } from "@/lib/site";
@@ -14,6 +10,7 @@ import { WHATSAPP_DISPLAY, WHATSAPP_MESSAGES, whatsappHref } from "@/lib/whatsap
 import CompanyHero from "@/components/company-hero";
 import NigeriaMap from "@/components/nigeria-map";
 import QuoteButton from "@/components/quote-button";
+import ServiceGalleryCarousel from "@/components/service-gallery-carousel";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -91,28 +88,61 @@ const structuredData = {
 
 const selectedWork = [
   {
-    image: workCeiling,
-    title: "Office fit-out",
-    service: "Interior finishing",
-    alt: "Completed office interior with a suspended ceiling and wall panels.",
+    image: "/media/finish-interiors/02.jpg",
+    alt: "Finished living room with a panel wall and a white ceiling.",
+    note: "Completed work" as const,
   },
   {
-    image: workInterior,
-    title: "Residential finish",
-    service: "Interior finishing",
-    alt: "Finished living room with a white panel wall, ceiling and warm lighting.",
+    image: "/media/finish-interiors/04.jpg",
+    alt: "Completed office fit-out with a suspended ceiling and wall panels.",
+    note: "Completed work" as const,
   },
   {
-    image: workBuild,
-    title: "Building in progress",
-    service: "Design & building projects",
-    alt: "Building under construction with columns, blockwork and formwork.",
+    image: "/media/finish-interiors/14.jpg",
+    alt: "Formal living room with a detailed ceiling and curtains.",
+    note: "Completed work" as const,
   },
   {
-    image: workRealEstate,
-    title: "Residential development",
-    service: "Real estate",
-    alt: "Completed residential building with a gated frontage.",
+    image: "/media/finish-interiors/18.jpg",
+    alt: "Staircase with a panelled wall and concealed lighting.",
+    note: "Completed work" as const,
+  },
+  {
+    image: "/media/finish-interiors/17.jpg",
+    alt: "Cathedral ceiling with a feature cross.",
+    note: "Completed work" as const,
+  },
+  {
+    image: "/media/selected-work/01.jpg",
+    alt: "Completed brick duplex with a gated frontage.",
+    note: "Completed work" as const,
+  },
+  {
+    image: "/media/selected-work/02.jpg",
+    alt: "Completed residence with ornate facade detailing.",
+    note: "Completed work" as const,
+  },
+  {
+    image: "/media/selected-work/03.jpg",
+    alt: "Completed white residential building with a gated frontage.",
+    note: "Completed work" as const,
+  },
+  {
+    image: "/media/selected-work/04.jpg",
+    alt: "Completed residence with a red roof and landscaped frontage.",
+    note: "Completed work" as const,
+  },
+  {
+    image: "/media/finish-interiors/video-04.jpg",
+    video: "/videos/finish-interiors/04.mp4",
+    alt: "Completed cathedral ceiling video.",
+    note: "Completed work" as const,
+  },
+  {
+    image: "/media/selected-work/video-01.jpg",
+    video: "/videos/selected-work/exterior.mp4",
+    alt: "Completed residential exterior video.",
+    note: "Completed work" as const,
   },
 ];
 
@@ -202,51 +232,24 @@ export default function Home() {
           <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
             <div data-reveal>
               <span className="eyebrow text-muted">Selected work</span>
-              <h2 className="h2 mt-4">Finished rooms. Working sites.</h2>
+              <h2 className="h2 mt-4">The work, up close.</h2>
             </div>
             <p className="body-lg max-w-sm md:text-right" data-reveal>
-              A company built across the whole project — from structure and services to the last
-              ceiling detail.
+              Finished interiors, completed exteriors and the details that carry a project through
+              to handover.
             </p>
           </div>
+        </div>
 
-          <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4" data-reveal-group>
-            {selectedWork.map((item) => (
-              <Link key={item.title} href="/projects" className="group block">
-                <div className="media relative aspect-[4/5] overflow-hidden">
-                  <Image
-                    src={item.image}
-                    alt={item.alt}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                    placeholder="blur"
-                    className="photo-grade object-cover transition-transform duration-700 group-hover:scale-[1.02]"
-                  />
-                  <span className="mono absolute top-3 left-3 bg-paper/92 px-2 py-1 text-[8px] tracking-[0.14em] uppercase text-ink">
-                    Completed work
-                  </span>
-                </div>
-                <div className="mt-3 flex items-center justify-between gap-3 border-t border-line pt-2.5">
-                  <div>
-                    <h3 className="font-display text-lg font-medium tracking-[-0.02em]">
-                      {item.title}
-                    </h3>
-                    <p className="mono mt-1 text-[8px] tracking-[0.12em] uppercase text-muted">
-                      {item.service}
-                    </p>
-                  </div>
-                  <ArrowUpRight className="h-3.5 w-3.5 text-muted transition-colors group-hover:text-forest" />
-                </div>
-              </Link>
-            ))}
-          </div>
+        <div className="mt-10" data-reveal>
+          <ServiceGalleryCarousel items={selectedWork} serviceTitle="Selected work" />
+        </div>
 
-          <div className="mt-8 flex justify-end" data-reveal>
-            <Link href="/projects" className="link-underline text-[13px] font-medium">
-              See the work
-              <ArrowUpRight className="h-3.5 w-3.5" />
-            </Link>
-          </div>
+        <div className="shell mt-8 flex justify-end" data-reveal>
+          <Link href="/projects" className="link-underline text-[13px] font-medium">
+            See the work
+            <ArrowUpRight className="h-3.5 w-3.5" />
+          </Link>
         </div>
       </section>
 

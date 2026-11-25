@@ -182,6 +182,15 @@ Source folders: `~/Desktop/ephtech-media/_sorted/01-plan-design/` and
 - These are client site records, not stock. Confirm project permissions before
   public launch.
 
+## Selected work gallery (client-supplied)
+
+- Interior images reuse the completed work in
+  `public/media/finish-interiors/`.
+- Exterior images `01.jpg` through `04.jpg` are copied from
+  `~/Desktop/ephtech-media/_sorted/05-real-estate-landscaping/`.
+- Video poster: `public/media/selected-work/video-01.jpg`.
+- These are client work. Confirm project permissions before public launch.
+
 ## Interior Finishing gallery (client-supplied)
 
 Source folder: `~/Desktop/ephtech-media/_sorted/03-finish-interiors/`.

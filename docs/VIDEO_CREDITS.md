@@ -35,6 +35,16 @@ projects when the client supplies suitable horizontal footage.
   gallery and played only on request.
 - Confirm project permissions before public launch.
 
+## Selected work gallery (client-supplied)
+
+- Interior clip: `public/videos/finish-interiors/04.mp4`, with poster
+  `public/media/finish-interiors/video-04.jpg`.
+- Exterior clip: `public/videos/selected-work/exterior.mp4`, with poster
+  `public/media/selected-work/video-01.jpg`.
+- Source for the exterior clip:
+  `~/Desktop/ephtech-media/_sorted/05-real-estate-landscaping/`.
+- Both are client work and play only on request.
+
 ## Interior Finishing gallery (client-supplied)
 
 - Source folder: `~/Desktop/ephtech-media/_sorted/03-finish-interiors/`.
