@@ -295,6 +295,16 @@ export const companyServices: CompanyService[] = [
         note: "Completed work",
       },
       {
+        image: "/media/finish-interiors/19.jpg",
+        alt: "White ceiling with concealed linear lighting and a pendant.",
+        note: "Completed work",
+      },
+      {
+        image: "/media/finish-interiors/20.jpg",
+        alt: "Ceiling with concealed LED lighting and a central pendant.",
+        note: "Completed work",
+      },
+      {
         image: "/media/finish-interiors/video-01.jpg",
         video: "/videos/finish-interiors/01.mp4",
         alt: "Interior finishing video: ceiling and wall works.",
@@ -322,6 +332,12 @@ export const companyServices: CompanyService[] = [
         image: "/media/finish-interiors/video-05.jpg",
         video: "/videos/finish-interiors/05.mp4",
         alt: "Interior finishing video: staircase and wall finish.",
+        note: "Completed work",
+      },
+      {
+        image: "/media/finish-interiors/video-06.jpg",
+        video: "/videos/finish-interiors/06.mp4",
+        alt: "Completed kitchen and ceiling video.",
         note: "Completed work",
       },
     ],

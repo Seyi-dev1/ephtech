@@ -37,8 +37,8 @@ projects when the client supplies suitable horizontal footage.
 
 ## Selected work gallery (client-supplied)
 
-- Interior clip: `public/videos/finish-interiors/04.mp4`, with poster
-  `public/media/finish-interiors/video-04.jpg`.
+- Interior clips: `public/videos/finish-interiors/04.mp4` and `06.mp4`, with
+  posters `public/media/finish-interiors/video-04.jpg` and `video-06.jpg`.
 - Exterior clip: `public/videos/selected-work/exterior.mp4`, with poster
   `public/media/selected-work/video-01.jpg`.
 - Source for the exterior clip:
@@ -48,11 +48,12 @@ projects when the client supplies suitable horizontal footage.
 ## Interior Finishing gallery (client-supplied)
 
 - Source folder: `~/Desktop/ephtech-media/_sorted/03-finish-interiors/`.
-- Files: `public/videos/finish-interiors/01.mp4` through `05.mp4`.
+- Files: `public/videos/finish-interiors/01.mp4` through `06.mp4`.
 - Posters: `public/media/finish-interiors/video-01.jpg` through
-  `video-05.jpg`.
-- Five client clips, each trimmed to the first 20 seconds for the gallery,
-  transcoded for web and played only on request.
+  `video-06.jpg`.
+- Six client clips, each trimmed to the first 20 seconds for the gallery,
+  transcoded for web and played only on request. `06.mp4` is the root
+  `kitchen.mp4`.
 - Confirm project permissions before public launch.
 
 ## Cathedral installation (owner-supplied)

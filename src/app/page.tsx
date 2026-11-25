@@ -113,6 +113,16 @@ const selectedWork = [
     note: "Completed work" as const,
   },
   {
+    image: "/media/finish-interiors/19.jpg",
+    alt: "White ceiling with concealed linear lighting and a pendant.",
+    note: "Completed work" as const,
+  },
+  {
+    image: "/media/finish-interiors/20.jpg",
+    alt: "Ceiling with concealed LED lighting and a central pendant.",
+    note: "Completed work" as const,
+  },
+  {
     image: "/media/selected-work/01.jpg",
     alt: "Completed brick duplex with a gated frontage.",
     note: "Completed work" as const,
@@ -136,6 +146,12 @@ const selectedWork = [
     image: "/media/finish-interiors/video-04.jpg",
     video: "/videos/finish-interiors/04.mp4",
     alt: "Completed cathedral ceiling video.",
+    note: "Completed work" as const,
+  },
+  {
+    image: "/media/finish-interiors/video-06.jpg",
+    video: "/videos/finish-interiors/06.mp4",
+    alt: "Completed kitchen and ceiling video.",
     note: "Completed work" as const,
   },
   {

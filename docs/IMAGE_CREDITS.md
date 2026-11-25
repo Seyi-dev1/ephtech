@@ -188,6 +188,8 @@ Source folders: `~/Desktop/ephtech-media/_sorted/01-plan-design/` and
   `public/media/finish-interiors/`.
 - Exterior images `01.jpg` through `04.jpg` are copied from
   `~/Desktop/ephtech-media/_sorted/05-real-estate-landscaping/`.
+- Also uses the two root ceiling images and the kitchen clip added to the
+  Interior Finishing set.
 - Video poster: `public/media/selected-work/video-01.jpg`.
 - These are client work. Confirm project permissions before public launch.
 
@@ -195,10 +197,11 @@ Source folders: `~/Desktop/ephtech-media/_sorted/01-plan-design/` and
 
 Source folder: `~/Desktop/ephtech-media/_sorted/03-finish-interiors/`.
 
-- 18 images copied to `public/media/finish-interiors/01.jpg` through
-  `18.jpg`.
-- 5 video posters copied to `public/media/finish-interiors/video-01.jpg`
-  through `video-05.jpg`.
+- 20 images copied to `public/media/finish-interiors/01.jpg` through
+  `20.jpg`. The final two are `ceiling1.jpeg` and `ceiling2.jpeg` from the
+  root of `~/Desktop/ephtech-media/`.
+- 6 video posters copied to `public/media/finish-interiors/video-01.jpg`
+  through `video-06.jpg`; `video-06` comes from the root `kitchen.mp4`.
 - These are client work, including ceiling, wall, staircase and cathedral
   finishes. Confirm project permissions before public launch.
 
