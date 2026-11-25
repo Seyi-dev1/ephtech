@@ -135,12 +135,13 @@ export default function Home() {
               <h2 className="h2 mt-5">The services we deliver.</h2>
             </div>
             <p className="body-lg lg:col-span-5" data-reveal>
-              Construction, interiors, materials and property. Start with one, or bring us in
-              across the whole project. The scope is yours.
+              Ephtech works across construction, interiors, materials and property. Whether you
+              need one service or the whole project, the same team carries the scope from first
+              brief to handover.
             </p>
           </div>
 
-          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:gap-6" data-reveal-group>
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6" data-reveal-group>
             {companyServices.map((service) => (
               <Link
                 key={service.slug}
@@ -152,7 +153,7 @@ export default function Home() {
                     src={service.image}
                     alt={service.alt}
                     fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     placeholder="blur"
                     className="photo-grade object-cover"
                   />
@@ -166,7 +167,7 @@ export default function Home() {
                         <h3 className="font-display text-[clamp(1.4rem,2.4vw,2.1rem)] leading-[1.02] font-medium tracking-[-0.03em] text-paper">
                           {service.title}
                         </h3>
-                        <p className="service-card__summary mt-2 max-w-[38ch] text-[12px] leading-relaxed text-paper/75">
+                        <p className="mt-2 max-w-[38ch] text-[12px] leading-relaxed text-paper/75">
                           {service.cardSummary}
                         </p>
                       </div>

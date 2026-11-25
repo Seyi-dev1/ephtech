@@ -31,7 +31,7 @@ export const companyServices: CompanyService[] = [
     title: "Design & Building Projects",
     summary:
       "A single team to take a building project from early design coordination through construction and handover.",
-    cardSummary: "Design coordination, construction and handover.",
+    cardSummary: "From design coordination to construction and handover.",
     description:
       "We coordinate the design, the programme and the site team so the building you brief is the building that gets delivered. The service covers project planning, design coordination, construction delivery and handover support, with clear reporting throughout.",
     image: workPlan,
@@ -55,7 +55,7 @@ export const companyServices: CompanyService[] = [
     title: "Road Construction",
     summary:
       "Roads, drainage and external works planned around the site, the traffic and the long-term maintenance of the surface.",
-    cardSummary: "Roads, drainage and external works.",
+    cardSummary: "Roads, drainage and external works built around the site.",
     description:
       "Our civil works cover road formation, earthworks, drainage, paving and finishing. We plan the works around access and site logistics, then deliver a surface that drains, holds its profile and stands up to daily use.",
     image: serviceRoad,
@@ -79,7 +79,7 @@ export const companyServices: CompanyService[] = [
     title: "Ceiling & Wall Systems",
     summary:
       "Suspended ceilings, dry partitions and wall linings specified, supplied and installed by one team.",
-    cardSummary: "Suspended ceilings, partitions and wall linings.",
+    cardSummary: "Suspended ceilings, partitions and wall linings, supplied and installed.",
     description:
       "From a simple flat ceiling to stepped set-outs, concealed lighting and acoustic partitions, we specify the right system and install it cleanly. The Ephtech Board system sits at the centre of this service, supported by grids, channels, jointing compounds and trained crews.",
     image: workCeiling,
@@ -103,7 +103,7 @@ export const companyServices: CompanyService[] = [
     title: "Interior Finishing",
     summary:
       "Turnkey fit-out, feature walls, staircases, joinery and the final details that make a space feel complete.",
-    cardSummary: "Fit-out, joinery and final finishes.",
+    cardSummary: "Fit-out, joinery and the final finishes that complete a space.",
     description:
       "We take interiors from bare shell to a finished, usable space. The scope can include partitions, wall panels, staircases, built-in joinery, screeding, painting and the final coordination of lighting and finishes.",
     image: workInterior,
@@ -127,7 +127,7 @@ export const companyServices: CompanyService[] = [
     title: "Supply & Installation of Building Materials",
     summary:
       "Boards, ceiling systems, grids, channels and accessories supplied as one package — with installation support when needed.",
-    cardSummary: "Boards, grids, channels and accessories.",
+    cardSummary: "Boards, grids and system components delivered as one package.",
     description:
       "We supply modern building materials and the system components that go with them, so nothing is missing on site. Materials can be delivered from the branch closest to the project, with technical support and installation teams available where the scope requires it.",
     image: boardProduct,
@@ -151,7 +151,7 @@ export const companyServices: CompanyService[] = [
     title: "Importation of Modern Building Materials",
     summary:
       "Sourcing and importing modern materials for projects that need a specification beyond the local catalogue.",
-    cardSummary: "Modern materials sourced, cleared and delivered.",
+    cardSummary: "Modern materials sourced, cleared and delivered to site.",
     description:
       "We source and import modern building materials for projects with specific performance, finish or availability requirements. The service covers supplier selection, shipping coordination, clearing and delivery to the branch or site.",
     image: serviceImport,
@@ -175,7 +175,7 @@ export const companyServices: CompanyService[] = [
     title: "Real Estate",
     summary:
       "Property development and residential or commercial places, from land and concept through delivery.",
-    cardSummary: "Property development from concept to delivery.",
+    cardSummary: "Property developed from land and concept to a finished place.",
     description:
       "We develop residential and commercial property with the same construction and finishing teams that deliver our building projects. The scope covers early feasibility, concept coordination, development delivery and project management.",
     image: workRealEstate,
@@ -199,7 +199,7 @@ export const companyServices: CompanyService[] = [
     title: "Landscaping",
     summary:
       "External environments, planting, paving and the landscape details that complete a property.",
-    cardSummary: "Planting, paving and external spaces.",
+    cardSummary: "Planting, paving and external spaces that complete the property.",
     description:
       "Landscaping completes the way a property is experienced. We coordinate soft and hard landscaping, planting, paving and external works with the building and finishing programme so the outside is ready when the inside is.",
     image: serviceLandscaping,
