@@ -171,6 +171,17 @@ available.
 - Usage: temporary company homepage hero. Replace with an Ephtech brand film when
   suitable client footage is available.
 
+## Design & Building Projects gallery (client-supplied)
+
+Source folders: `~/Desktop/ephtech-media/_sorted/01-plan-design/` and
+`~/Desktop/ephtech-media/_sorted/02-build-civil/`.
+
+- 17 images copied to `public/media/design-build/01.jpg` through `17.jpg`.
+- 6 video posters copied to `public/media/design-build/video-01.jpg` through
+  `video-06.jpg`.
+- These are client site records, not stock. Confirm project permissions before
+  public launch.
+
 ## Client-supplied company media
 
 Source folder: `~/Desktop/ephtech-media/` (WhatsApp export; originals retained).

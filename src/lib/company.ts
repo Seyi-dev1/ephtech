@@ -14,7 +14,6 @@ import serviceRoad from "@/assets/images/service-road.jpg";
 import serviceRoadFinish from "@/assets/images/service-road-finish.jpg";
 import serviceRoadMachinery from "@/assets/images/service-road-machinery.jpg";
 import serviceRoadPaving from "@/assets/images/service-road-paving.jpg";
-import siteDrone from "@/assets/images/site-drone.jpg";
 import teamSite from "@/assets/images/team-site.jpg";
 import workBuild from "@/assets/images/work-build.jpg";
 import workCeiling from "@/assets/images/work-ceiling.jpg";
@@ -25,9 +24,10 @@ import workRealEstate from "@/assets/images/work-real-estate.jpg";
 import workStairs from "@/assets/images/work-stairs.jpg";
 
 export type ServiceGalleryItem = {
-  image: StaticImageData;
+  image: string | StaticImageData;
   alt: string;
-  note: "Completed work" | "Illustrative image";
+  note: "Completed work" | "Illustrative image" | "Client site";
+  video?: string;
 };
 
 export type CompanyService = {
@@ -58,24 +58,125 @@ export const companyServices: CompanyService[] = [
     imageNote: "Illustrative image",
     gallery: [
       {
-        image: serviceDesignPlan,
-        alt: "Architectural floor plan with room layouts and measured dimensions.",
-        note: "Illustrative image",
+        image: "/media/design-build/01.jpg",
+        alt: "Building under construction with blockwork and a pitched roof.",
+        note: "Client site",
       },
       {
-        image: workBuild,
-        alt: "Building under construction with columns, blockwork and formwork.",
-        note: "Completed work",
+        image: "/media/design-build/02.jpg",
+        alt: "Two-storey building under construction with scaffolding.",
+        note: "Client site",
       },
       {
-        image: siteDrone,
-        alt: "Aerial view of a construction site with groundworks and site team.",
-        note: "Illustrative image",
+        image: "/media/design-build/03.jpg",
+        alt: "Roof structure and ceiling framing under construction.",
+        note: "Client site",
       },
       {
-        image: teamSite,
-        alt: "Ephtech team on a construction site.",
-        note: "Completed work",
+        image: "/media/design-build/04.jpg",
+        alt: "Timber roof framing on a residential building.",
+        note: "Client site",
+      },
+      {
+        image: "/media/design-build/05.jpg",
+        alt: "Completed two-storey building with balconies.",
+        note: "Client site",
+      },
+      {
+        image: "/media/design-build/06.jpg",
+        alt: "Completed house with a hipped roof.",
+        note: "Client site",
+      },
+      {
+        image: "/media/design-build/07.jpg",
+        alt: "Ground slab and site team at work.",
+        note: "Client site",
+      },
+      {
+        image: "/media/design-build/08.jpg",
+        alt: "Curved staircase formwork under construction.",
+        note: "Client site",
+      },
+      {
+        image: "/media/design-build/09.jpg",
+        alt: "Reinforced concrete staircase under construction.",
+        note: "Client site",
+      },
+      {
+        image: "/media/design-build/10.jpg",
+        alt: "Groundworks and site team preparing a building footprint.",
+        note: "Client site",
+      },
+      {
+        image: "/media/design-build/11.jpg",
+        alt: "Foundation slab and reinforcement on site.",
+        note: "Client site",
+      },
+      {
+        image: "/media/design-build/12.jpg",
+        alt: "Staircase blockwork and reinforcement in progress.",
+        note: "Client site",
+      },
+      {
+        image: "/media/design-build/13.jpg",
+        alt: "Building frame at first-floor level.",
+        note: "Client site",
+      },
+      {
+        image: "/media/design-build/14.jpg",
+        alt: "Foundation blockwork and reinforcement.",
+        note: "Client site",
+      },
+      {
+        image: "/media/design-build/15.jpg",
+        alt: "Blockwork walls at foundation level.",
+        note: "Client site",
+      },
+      {
+        image: "/media/design-build/16.jpg",
+        alt: "Ground-floor slab with reinforcement laid out.",
+        note: "Client site",
+      },
+      {
+        image: "/media/design-build/17.jpg",
+        alt: "Blockwork walls and site progress.",
+        note: "Client site",
+      },
+      {
+        image: "/media/design-build/video-01.jpg",
+        video: "/videos/design-build/01.mp4",
+        alt: "Site progress video.",
+        note: "Client site",
+      },
+      {
+        image: "/media/design-build/video-02.jpg",
+        video: "/videos/design-build/02.mp4",
+        alt: "Construction works video.",
+        note: "Client site",
+      },
+      {
+        image: "/media/design-build/video-03.jpg",
+        video: "/videos/design-build/03.mp4",
+        alt: "Site progress video.",
+        note: "Client site",
+      },
+      {
+        image: "/media/design-build/video-04.jpg",
+        video: "/videos/design-build/04.mp4",
+        alt: "Construction works video.",
+        note: "Client site",
+      },
+      {
+        image: "/media/design-build/video-05.jpg",
+        video: "/videos/design-build/05.mp4",
+        alt: "Site progress video.",
+        note: "Client site",
+      },
+      {
+        image: "/media/design-build/video-06.jpg",
+        video: "/videos/design-build/06.mp4",
+        alt: "Construction works video.",
+        note: "Client site",
       },
     ],
     capabilities: [

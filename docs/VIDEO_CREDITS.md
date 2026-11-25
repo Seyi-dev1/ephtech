@@ -26,6 +26,15 @@ Nigerian residential imagery, not as a named Ephtech project.
 The montage should be replaced with an Ephtech brand film featuring real
 projects when the client supplies suitable horizontal footage.
 
+## Design & Building Projects gallery (client-supplied)
+
+- Source folder: `~/Desktop/ephtech-media/_sorted/02-build-civil/`.
+- Files: `public/videos/design-build/01.mp4` through `06.mp4`.
+- Posters: `public/media/design-build/video-01.jpg` through `video-06.jpg`.
+- Six client site clips, transcoded for web at up to 720px wide, muted in the
+  gallery and played only on request.
+- Confirm project permissions before public launch.
+
 ## Cathedral installation (owner-supplied)
 
 - Source: Supplied locally (`Desktop/cathedral-video.mp4`).
