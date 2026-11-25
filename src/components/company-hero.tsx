@@ -1,8 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import companyHero from "@/assets/images/company-hero.jpg";
-import { ArrowRight, ArrowUpRight, WhatsApp } from "@/components/icons";
-import { WHATSAPP_MESSAGES, whatsappHref } from "@/lib/whatsapp";
+import { ArrowRight, ArrowUpRight } from "@/components/icons";
 
 export default function CompanyHero() {
   return (
@@ -83,15 +82,6 @@ export default function CompanyHero() {
                   See our work
                   <ArrowUpRight className="h-3.5 w-3.5" />
                 </Link>
-                <a
-                  href={whatsappHref(WHATSAPP_MESSAGES.general)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="link-underline ml-1 hidden text-[12px] font-medium text-paper/70 sm:inline-flex"
-                >
-                  <WhatsApp className="h-3.5 w-3.5" />
-                  Talk to the team
-                </a>
               </div>
             </div>
           </div>
