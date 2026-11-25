@@ -111,14 +111,14 @@ export default function ServiceGalleryCarousel({ items, serviceTitle }: Props) {
         {slides.map((item, index) => (
           <div
             key={`${item.alt}-${index}`}
-            className="relative h-64 w-52 shrink-0 overflow-hidden bg-stone sm:h-[30rem] sm:w-[22rem]"
+            className="relative h-72 w-60 shrink-0 overflow-hidden bg-stone sm:h-[32rem] sm:w-[24rem]"
             aria-hidden={index >= items.length ? true : undefined}
           >
             <Image
               src={item.image}
               alt={item.alt}
               fill
-              sizes="(max-width: 640px) 208px, 352px"
+              sizes="(max-width: 640px) 240px, 384px"
               placeholder="blur"
               draggable={false}
               className="pointer-events-none photo-grade object-cover"
