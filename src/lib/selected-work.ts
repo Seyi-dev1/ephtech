@@ -1,4 +1,5 @@
 import type { ServiceGalleryItem } from "@/components/service-gallery-carousel";
+import { cloudinaryVideo } from "@/lib/cloudinary";
 
 export const selectedWork: ServiceGalleryItem[] = [
   {
@@ -58,19 +59,19 @@ export const selectedWork: ServiceGalleryItem[] = [
   },
   {
     image: "/media/finish-interiors/video-04.jpg",
-    video: "/videos/finish-interiors/04.mp4",
+    video: cloudinaryVideo("ephtech/videos/finish-interiors/04"),
     alt: "Completed cathedral ceiling video.",
     note: "Completed work",
   },
   {
     image: "/media/finish-interiors/video-06.jpg",
-    video: "/videos/finish-interiors/06.mp4",
+    video: cloudinaryVideo("ephtech/videos/finish-interiors/06"),
     alt: "Completed kitchen and ceiling video.",
     note: "Completed work",
   },
   {
     image: "/media/selected-work/video-01.jpg",
-    video: "/videos/selected-work/exterior.mp4",
+    video: cloudinaryVideo("ephtech/videos/selected-work/exterior"),
     alt: "Completed residential exterior video.",
     note: "Completed work",
   },

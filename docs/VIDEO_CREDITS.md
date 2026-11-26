@@ -1,9 +1,15 @@
 # Video credits
 
+## Hosting
+
+All MP4 files are hosted on Cloudinary under `ephtech/videos/`. The local
+`public/videos/**/*.mp4` files are ignored by Git and are not part of the
+repository. Posters remain local in `public/media/` and `public/videos/`.
+
 ## Company hero — temporary four-scene montage
 
-- Files: `public/videos/company-hero.mp4` and
-  `public/videos/company-hero-poster.jpg`
+- Cloudinary: `ephtech/videos/company-hero`
+- Poster: `public/videos/company-hero-poster.jpg`
 - Edit: **15.6 seconds**, 1920 × 1080, 30 fps, muted; four 4.5-second scenes
   joined by 0.8-second crossfades, with a short fade in/out and a shared grade.
 - Scenes 1–3 use the clips' own camera movement. Scene 4 is a high-resolution
@@ -29,7 +35,7 @@ projects when the client supplies suitable horizontal footage.
 ## Design & Building Projects gallery (client-supplied)
 
 - Source folder: `~/Desktop/ephtech-media/_sorted/02-build-civil/`.
-- Files: `public/videos/design-build/01.mp4` through `06.mp4`.
+- Cloudinary: `ephtech/videos/design-build/01` through `06`.
 - Posters: `public/media/design-build/video-01.jpg` through `video-06.jpg`.
 - Six client site clips, transcoded for web at up to 720px wide, muted in the
   gallery and played only on request.
@@ -37,9 +43,9 @@ projects when the client supplies suitable horizontal footage.
 
 ## Selected work gallery (client-supplied)
 
-- Interior clips: `public/videos/finish-interiors/04.mp4` and `06.mp4`, with
+- Interior clips: `ephtech/videos/finish-interiors/04` and `06`, with
   posters `public/media/finish-interiors/video-04.jpg` and `video-06.jpg`.
-- Exterior clip: `public/videos/selected-work/exterior.mp4`, with poster
+- Exterior clip: `ephtech/videos/selected-work/exterior`, with poster
   `public/media/selected-work/video-01.jpg`.
 - Source for the exterior clip:
   `~/Desktop/ephtech-media/_sorted/05-real-estate-landscaping/`.
@@ -48,7 +54,7 @@ projects when the client supplies suitable horizontal footage.
 ## Interior Finishing gallery (client-supplied)
 
 - Source folder: `~/Desktop/ephtech-media/_sorted/03-finish-interiors/`.
-- Files: `public/videos/finish-interiors/01.mp4` through `06.mp4`.
+- Cloudinary: `ephtech/videos/finish-interiors/01` through `06`.
 - Posters: `public/media/finish-interiors/video-01.jpg` through
   `video-06.jpg`.
 - Six client clips, each trimmed to the first 20 seconds for the gallery,

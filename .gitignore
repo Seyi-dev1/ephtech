@@ -25,4 +25,4 @@ yarn-error.log*
 
 # large media (video is hosted on Cloudinary)
 /public/videos/*.mp4
-!/public/videos/company-hero.mp4
+/public/videos/**/*.mp4

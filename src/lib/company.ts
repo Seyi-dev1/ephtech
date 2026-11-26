@@ -1,4 +1,5 @@
 import type { StaticImageData } from "next/image";
+import { cloudinaryVideo } from "@/lib/cloudinary";
 import boardProduct from "@/assets/images/board-product.jpg";
 import panelInstall from "@/assets/images/panel-install.jpg";
 import projectCivic from "@/assets/images/project-civic.jpg";
@@ -144,37 +145,37 @@ export const companyServices: CompanyService[] = [
       },
       {
         image: "/media/design-build/video-01.jpg",
-        video: "/videos/design-build/01.mp4",
+        video: cloudinaryVideo("ephtech/videos/design-build/01"),
         alt: "Site progress video.",
         note: "Client site",
       },
       {
         image: "/media/design-build/video-02.jpg",
-        video: "/videos/design-build/02.mp4",
+        video: cloudinaryVideo("ephtech/videos/design-build/02"),
         alt: "Construction works video.",
         note: "Client site",
       },
       {
         image: "/media/design-build/video-03.jpg",
-        video: "/videos/design-build/03.mp4",
+        video: cloudinaryVideo("ephtech/videos/design-build/03"),
         alt: "Site progress video.",
         note: "Client site",
       },
       {
         image: "/media/design-build/video-04.jpg",
-        video: "/videos/design-build/04.mp4",
+        video: cloudinaryVideo("ephtech/videos/design-build/04"),
         alt: "Construction works video.",
         note: "Client site",
       },
       {
         image: "/media/design-build/video-05.jpg",
-        video: "/videos/design-build/05.mp4",
+        video: cloudinaryVideo("ephtech/videos/design-build/05"),
         alt: "Site progress video.",
         note: "Client site",
       },
       {
         image: "/media/design-build/video-06.jpg",
-        video: "/videos/design-build/06.mp4",
+        video: cloudinaryVideo("ephtech/videos/design-build/06"),
         alt: "Construction works video.",
         note: "Client site",
       },
@@ -306,37 +307,37 @@ export const companyServices: CompanyService[] = [
       },
       {
         image: "/media/finish-interiors/video-01.jpg",
-        video: "/videos/finish-interiors/01.mp4",
+        video: cloudinaryVideo("ephtech/videos/finish-interiors/01"),
         alt: "Interior finishing video: ceiling and wall works.",
         note: "Completed work",
       },
       {
         image: "/media/finish-interiors/video-02.jpg",
-        video: "/videos/finish-interiors/02.mp4",
+        video: cloudinaryVideo("ephtech/videos/finish-interiors/02"),
         alt: "Interior finishing video: completed room detailing.",
         note: "Completed work",
       },
       {
         image: "/media/finish-interiors/video-03.jpg",
-        video: "/videos/finish-interiors/03.mp4",
+        video: cloudinaryVideo("ephtech/videos/finish-interiors/03"),
         alt: "Interior finishing video: ceiling installation.",
         note: "Completed work",
       },
       {
         image: "/media/finish-interiors/video-04.jpg",
-        video: "/videos/finish-interiors/04.mp4",
+        video: cloudinaryVideo("ephtech/videos/finish-interiors/04"),
         alt: "Interior finishing video: feature ceiling and lighting.",
         note: "Completed work",
       },
       {
         image: "/media/finish-interiors/video-05.jpg",
-        video: "/videos/finish-interiors/05.mp4",
+        video: cloudinaryVideo("ephtech/videos/finish-interiors/05"),
         alt: "Interior finishing video: staircase and wall finish.",
         note: "Completed work",
       },
       {
         image: "/media/finish-interiors/video-06.jpg",
-        video: "/videos/finish-interiors/06.mp4",
+        video: cloudinaryVideo("ephtech/videos/finish-interiors/06"),
         alt: "Completed kitchen and ceiling video.",
         note: "Completed work",
       },

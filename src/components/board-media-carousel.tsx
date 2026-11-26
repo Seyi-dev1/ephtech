@@ -11,6 +11,7 @@ import {
 import boardProduct from "@/assets/images/board-product.jpg";
 import BoardVisual from "@/components/board-visual";
 import { ArrowRight } from "@/components/icons";
+import { cloudinaryVideo } from "@/lib/cloudinary";
 
 type Slide = {
   id: string;
@@ -37,14 +38,14 @@ const slides: Slide[] = [
     id: "packaging",
     label: "Packaging",
     caption: "Packed for dispatch",
-    video: "https://res.cloudinary.com/drikcqdzp/video/upload/q_auto,f_auto/ephtech/videos/ephtech-board-packaging.mp4",
+    video: cloudinaryVideo("ephtech/videos/ephtech-board-packaging"),
     poster: "/videos/ephtech-board-packaging-poster.jpg",
   },
   {
     id: "installation",
     label: "Installation",
     caption: "On-site installation",
-    video: "https://res.cloudinary.com/drikcqdzp/video/upload/q_auto,f_auto/ephtech/videos/ephtech-board-installation.mp4",
+    video: cloudinaryVideo("ephtech/videos/ephtech-board-installation"),
     poster: "/videos/ephtech-board-installation-poster.jpg",
   },
 ];

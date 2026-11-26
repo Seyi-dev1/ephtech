@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import companyHero from "@/assets/images/company-hero.jpg";
 import { ArrowRight, ArrowUpRight } from "@/components/icons";
+import { cloudinaryVideo } from "@/lib/cloudinary";
 
 export default function CompanyHero() {
   return (
@@ -28,7 +29,7 @@ export default function CompanyHero() {
           poster="/videos/company-hero-poster.jpg"
           aria-hidden="true"
         >
-          <source src="/videos/company-hero.mp4" type="video/mp4" />
+          <source src={cloudinaryVideo("ephtech/videos/company-hero")} type="video/mp4" />
         </video>
       </div>
       <div className="hero-image__wash" aria-hidden="true" />
