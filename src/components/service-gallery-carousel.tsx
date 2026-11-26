@@ -17,9 +17,10 @@ export type ServiceGalleryItem = {
 type Props = {
   items: ServiceGalleryItem[];
   serviceTitle: string;
+  speed?: number;
 };
 
-export default function ServiceGalleryCarousel({ items, serviceTitle }: Props) {
+export default function ServiceGalleryCarousel({ items, serviceTitle, speed = 0.65 }: Props) {
   const trackRef = useRef<HTMLDivElement>(null);
   const offsetRef = useRef(0);
   const groupWidthRef = useRef(1);
@@ -66,7 +67,7 @@ export default function ServiceGalleryCarousel({ items, serviceTitle }: Props) {
         !videoPlayingRef.current &&
         !reduced.matches
       ) {
-        offsetRef.current -= 0.65;
+        offsetRef.current -= speed;
         wrapOffset();
         applyOffset();
       }
@@ -78,7 +79,7 @@ export default function ServiceGalleryCarousel({ items, serviceTitle }: Props) {
       cancelAnimationFrame(frame);
       resizeObserver.disconnect();
     };
-  }, [copies]);
+  }, [copies, speed]);
 
   const onPointerDown = (event: ReactPointerEvent<HTMLDivElement>) => {
     pointerDownRef.current = true;

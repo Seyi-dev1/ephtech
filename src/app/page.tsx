@@ -217,7 +217,7 @@ export default function Home() {
         </div>
 
         <div className="mt-10" data-reveal>
-          <ServiceGalleryCarousel items={selectedWork} serviceTitle="Selected work" />
+          <ServiceGalleryCarousel items={selectedWork} serviceTitle="Selected work" speed={0.55} />
         </div>
 
         <div className="shell mt-8 flex justify-end" data-reveal>
