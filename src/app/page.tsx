@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import boardProduct from "@/assets/images/board-product.jpg";
-import teamSite from "@/assets/images/team-site.jpg";
 import { branches } from "@/lib/data";
-import { companyPrinciples, companyServices } from "@/lib/company";
+import { companyServices } from "@/lib/company";
+import { selectedWork } from "@/lib/selected-work";
 import { siteUrl } from "@/lib/site";
 import { WHATSAPP_DISPLAY, WHATSAPP_MESSAGES, whatsappHref } from "@/lib/whatsapp";
 import CompanyHero from "@/components/company-hero";
@@ -14,6 +14,7 @@ import ServiceGalleryCarousel from "@/components/service-gallery-carousel";
 import {
   ArrowRight,
   ArrowUpRight,
+  Check,
   Download,
   Phone,
   WhatsApp,
@@ -78,87 +79,45 @@ const structuredData = {
       "@type": "Product",
       name: "Ephtech Board",
       brand: { "@type": "Brand", name: "Ephtech" },
-      category: "Factory-finished building board",
+      category: "Engineered building board",
       description:
-        "A dry, factory-finished, moisture-resistant alternative to POP, plasterboard and gypsum for ceilings and walls.",
+        "A dry board with a factory finish and moisture resistance, made as an alternative to POP, plasterboard and gypsum for ceilings and walls.",
       url: `${siteUrl}/board`,
     },
   ],
 };
 
-const selectedWork = [
+const boardAdvantages = [
   {
-    image: "/media/finish-interiors/02.jpg",
-    alt: "Finished living room with a panel wall and a white ceiling.",
-    note: "Completed work" as const,
+    lead: "Moisture resistance.",
+    body: "Formulated for humid rooms and wet areas.",
   },
   {
-    image: "/media/finish-interiors/04.jpg",
-    alt: "Completed office fit-out with a suspended ceiling and wall panels.",
-    note: "Completed work" as const,
+    lead: "Impact resistance.",
+    body: "Resists cracking, sagging and chipped edges.",
   },
   {
-    image: "/media/finish-interiors/14.jpg",
-    alt: "Formal living room with a detailed ceiling and curtains.",
-    note: "Completed work" as const,
+    lead: "Dry install.",
+    body: "Zero curing downtime, so rooms finish sooner.",
+  },
+];
+
+const workSteps = [
+  {
+    title: "Brief and site review",
+    body: "We visit the site, read the drawings and agree what the space needs to do. Budget, programme and site constraints are put on the table before anything is priced.",
   },
   {
-    image: "/media/finish-interiors/18.jpg",
-    alt: "Staircase with a panelled wall and concealed lighting.",
-    note: "Completed work" as const,
+    title: "Scope and materials",
+    body: "You receive a scope that states what is included, what is not, and the materials and quantities involved. The programme is agreed before the team mobilises.",
   },
   {
-    image: "/media/finish-interiors/17.jpg",
-    alt: "Cathedral ceiling with a feature cross.",
-    note: "Completed work" as const,
+    title: "Build and finish",
+    body: "Construction, ceilings, partitions, joinery and finishes are carried in sequence by the same team, with site coordination and progress reporting.",
   },
   {
-    image: "/media/finish-interiors/19.jpg",
-    alt: "White ceiling with concealed linear lighting and a pendant.",
-    note: "Completed work" as const,
-  },
-  {
-    image: "/media/finish-interiors/20.jpg",
-    alt: "Ceiling with concealed LED lighting and a central pendant.",
-    note: "Completed work" as const,
-  },
-  {
-    image: "/media/selected-work/01.jpg",
-    alt: "Completed brick duplex with a gated frontage.",
-    note: "Completed work" as const,
-  },
-  {
-    image: "/media/selected-work/02.jpg",
-    alt: "Completed residence with ornate facade detailing.",
-    note: "Completed work" as const,
-  },
-  {
-    image: "/media/selected-work/03.jpg",
-    alt: "Completed white residential building with a gated frontage.",
-    note: "Completed work" as const,
-  },
-  {
-    image: "/media/selected-work/04.jpg",
-    alt: "Completed residence with a red roof and landscaped frontage.",
-    note: "Completed work" as const,
-  },
-  {
-    image: "/media/finish-interiors/video-04.jpg",
-    video: "/videos/finish-interiors/04.mp4",
-    alt: "Completed cathedral ceiling video.",
-    note: "Completed work" as const,
-  },
-  {
-    image: "/media/finish-interiors/video-06.jpg",
-    video: "/videos/finish-interiors/06.mp4",
-    alt: "Completed kitchen and ceiling video.",
-    note: "Completed work" as const,
-  },
-  {
-    image: "/media/selected-work/video-01.jpg",
-    video: "/videos/selected-work/exterior.mp4",
-    alt: "Completed residential exterior video.",
-    note: "Completed work" as const,
+    title: "Handover and aftercare",
+    body: "We complete snagging, hand over the documents and stay available after completion. The people who built the work are the people you call.",
   },
 ];
 
@@ -272,112 +231,171 @@ export default function Home() {
       {/* ---------------- products ---------------- */}
       <section className="section">
         <div className="shell">
-          <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
+          <div className="grid gap-6 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-6" data-reveal>
               <span className="eyebrow text-muted">Products & materials</span>
-              <h2 className="h2 mt-4">
-                The board is one product.
-                <br />
-                The company is the system.
-              </h2>
-              <p className="body-lg mt-6 max-w-lg">
-                Ephtech Board is our flagship factory-finished board, supported by ceiling systems,
-                building materials and imported finishes. Explore the product range as part of the
-                wider Ephtech service.
-              </p>
-              <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3">
-                <Link href="/products" className="btn btn-primary">
-                  Explore products
-                  <ArrowRight className="h-3.5 w-3.5" />
-                </Link>
-                <Link href="/board" className="link-underline text-[13px] font-medium">
-                  Ephtech Board
-                  <ArrowUpRight className="h-3.5 w-3.5" />
-                </Link>
-              </div>
+              <h2 className="h2 mt-4">The products we supply.</h2>
             </div>
-            <Link href="/board" className="group block lg:col-span-6" data-reveal>
-              <div className="media relative aspect-[16/10] overflow-hidden">
+            <p className="body-lg lg:col-span-5 lg:col-start-8" data-reveal>
+              Ephtech International imports and supplies a number of building products. At the
+              forefront right now is the Ephtech Board.
+            </p>
+          </div>
+
+          <div className="mt-10 grid lg:grid-cols-12" data-reveal>
+            <Link href="/board" className="group block lg:col-span-7 lg:h-full">
+              <div className="media relative aspect-[4/3] overflow-hidden lg:aspect-auto lg:h-full lg:min-h-[420px]">
                 <Image
                   src={boardProduct}
-                  alt="Stack of Ephtech boards showing the factory-finished face."
+                  alt="Stack of Ephtech boards showing the finished face."
                   fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  sizes="(max-width: 1024px) 100vw, 58vw"
                   placeholder="blur"
                   className="photo-grade object-cover transition-transform duration-700 group-hover:scale-[1.02]"
                 />
                 <span className="mono absolute top-3 left-3 bg-paper/92 px-2 py-1 text-[8px] tracking-[0.14em] uppercase text-ink">
-                  Flagship product
-                </span>
-              </div>
-              <div className="mt-3 flex items-center justify-between border-t border-line pt-3">
-                <span className="font-display text-xl font-medium tracking-[-0.025em]">
                   Ephtech Board
                 </span>
-                <span className="mono text-[8px] tracking-[0.12em] uppercase text-muted">
-                  Factory-finished board system
+              </div>
+            </Link>
+
+            <div className="relative z-10 mx-4 -mt-8 border border-line bg-paper p-6 sm:mx-6 sm:p-8 lg:col-span-5 lg:mr-0 lg:-ml-14 lg:mt-12 lg:mb-12">
+              <div className="flex items-center justify-between gap-4 border-b border-line pb-3">
+                <span className="mono text-[8.5px] tracking-[0.16em] uppercase text-forest">
+                  At the forefront
+                </span>
+                <span className="mono text-[8.5px] tracking-[0.14em] uppercase text-muted">
+                  01 / Flagship
                 </span>
               </div>
+
+              <h3 className="mt-4 font-display text-3xl font-medium tracking-[-0.03em]">
+                Ephtech Board
+              </h3>
+              <p className="mt-3 text-[13.5px] leading-relaxed text-muted">
+                A dry board with a factory finish for ceilings, partitions and wall linings. It
+                replaces wet POP and fragile gypsum. It resists moisture and impact, holds a flat
+                face that is ready for paint, and installs without curing downtime.
+              </p>
+
+              <ul className="mt-5 flex flex-col gap-2.5 border-t border-line pt-5">
+                {boardAdvantages.map((advantage) => (
+                  <li key={advantage.lead} className="flex items-start gap-2.5">
+                    <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-green" />
+                    <span className="text-[12.5px] leading-relaxed text-muted">
+                      <strong className="font-medium text-ink">{advantage.lead}</strong>{" "}
+                      {advantage.body}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3">
+                <Link href="/board" className="btn btn-primary">
+                  Explore the board
+                  <ArrowRight className="h-3.5 w-3.5" />
+                </Link>
+                <Link href="/board#specification" className="link-underline text-[13px] font-medium">
+                  Board specification
+                  <ArrowUpRight className="h-3.5 w-3.5" />
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          <div
+            className="mt-8 flex flex-col gap-4 border-t border-line pt-5 sm:flex-row sm:items-center sm:justify-between"
+            data-reveal
+          >
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+              <span className="mono text-[8.5px] tracking-[0.14em] uppercase text-muted">
+                Also supplied
+              </span>
+              {[
+                { label: "Ceiling systems", href: "/board" },
+                { label: "Building materials", href: "/services/building-materials-supply" },
+                { label: "Imported finishes", href: "/services/building-materials-importation" },
+              ].map((item) => (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className="link-underline text-[12.5px] font-medium"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+            <Link href="/services" className="link-underline text-[13px] font-medium">
+              All services
+              <ArrowUpRight className="h-3.5 w-3.5" />
             </Link>
           </div>
         </div>
       </section>
 
-      {/* ---------------- principles ---------------- */}
-      <section className="section bg-forest text-paper">
+      {/* ---------------- how we work ---------------- */}
+      <section className="section border-y border-line bg-paper-2">
         <div className="shell">
           <div className="grid gap-6 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-7" data-reveal>
-              <span className="eyebrow text-amber/80">How we work</span>
-              <h2 className="h2 mt-5 text-paper">One team. Clear scope. No hand-offs.</h2>
+              <span className="eyebrow text-muted">How we work</span>
+              <h2 className="h2 mt-5">The same team, from first brief to handover.</h2>
             </div>
-            <p className="body-lg lg:col-span-5 text-paper/55" data-reveal>
-              Use one service or combine several. The scope is agreed around your project, not a
-              fixed package.
+            <p className="body-lg lg:col-span-5" data-reveal>
+              A project runs better when one team owns the scope, the programme and the finish. We
+              agree the work first, build it in a clear sequence, and stay available after handover.
             </p>
           </div>
 
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4" data-reveal-group>
-            {companyPrinciples.map((principle) => (
-              <div key={principle.title} className="border-t border-paper/12 pt-4">
-                <h3 className="mt-1 font-display text-lg font-medium tracking-[-0.02em]">
-                  {principle.title}
+          <div
+            className="mt-12 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-4"
+            data-reveal-group
+          >
+            {workSteps.map((step, index) => (
+              <div key={step.title} className="border-t border-line pt-4">
+                <div className="flex items-center justify-between gap-3">
+                  <span className="mono text-[9px] tracking-[0.14em] text-muted">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <span className="h-1.5 w-1.5 rounded-full bg-amber" aria-hidden="true" />
+                </div>
+                <h3 className="mt-3 font-display text-xl font-medium tracking-[-0.025em]">
+                  {step.title}
                 </h3>
-                <p className="mt-2 text-[12.5px] leading-relaxed text-paper/55">
-                  {principle.body}
+                <p className="mt-2 max-w-sm text-[13px] leading-relaxed text-muted">
+                  {step.body}
                 </p>
               </div>
             ))}
           </div>
 
-          <figure className="mt-10" data-reveal>
-            <div className="media relative aspect-[16/7] overflow-hidden">
-              <Image
-                src={teamSite}
-                alt="Ephtech team on a construction site."
-                fill
-                sizes="100vw"
-                placeholder="blur"
-                className="photo-grade object-cover"
-              />
-              <span className="mono absolute bottom-3 left-3 bg-forest/80 px-2 py-1 text-[8px] tracking-[0.14em] uppercase text-paper/80">
-                One team · Client site
-              </span>
+          <div
+            className="mt-12 grid gap-8 border-t border-line pt-8 lg:grid-cols-12 lg:items-end"
+            data-reveal
+          >
+            <div className="lg:col-span-8">
+              <span className="eyebrow text-muted">One accountable team</span>
+              <p className="mt-4 max-w-3xl font-display text-[clamp(1.7rem,3vw,2.6rem)] leading-[1.05] tracking-[-0.03em]">
+                The same people carry the brief, the build, the finish and the supply. You are not
+                passed between trades or left to coordinate the gaps.
+              </p>
+              <div className="mono mt-6 flex flex-wrap gap-x-6 gap-y-2 text-[8.5px] tracking-[0.14em] uppercase text-muted">
+                <span>One accountable team</span>
+                <span>Lagos, Owerri and Aba</span>
+                <span>Seven service divisions</span>
+              </div>
             </div>
-            <figcaption className="mono mt-3 text-[8px] tracking-[0.14em] uppercase text-paper/45">
-              The same team across design, construction, finishing and supply.
-            </figcaption>
-          </figure>
 
-          <div className="mt-8 flex flex-wrap items-center gap-x-7 gap-y-3 border-t border-paper/12 pt-5" data-reveal>
-            <QuoteButton className="btn btn-primary">
-              Start a project
-              <WhatsApp className="h-4 w-4" />
-            </QuoteButton>
-            <Link href="/about" className="link-underline text-[13px] font-medium text-paper">
-              About Ephtech
-              <ArrowUpRight className="h-3.5 w-3.5" />
-            </Link>
+            <div className="flex flex-col gap-3 lg:col-span-4">
+              <QuoteButton className="btn btn-primary w-full">
+                Start a project
+                <WhatsApp className="h-4 w-4" />
+              </QuoteButton>
+              <Link href="/about" className="btn btn-ghost w-full">
+                About Ephtech
+                <ArrowUpRight className="h-3.5 w-3.5" />
+              </Link>
+            </div>
           </div>
         </div>
       </section>

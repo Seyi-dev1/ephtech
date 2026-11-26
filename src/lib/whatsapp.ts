@@ -9,6 +9,8 @@ export const WHATSAPP_MESSAGES = {
     "Hello Ephtech, I would like a quote for the full Ephtech Board system. It includes the board, ceiling grid, channels, studs, fasteners and jointing compound.",
   sample:
     "Hello Ephtech, I would like to request a sample of the Ephtech Board and its jointing system.",
+  schedule:
+    "Hello Ephtech, I would like to send drawings for a material schedule and quotation.",
 };
 
 export function whatsappHref(message: string = WHATSAPP_MESSAGES.quote) {

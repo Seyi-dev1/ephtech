@@ -966,8 +966,8 @@ body {
   .site-nav__logo-stack {
     position: relative;
     display: block;
-    width: 148px;
-    height: 37px;
+    width: 132px;
+    height: 43px;
   }
 
   .site-nav__logo-tone {
@@ -1133,8 +1133,8 @@ body {
 
   @media (max-width: 1023px) {
     .site-nav__logo-stack {
-      width: 132px;
-      height: 33px;
+      width: 116px;
+      height: 38px;
     }
 
     .nav-menu-trigger {

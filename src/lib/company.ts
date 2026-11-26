@@ -455,12 +455,12 @@ export const companyServices: CompanyService[] = [
     description:
       "We source and import modern building materials for projects with specific performance, finish or availability requirements. The service covers supplier selection, shipping coordination, clearing and delivery to the branch or site.",
     image: serviceImport,
-    alt: "Aerial view of a logistics port with shipping containers and cargo handling equipment.",
+    alt: "Stacks of metal building panels and profiles inside a warehouse.",
     imageNote: "Illustrative image",
     gallery: [
       {
         image: serviceImport,
-        alt: "Aerial view of a logistics port with shipping containers and cargo handling equipment.",
+        alt: "Stacks of metal building panels and profiles inside a warehouse.",
         note: "Illustrative image",
       },
       {

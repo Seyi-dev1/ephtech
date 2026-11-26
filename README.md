@@ -37,7 +37,6 @@ npm run start
 /services                 Services
 /services/[slug]          Individual service pages
 /projects                 Selected work across the company
-/products                 Products, systems and materials
 /board                    Ephtech Board product page
 /contact                  Contact and project enquiry
 ```

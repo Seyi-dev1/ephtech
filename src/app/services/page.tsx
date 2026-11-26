@@ -14,14 +14,48 @@ export const metadata: Metadata = {
   alternates: { canonical: "/services" },
 };
 
+const introMedia = [
+  {
+    src: "/media/finish-interiors/04.jpg",
+    alt: "Completed office interior with a suspended ceiling and wall panels.",
+    note: "Completed work",
+  },
+  {
+    src: "/media/finish-interiors/02.jpg",
+    alt: "Finished living room with a panel wall and a white ceiling.",
+    note: "Completed work",
+  },
+  {
+    src: "/media/finish-interiors/18.jpg",
+    alt: "Staircase with a panelled wall and concealed lighting.",
+    note: "Completed work",
+  },
+  {
+    src: "/media/design-build/05.jpg",
+    alt: "Completed two storey building with balconies.",
+    note: "Client site",
+  },
+  {
+    src: "/media/finish-interiors/17.jpg",
+    alt: "Cathedral ceiling with a feature cross.",
+    note: "Completed work",
+  },
+  {
+    src: "/media/finish-interiors/01.jpg",
+    alt: "Suspended ceiling with a concealed blue light cove.",
+    note: "Completed work",
+  },
+];
+
 export default function ServicesPage() {
   return (
     <main id="main" className="bg-paper text-ink">
       <PageIntro
-        eyebrow="Services"
+        eyebrow="Design, build, supply and property"
+        label="Services"
         title="The services we deliver."
-        lede="Construction, interiors, materials and property. Use one service or combine several — the scope is built around your project, not a fixed package."
-        note="Project photography is client-supplied. Online images are illustrative and marked as such."
+        lede="Ephtech International works across seven service divisions: design and building projects, interior finishing, road construction, building materials supply, importation of modern materials, real estate and landscaping. Use one service on its own, or combine several under one team and one scope. Work is delivered from our Lagos, Owerri and Aba branches, with the same standard of coordination from first brief to handover."
+        carousel={introMedia}
       />
 
       <section className="section">

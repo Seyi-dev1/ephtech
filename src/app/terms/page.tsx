@@ -11,12 +11,18 @@ export default function TermsPage() {
   return (
     <main className="bg-paper text-ink">
       <div className="shell pt-[clamp(128px,17vh,184px)] pb-24">
-        <Link
-          href="/"
-          className="mono text-[10px] tracking-[0.16em] uppercase text-muted transition-colors hover:text-forest"
+        <nav
+          aria-label="Breadcrumb"
+          className="mono flex flex-wrap items-center gap-2 text-[9px] tracking-[0.16em] uppercase text-muted"
         >
-          ← Back to home
-        </Link>
+          <Link href="/" className="transition-colors hover:text-forest">
+            Ephtech
+          </Link>
+          <span aria-hidden="true">/</span>
+          <span className="text-ink" aria-current="page">
+            Terms
+          </span>
+        </nav>
 
         <span className="eyebrow mt-10 block text-muted">Legal</span>
         <h1 className="mt-4 max-w-3xl font-display text-[clamp(2.6rem,5.4vw,4.6rem)] leading-[0.95] font-medium tracking-[-0.045em]">

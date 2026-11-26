@@ -1,0 +1,192 @@
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import { ArrowRight, ArrowUpRight } from "@/components/icons";
+
+export type ProjectCarouselItem = {
+  src: string;
+  alt: string;
+  title: string;
+  service: string;
+  note: string;
+  href: string;
+};
+
+function PlayIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className="h-3 w-3 translate-x-px">
+      <path d="M8 5.14v13.72L19 12 8 5.14Z" />
+    </svg>
+  );
+}
+
+function PauseIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className="h-3 w-3">
+      <path d="M7 5h4v14H7V5Zm6 0h4v14h-4V5Z" />
+    </svg>
+  );
+}
+
+export default function ProjectCarousel({
+  items,
+  interval = 5500,
+}: {
+  items: ProjectCarouselItem[];
+  interval?: number;
+}) {
+  const [active, setActive] = useState(0);
+  const [autoplay, setAutoplay] = useState(true);
+  const [hovered, setHovered] = useState(false);
+  const [focused, setFocused] = useState(false);
+  const [reduced, setReduced] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const update = () => {
+      setReduced(media.matches);
+      if (media.matches) setAutoplay(false);
+    };
+    update();
+    media.addEventListener("change", update);
+    return () => media.removeEventListener("change", update);
+  }, []);
+
+  const isPlaying = autoplay && !reduced && !hovered && !focused;
+
+  useEffect(() => {
+    if (!isPlaying || items.length < 2) return;
+    const timer = window.setInterval(() => {
+      if (document.hidden) return;
+      setActive((current) => (current + 1) % items.length);
+    }, interval);
+    return () => window.clearInterval(timer);
+  }, [isPlaying, items.length, interval]);
+
+  const step = (delta: number) => {
+    setActive((current) => (current + delta + items.length) % items.length);
+  };
+
+  const activeItem = items[active];
+
+  return (
+    <div
+      className="overflow-hidden border border-line bg-stone"
+      role="region"
+      aria-roledescription="carousel"
+      aria-label="Selected project work"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      onFocusCapture={() => setFocused(true)}
+      onBlurCapture={() => setFocused(false)}
+      onKeyDown={(event) => {
+        if (event.key === "ArrowLeft") {
+          event.preventDefault();
+          step(-1);
+        } else if (event.key === "ArrowRight") {
+          event.preventDefault();
+          step(1);
+        }
+      }}
+    >
+      <div className="relative aspect-[4/3] overflow-hidden sm:aspect-[16/10]">
+        {items.map((item, index) => (
+          <div
+            key={`${item.src}-${index}`}
+            className={`absolute inset-0 transition-opacity duration-700 ${
+              index === active ? "opacity-100" : "pointer-events-none opacity-0"
+            }`}
+            aria-hidden={index !== active}
+          >
+            <Image
+              src={item.src}
+              alt={item.alt}
+              fill
+              priority={index === 0}
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="photo-grade object-cover"
+            />
+          </div>
+        ))}
+
+        <div
+          className="pointer-events-none absolute inset-0 bg-gradient-to-t from-forest/90 via-forest/20 to-transparent"
+          aria-hidden="true"
+        />
+
+        <span className="mono absolute top-3 left-3 bg-paper/92 px-2 py-1 text-[8px] tracking-[0.14em] uppercase text-ink">
+          {activeItem.note}
+        </span>
+        <span className="mono absolute top-3 right-3 bg-forest/45 px-2 py-1 text-[8px] tracking-[0.14em] uppercase text-paper/80 backdrop-blur-sm">
+          {String(active + 1).padStart(2, "0")} / {String(items.length).padStart(2, "0")}
+        </span>
+
+        <div className="absolute inset-x-0 bottom-0 p-5">
+          <div aria-live="polite" aria-atomic="true">
+            <span className="mono block text-[8px] tracking-[0.14em] uppercase text-amber/90">
+              {activeItem.service}
+            </span>
+            <p className="mt-1.5 font-display text-[clamp(1.3rem,2vw,1.8rem)] leading-[1.05] font-medium tracking-[-0.03em] text-paper">
+              {activeItem.title}
+            </p>
+            <Link
+              href={activeItem.href}
+              className="link-underline mt-2.5 inline-flex text-[11.5px] font-medium text-paper"
+            >
+              View service
+              <ArrowUpRight className="h-3 w-3" />
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      <div className="flex items-center justify-between gap-4 border-t border-line bg-paper px-4 py-3">
+        <div className="flex items-center gap-1.5">
+          {items.map((item, index) => (
+            <button
+              key={`dot-${item.src}-${index}`}
+              type="button"
+              onClick={() => setActive(index)}
+              aria-label={`Show project ${index + 1} of ${items.length}: ${item.title}`}
+              aria-current={active === index ? "true" : undefined}
+              className={`h-1.5 rounded-full transition-all duration-300 ${
+                active === index ? "w-5 bg-amber" : "w-1.5 bg-line hover:bg-muted"
+              }`}
+            />
+          ))}
+        </div>
+
+        <div className="flex items-center gap-2">
+          {!reduced ? (
+            <button
+              type="button"
+              onClick={() => setAutoplay((current) => !current)}
+              className="flex h-8 w-8 items-center justify-center border border-line text-muted transition-colors hover:border-forest hover:bg-forest hover:text-paper"
+              aria-label={isPlaying ? "Pause slideshow" : "Play slideshow"}
+            >
+              {isPlaying ? <PauseIcon /> : <PlayIcon />}
+            </button>
+          ) : null}
+          <button
+            type="button"
+            onClick={() => step(-1)}
+            className="flex h-8 w-8 items-center justify-center border border-line text-muted transition-colors hover:border-forest hover:bg-forest hover:text-paper"
+            aria-label="Previous project"
+          >
+            <ArrowRight className="h-3.5 w-3.5 rotate-180" />
+          </button>
+          <button
+            type="button"
+            onClick={() => step(1)}
+            className="flex h-8 w-8 items-center justify-center border border-line text-muted transition-colors hover:border-forest hover:bg-forest hover:text-paper"
+            aria-label="Next project"
+          >
+            <ArrowRight className="h-3.5 w-3.5" />
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}

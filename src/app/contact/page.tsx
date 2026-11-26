@@ -60,6 +60,7 @@ export default function ContactPage() {
     <main id="main" className="bg-paper text-ink">
       <PageIntro
         eyebrow="Contact"
+        label="Contact"
         title="Talk to one team."
         lede="A building project, an interior, a material schedule or a property. Tell us what you are planning and we will point you to the right service and team."
         note="Project enquiries are reviewed within one business day."

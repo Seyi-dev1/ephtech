@@ -57,15 +57,13 @@ product. It gets its own product page, not the homepage.
 /services                 Services
 /services/[slug]          Individual service pages
 /projects                 Selected work across the company
-/products                 Products and systems
-/board                    Ephtech Board product page (current URL)
+/board                    Ephtech Board product page
 /contact                  Quote and contact
 ```
 
-The board remains at `/board` for now; an alias at `/products/ephtech-board`
-can be added at launch. The main nav becomes:
+The board remains at `/board`. The main nav becomes:
 
-**Services · Projects · Products · About · Contact** + **Start a project**
+**Services · Projects · The Board · About · Contact** + **Start a project**
 
 ## 4. Homepage concept
 
@@ -192,5 +190,4 @@ See [`MEDIA_INVENTORY.md`](./MEDIA_INVENTORY.md) and the contact sheets in
 - Confirm priority services and sectors.
 - Provide real project names, locations and permissions.
 - Decide whether Real Estate needs listings or a marketing page only.
-- Confirm the board moves to `/products/ephtech-board`.
 - Provide the best available originals for hero imagery and film.

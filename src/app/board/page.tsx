@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import boardProduct from "@/assets/images/board-product.jpg";
 import { applications, sectors } from "@/lib/applications";
 import { faqs } from "@/lib/faqs";
 import { confirmedSpecs, formatSpec, pillars, product } from "@/lib/product";
@@ -25,7 +26,8 @@ export default function BoardPage() {
   return (
     <main id="main" className="bg-paper text-ink">
       <PageIntro
-        eyebrow="02: The board"
+        eyebrow="Flagship product"
+        label="The board"
         title={
           <>
             The board,
@@ -33,8 +35,11 @@ export default function BoardPage() {
             up close.
           </>
         }
-        lede="Ephtech Board is a dry, factory-finished, impact-resistant system that replaces wet POP, plasterboard and fragile gypsum. The result is a ceiling that stays flat, holds its edge and survives the climate it was built for."
+        lede="Ephtech Board is a dry, factory finished board system for ceilings, partitions, wall linings, wet areas and joinery. It replaces wet POP, plasterboard and fragile gypsum with a panel that resists moisture and impact, holds a flat face and arrives ready for paint. Installation is dry: the board is cut, fixed, jointed and painted with no curing downtime, so the space is finished sooner. It is supplied as a complete system with its grid, channels, fasteners and jointing compound, and can be installed by the same team that supplies it."
         note="Photography is illustrative. Full dimensional schedule is issued with your quotation."
+        image={boardProduct}
+        imageAlt="Stack of Ephtech boards showing the factory-finished face."
+        imageNote="Ephtech Board"
       />
 
       {/* ---------------- board + pillars ---------------- */}

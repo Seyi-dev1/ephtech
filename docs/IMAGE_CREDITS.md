@@ -27,11 +27,17 @@ The file is used as supplied and cropped/toned in CSS. It is not presented as an
 
 **Ephtech International lockup**
 
-- Source: Supplied by the business owner (`Desktop/logo-material.jpeg`).
+- Source: Supplied by the business owner (`Desktop/ephtech-logo.jpeg`).
 - Files: `src/assets/images/ephtech-logo-color.png` and
   `src/assets/images/ephtech-logo-light.png`.
-- Usage: site header. Background removed, house body filled with paper, and a
-  paper/amber light variant for the hero and other dark surfaces.
+- Extraction: the lockup was cropped from the supplied letterhead image,
+  upscaled with a high quality resample, and given a transparent background.
+  The RC line was removed from the header lockup; the registration number
+  remains in the footer and company details.
+- Colour treatment: the light background version uses the site deep green and
+  amber; the dark background version uses a softened warm off-white (#e3ddcf)
+  and amber. Both are 888 × 288 PNG with alpha.
+- Usage: site header, swapped automatically over light and dark surfaces.
 - Confirm ownership and brand permission before launch.
 
 ## Board product photograph (owner-supplied)
@@ -143,9 +149,9 @@ available.
 ### Importation service
 
 - File: `src/assets/images/service-import.jpg`
-- Photographer: Diego F. Parra
-- Source: Pexels, photo 24244230
-- URL: https://www.pexels.com/photo/containers-in-warehouse-24244230/
+- Photographer: James Richardson
+- Source: Pexels, photo 36122954
+- URL: https://www.pexels.com/photo/spacious-industrial-warehouse-interior-with-storage-racks-36122954/
 - License: Pexels License. Free for commercial use. Attribution not required.
 - Usage: Importation service; labelled illustrative.
 

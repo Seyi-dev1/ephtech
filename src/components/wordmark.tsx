@@ -13,7 +13,7 @@ export default function Wordmark({ light = false, className = "" }: Props) {
       src={light ? logoLight : logoColor}
       alt=""
       fill
-      sizes="148px"
+      sizes="132px"
       className={`object-contain object-left ${className}`}
       priority
     />
